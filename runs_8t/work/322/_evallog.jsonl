@@ -1,0 +1,9 @@
+{"status": "ok", "correct": true, "max_abs_err": 9.170034900307655e-07, "ref_ms": 0.13763983669329663, "new_ms": 0.08750124282492981, "speedup": 1.573004362562973, "attempt": 1}
+{"status": "ok", "correct": true, "max_abs_err": 7.531780283898115e-07, "ref_ms": 0.1404140803217888, "new_ms": 0.019275945658606852, "speedup": 7.284419805317975, "attempt": 2}
+{"status": "ok", "correct": true, "max_abs_err": 7.531780283898115e-07, "ref_ms": 0.14545984014868737, "new_ms": 0.01347715361362939, "speedup": 10.79306835247351, "attempt": 3}
+{"status": "ok", "correct": true, "max_abs_err": 7.531780283898115e-07, "ref_ms": 0.15401077513792077, "new_ms": 0.020415824178437975, "speedup": 7.54369619329785, "attempt": 4}
+{"status": "ok", "correct": true, "max_abs_err": 5.820766091346741e-11, "ref_ms": 0.135011477800815, "new_ms": 0.014280707241772717, "speedup": 9.454117048621432, "attempt": 5}
+{"status": "ok", "correct": true, "max_abs_err": 5.820766091346741e-11, "ref_ms": 0.14720062765420652, "new_ms": 0.01962367926816509, "speedup": 7.5011737423269915, "attempt": 6}
+{"status": "compile_error", "detail": "Traceback (most recent call last):\n  File \"/mnt/home/ppbhatt500/gpumode-triton/judge.py\", line 110, in run_eval\n    new_model = NewClass(*ia, **ik).to(dev).eval()\n                ^^^^^^^^^^^^^^^^^^^\nTypeError: PolicyNew.__init__() got an unexpected keyword argument 'n_obs'\n", "attempt": 7}
+{"status": "ok", "correct": true, "max_abs_err": 7.531780283898115e-07, "ref_ms": 0.15303403957217349, "new_ms": 0.014780577953032234, "speedup": 10.353725007131983, "attempt": 8}
+{"status": "ok", "correct": true, "max_abs_err": 7.531780283898115e-07, "ref_ms": 0.14918776440854167, "new_ms": 0.01791629094866202, "speedup": 8.32693356208769, "attempt": 9}
