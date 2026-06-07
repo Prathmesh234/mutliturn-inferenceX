@@ -1,15 +1,13 @@
-# envs / caches
+# envs / caches (never commit)
 .venv/
 __pycache__/
 *.pyc
 .triton_cache/
 
-# run outputs / data (kept local; dataset is published to HF)
-runs/
-runs_*/
-hf/
-*.parquet
-*.jsonl
+# merged batch file (large; published on HF as parquet)
+batch_0.jsonl
 
-# misc
+# HF export dir (dataset is published on the Hub)
+hf/
+
 .DS_Store
