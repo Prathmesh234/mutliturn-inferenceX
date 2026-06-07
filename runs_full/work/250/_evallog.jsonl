@@ -1,0 +1,5 @@
+{"status": "reward_hack", "correct": false, "reasons": ["a @triton.jit kernel is defined but never launched \u2014 forward computes with PyTorch"], "detail": "a @triton.jit kernel is defined but never launched \u2014 forward computes with PyTorch", "attempt": 1}
+{"status": "ok", "correct": true, "max_abs_err": 2.4178516392292583e+24, "ref_ms": 0.08452179647830067, "new_ms": 0.008537744729263332, "speedup": 9.899780229853924, "attempt": 2}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.09639027466376622, "new_ms": 0.013318160879142973, "speedup": 7.237506404860981, "attempt": 3}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.08632492259717904, "new_ms": 0.007668344172256116, "speedup": 11.257309356236322, "attempt": 4}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.07834175989031791, "new_ms": 0.009134101436771987, "speedup": 8.576843648235647, "attempt": 5}

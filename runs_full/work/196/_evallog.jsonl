@@ -1,0 +1,5 @@
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.07205155567714462, "new_ms": 0.028692848858377067, "speedup": 2.5111328621559545, "attempt": 1}
+{"status": "ok", "correct": true, "max_abs_err": 0.0008063316345214844, "ref_ms": 0.06304960034787654, "new_ms": 0.01713338513193386, "speedup": 3.6799266381027227, "attempt": 2}
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.07111938419536902, "new_ms": 0.024073989842640153, "speedup": 2.9542001413243715, "attempt": 3}
+{"status": "ok", "correct": true, "max_abs_err": 0.0008063316345214844, "ref_ms": 0.066042552920098, "new_ms": 0.02986197273079132, "speedup": 2.2115937723029298, "attempt": 4}
+{"status": "ok", "correct": true, "max_abs_err": 0.0008063316345214844, "ref_ms": 0.07381709833063331, "new_ms": 0.027843721454812623, "speedup": 2.651121849873069, "attempt": 5}

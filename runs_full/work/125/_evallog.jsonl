@@ -1,0 +1,4 @@
+{"status": "ok", "correct": true, "max_abs_err": 0.0004706382751464844, "ref_ms": 0.046923921607873016, "new_ms": 0.031437052035266755, "speedup": 1.4926311015178129, "attempt": 1}
+{"status": "compile_error", "detail": "Traceback (most recent call last):\n  File \"/mnt/home/ppbhatt500/gpumode-triton/judge.py\", line 108, in run_eval\n    new_model = NewClass(*ia, **ik).to(dev).eval()\n                ^^^^^^^^^^^^^^^^^^^\nTypeError: make_denseNew.__init__() got an unexpected keyword argument 'in_planes'\n", "attempt": 2}
+{"status": "ok", "correct": true, "max_abs_err": 0.0004706382751464844, "ref_ms": 0.05136966051639251, "new_ms": 0.033080383616958885, "speedup": 1.5528737849961782, "attempt": 3}
+{"status": "ok", "correct": true, "max_abs_err": 0.0004706382751464844, "ref_ms": 0.056205283077257986, "new_ms": 0.02960136274099115, "speedup": 1.8987397157708035, "attempt": 4}

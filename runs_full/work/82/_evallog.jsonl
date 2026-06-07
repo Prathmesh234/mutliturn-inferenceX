@@ -1,0 +1,8 @@
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.08832362223908587, "new_ms": 0.03634358284726419, "speedup": 2.4302398200604083, "attempt": 1}
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.08102462747517754, "new_ms": 0.0497250257275111, "speedup": 1.6294537064532775, "attempt": 2}
+{"status": "compile_error", "detail": "Traceback (most recent call last):\n  File \"/mnt/home/ppbhatt500/gpumode-triton/judge.py\", line 108, in run_eval\n    new_model = NewClass(*ia, **ik).to(dev).eval()\n                ^^^^^^^^^^^^^^^^^^^\nTypeError: BcNew.__init__() got an unexpected keyword argument 'in_channels'\n", "attempt": 3}
+{"status": "compile_error", "detail": "Traceback (most recent call last):\n  File \"/mnt/home/ppbhatt500/gpumode-triton/judge.py\", line 108, in run_eval\n    new_model = NewClass(*ia, **ik).to(dev).eval()\n                ^^^^^^^^^^^^^^^^^^^\nTypeError: BcNew.__init__() got an unexpected keyword argument 'in_channels'\n", "attempt": 4}
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.09627799907078345, "new_ms": 0.03969884138586449, "speedup": 2.425209293515176, "attempt": 5}
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.09313838310698246, "new_ms": 0.027372113732289993, "speedup": 3.4026741236687954, "attempt": 6}
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.0766752003133297, "new_ms": 0.022783099017413027, "speedup": 3.365442087344095, "attempt": 7}
+{"status": "ok", "correct": true, "max_abs_err": 2.384185791015625e-07, "ref_ms": 0.09001177366612093, "new_ms": 0.026657175321754118, "speedup": 3.376643345728571, "attempt": 8}

@@ -1,0 +1,2 @@
+{"status": "ok", "correct": true, "max_abs_err": 1.1920928955078125e-07, "ref_ms": 0.09744391833641092, "new_ms": 0.030479104893764, "speedup": 3.1970728364909387, "attempt": 1}
+{"status": "ok", "correct": true, "max_abs_err": 1.1920928955078125e-07, "ref_ms": 0.1138566272223697, "new_ms": 0.017430753483393683, "speedup": 6.531939501688274, "attempt": 2}
