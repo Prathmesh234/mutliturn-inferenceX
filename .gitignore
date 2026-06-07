@@ -1,0 +1,15 @@
+# envs / caches
+.venv/
+__pycache__/
+*.pyc
+.triton_cache/
+
+# run outputs / data (kept local; dataset is published to HF)
+runs/
+runs_*/
+hf/
+*.parquet
+*.jsonl
+
+# misc
+.DS_Store

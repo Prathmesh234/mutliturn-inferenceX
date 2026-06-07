@@ -1,0 +1,39 @@
+[project]
+name = "gpumode-triton"
+version = "0.1.0"
+description = "KernelBook PyTorch -> Triton via `claude -p`, 4 GPU workers on one node"
+requires-python = ">=3.10"
+
+# Core deps: only what's needed to LOAD problems and run claude. These install
+# fine on aarch64 from PyPI, so `uv sync` always works and generation can start.
+dependencies = [
+    "datasets>=2.14",
+    "huggingface-hub>=0.23",
+]
+
+[project.optional-dependencies]
+# Eval deps: torch + triton for GB300 (aarch64 + Blackwell). This is the one
+# part that may need tweaking. Installed via `uv sync --extra eval`. If it
+# fails, the pipeline still runs and the evaluator reports "env_unavailable".
+eval = [
+    "torch",
+    "triton",
+    "numpy",
+]
+
+[tool.uv]
+# Use a uv-managed standalone CPython, NOT the system /usr/bin/python3. The
+# system Python lacks dev headers (Python.h), which Triton needs to JIT-compile
+# its runtime shim; managed CPython ships the headers, so Triton works without
+# needing root to `apt install python3-dev`.
+python-preference = "only-managed"
+
+# PyTorch CUDA 12.8 index (Blackwell support + aarch64 SBSA wheels).
+# If GB300 needs a different CUDA, change cu128 -> cu126 / cu130 etc.
+[[tool.uv.index]]
+name = "pytorch-cu128"
+url = "https://download.pytorch.org/whl/cu128"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu128" }
