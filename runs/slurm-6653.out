@@ -1,0 +1,385 @@
+>> claude: 2.1.167 (Claude Code)
+Resolved 77 packages in 2ms
+Uninstalled 26 packages in 25.83s
+ - cuda-bindings==12.9.7
+ - cuda-pathfinder==1.5.5
+ - cuda-toolkit==12.8.1
+ - jinja2==3.1.6
+ - markupsafe==3.0.3
+ - mpmath==1.3.0
+ - networkx==3.6.1
+ - nvidia-cublas-cu12==12.8.4.1
+ - nvidia-cuda-cupti-cu12==12.8.90
+ - nvidia-cuda-nvrtc-cu12==12.8.93
+ - nvidia-cuda-runtime-cu12==12.8.90
+ - nvidia-cudnn-cu12==9.19.0.56
+ - nvidia-cufft-cu12==11.3.3.83
+ - nvidia-cufile-cu12==1.13.1.3
+ - nvidia-curand-cu12==10.3.9.90
+ - nvidia-cusolver-cu12==11.7.3.90
+ - nvidia-cusparse-cu12==12.5.8.93
+ - nvidia-cusparselt-cu12==0.7.1
+ - nvidia-nccl-cu12==2.28.9
+ - nvidia-nvjitlink-cu12==12.8.93
+ - nvidia-nvshmem-cu12==3.4.5
+ - nvidia-nvtx-cu12==12.8.90
+ - setuptools==81.0.0
+ - sympy==1.14.0
+ - torch==2.11.0+cu128
+ - triton==3.6.0
+Resolved 77 packages in 2ms
+Installed 26 packages in 21.70s
+ + cuda-bindings==12.9.7
+ + cuda-pathfinder==1.5.5
+ + cuda-toolkit==12.8.1
+ + jinja2==3.1.6
+ + markupsafe==3.0.3
+ + mpmath==1.3.0
+ + networkx==3.6.1
+ + nvidia-cublas-cu12==12.8.4.1
+ + nvidia-cuda-cupti-cu12==12.8.90
+ + nvidia-cuda-nvrtc-cu12==12.8.93
+ + nvidia-cuda-runtime-cu12==12.8.90
+ + nvidia-cudnn-cu12==9.19.0.56
+ + nvidia-cufft-cu12==11.3.3.83
+ + nvidia-cufile-cu12==1.13.1.3
+ + nvidia-curand-cu12==10.3.9.90
+ + nvidia-cusolver-cu12==11.7.3.90
+ + nvidia-cusparse-cu12==12.5.8.93
+ + nvidia-cusparselt-cu12==0.7.1
+ + nvidia-nccl-cu12==2.28.9
+ + nvidia-nvjitlink-cu12==12.8.93
+ + nvidia-nvshmem-cu12==3.4.5
+ + nvidia-nvtx-cu12==12.8.90
+ + setuptools==81.0.0
+ + sympy==1.14.0
+ + torch==2.11.0+cu128
+ + triton==3.6.0
+>> solving problems [0, 300) on slurm-gb300-133-181 -> runs_full
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+loaded 268 tasks (offset 0, batch 300, skipped 32 done)
+[w1/gpu1] solving 36 (Net)
+[w2/gpu2] solving 40 (ScalarScaleBias)
+[w3/gpu3] solving 41 (NormActivation)
+[w0/gpu0] solving 35 (MultiHeadAttention)
+[w3/gpu3] saved 41: claude=ok eval=ok speedup=3.6182565861206193 evals=3 61.8s
+[w3/gpu3] solving 42 (BertLayerNorm)
+[w2/gpu2] saved 40: claude=ok eval=ok speedup=1.33354387461737 evals=3 72.1s
+[w2/gpu2] solving 43 (Upscale2d)
+[w2/gpu2] saved 43: claude=ok eval=ok speedup=1.5353402428554408 evals=4 71.4s
+[w2/gpu2] solving 44 (AdaIN)
+[w3/gpu3] saved 42: claude=ok eval=ok speedup=7.584869568755962 evals=5 96.7s
+[w3/gpu3] solving 45 (maxout)
+[w2/gpu2] saved 44: claude=ok eval=ok speedup=16.549150562486535 evals=2 95.4s
+[w2/gpu2] solving 46 (DecoderLayer)
+[w1/gpu1] saved 36: claude=ok eval=ok speedup=3.0383976302685554 evals=6 253.7s
+[w1/gpu1] solving 47 (Joiner)
+[w3/gpu3] saved 45: claude=ok eval=ok speedup=2.830017757198784 evals=4 141.4s
+[w3/gpu3] solving 49 (NoiseLayer)
+[w1/gpu1] saved 47: claude=ok eval=ok speedup=7.5143975935740865 evals=1 50.7s
+[w1/gpu1] solving 50 (resblock)
+[w3/gpu3] saved 49: claude=ok eval=ok speedup=1.2678683978750607 evals=2 59.7s
+[w3/gpu3] solving 51 (PositionwiseFeedForward)
+[w3/gpu3] saved 51: claude=ok eval=ok speedup=5.875180209357497 evals=3 118.9s
+[w3/gpu3] solving 52 (SelfAttention)
+[w3/gpu3] saved 52: claude=ok eval=ok speedup=3.234939686925051 evals=3 123.2s
+[w3/gpu3] solving 53 (RelativeAttention)
+[w0/gpu0] saved 35: claude=ok eval=ok speedup=7.739453934192396 evals=8 660.2s
+[w0/gpu0] solving 55 (GeometryFeature)
+[w0/gpu0] saved 55: claude=ok eval=ok speedup=10.050557375362551 evals=2 56.2s
+[w0/gpu0] solving 57 (group)
+[w0/gpu0] saved 57: claude=ok eval=ok speedup=4.345884798082989 evals=2 93.1s
+[w0/gpu0] solving 58 (ToHalf)
+[w0/gpu0] saved 58: claude=ok eval=ok speedup=0.9984485229275434 evals=2 30.9s
+[w0/gpu0] solving 59 (mfm)
+[w2/gpu2] saved 46: claude=ok eval=ok speedup=13.520794804536468 evals=5 628.3s
+[w2/gpu2] solving 60 (SimpleAttention)
+[w2/gpu2] saved 60: claude=ok eval=ok speedup=3.737560588793468 evals=2 55.3s
+[w2/gpu2] solving 61 (MultiLevelPooling)
+[w0/gpu0] saved 59: claude=ok eval=ok speedup=8.406208628929384 evals=3 108.2s
+[w0/gpu0] solving 62 (Linear_soft_plus)
+[w1/gpu1] saved 50: claude=ok eval=ok speedup=6.591254643563296 evals=7 658.1s
+[w1/gpu1] solving 63 (ContrastiveLoss)
+[w3/gpu3] saved 53: claude=ok eval=ok speedup=3.590743777729054 evals=1 394.3s
+[w3/gpu3] solving 64 (Linear_tanh)
+[w2/gpu2] saved 61: claude=ok eval=ok speedup=3.307430157538609 evals=4 88.0s
+[w2/gpu2] solving 65 (Linear_leaky_relu)
+[w0/gpu0] saved 62: claude=ok eval=ok speedup=2.365800615161164 evals=4 100.6s
+[w0/gpu0] solving 66 (Conv2dBlock)
+[w1/gpu1] saved 63: claude=ok eval=ok speedup=12.57506300122142 evals=3 95.3s
+[w1/gpu1] solving 67 (LinearBlock)
+[w2/gpu2] saved 65: claude=ok eval=ok speedup=2.1980673256015093 evals=3 59.4s
+[w2/gpu2] solving 68 (Linear_sigmoid)
+[w3/gpu3] saved 64: claude=ok eval=ok speedup=2.434048057302197 evals=6 153.0s
+[w3/gpu3] solving 69 (BiAttention)
+[w1/gpu1] saved 67: claude=ok eval=ok speedup=3.8668272572885636 evals=3 91.6s
+[w1/gpu1] solving 71 (Attention)
+[w2/gpu2] saved 68: claude=ok eval=ok speedup=3.639705345385584 evals=3 84.0s
+[w2/gpu2] solving 72 (MaxPool2dDynamicSamePadding)
+[w0/gpu0] saved 66: claude=ok eval=ok speedup=1.961005801520161 evals=3 147.1s
+[w0/gpu0] solving 73 (GroupScaling1D)
+[w2/gpu2] saved 72: claude=ok eval=ok speedup=2.7792993300519515 evals=3 68.8s
+[w2/gpu2] solving 74 (adaModule)
+[w3/gpu3] saved 69: claude=ok eval=ok speedup=13.42143389456399 evals=1 120.6s
+[w3/gpu3] solving 75 (SppPooling)
+[w2/gpu2] saved 74: claude=ok eval=ok speedup=14.77951752967539 evals=1 94.5s
+[w2/gpu2] solving 76 (SurfaceLoss)
+[w0/gpu0] saved 73: claude=ok eval=ok speedup=3.050063982434273 evals=4 180.7s
+[w0/gpu0] solving 77 (SmoothCrossEntropyLoss)
+[w3/gpu3] saved 75: claude=ok eval=ok speedup=4.633633321840813 evals=2 113.1s
+[w3/gpu3] solving 78 (LayerNorm)
+[w2/gpu2] saved 76: claude=ok eval=ok speedup=4.50572621703346 evals=2 76.8s
+[w2/gpu2] solving 79 (Conv2dDynamicSamePadding)
+[w3/gpu3] saved 78: claude=ok eval=ok speedup=9.115191169547398 evals=1 46.7s
+[w3/gpu3] solving 80 (CasualConv1d)
+[w2/gpu2] saved 79: claude=ok eval=ok speedup=4.988054416663804 evals=3 105.8s
+[w2/gpu2] solving 81 (DenseBlock)
+[w0/gpu0] saved 77: claude=ok eval=ok speedup=5.244491958812094 evals=5 143.4s
+[w0/gpu0] solving 82 (Block)
+[w3/gpu3] saved 80: claude=ok eval=ok speedup=4.018168167288159 evals=4 165.1s
+[w3/gpu3] solving 83 (Bc)
+[w2/gpu2] saved 81: claude=ok eval=ok speedup=8.478404737077964 evals=2 99.3s
+[w2/gpu2] solving 84 (ATRCell)
+[w3/gpu3] saved 83: claude=ok eval=ok speedup=3.1995376548925503 evals=3 60.5s
+[w3/gpu3] solving 85 (TimeEncode)
+[w1/gpu1] saved 71: claude=ok eval=ok speedup=5.008909154027819 evals=8 518.0s
+[w1/gpu1] solving 86 (LargeNN)
+[w2/gpu2] saved 84: claude=ok eval=ok speedup=6.718966083032727 evals=3 88.2s
+[w2/gpu2] solving 87 (LRNCell)
+[w3/gpu3] saved 85: claude=ok eval=ok speedup=3.0106230825613145 evals=3 66.2s
+[w3/gpu3] solving 88 (FeedForward)
+[w0/gpu0] saved 82: claude=ok eval=ok speedup=3.805830816921514 evals=8 241.9s
+[w0/gpu0] solving 89 (MergeLayer)
+[w2/gpu2] saved 87: claude=ok eval=ok speedup=9.678024080997133 evals=3 124.0s
+[w2/gpu2] solving 90 (MLP)
+[w0/gpu0] saved 89: claude=ok eval=ok speedup=5.08265037457211 evals=4 127.2s
+[w0/gpu0] solving 91 (DenseNet2D_up_block_concat)
+[w1/gpu1] saved 86: claude=ok eval=ok speedup=2.6280467488861468 evals=7 252.5s
+[w1/gpu1] solving 92 (ScaleNorm)
+[w2/gpu2] saved 90: claude=ok eval=ok speedup=5.86685406846536 evals=3 119.4s
+[w2/gpu2] solving 93 (ShakeResNet)
+[w1/gpu1] saved 92: claude=ok eval=ok speedup=8.309234279223238 evals=3 60.3s
+[w1/gpu1] solving 94 (ShakeResNeXt)
+[w2/gpu2] saved 93: claude=ok eval=ok speedup=8.799920040063812 evals=4 278.1s
+[w2/gpu2] solving 95 (Norm)
+[w2/gpu2] saved 95: claude=ok eval=ok speedup=6.126092181127413 evals=4 79.5s
+[w2/gpu2] solving 96 (ConvBlock)
+[w1/gpu1] saved 94: claude=ok eval=ok speedup=2.568513420001241 evals=6 383.7s
+[w1/gpu1] solving 97 (L2)
+[w1/gpu1] saved 97: claude=ok eval=ok speedup=4.126628872789649 evals=3 78.2s
+[w1/gpu1] solving 98 (MLP_multiple_class)
+[w0/gpu0] saved 91: claude=ok eval=ok speedup=6.553438175507862 evals=4 641.0s
+[w0/gpu0] solving 99 (L1)
+[w2/gpu2] saved 96: claude=ok eval=ok speedup=14.232587118083833 evals=5 256.0s
+[w2/gpu2] solving 100 (SmallNN)
+[w0/gpu0] saved 99: claude=ok eval=ok speedup=3.894981921622044 evals=4 66.8s
+[w0/gpu0] solving 101 (LinearModel)
+[w1/gpu1] saved 98: claude=ok eval=ok speedup=5.1695225378191685 evals=5 190.6s
+[w1/gpu1] solving 102 (AdMSoftmaxLoss)
+[w0/gpu0] saved 101: claude=ok eval=ok speedup=13.052640826672869 evals=1 40.9s
+[w0/gpu0] solving 103 (OutConv)
+[w0/gpu0] saved 103: claude=ok eval=ok speedup=3.845734091125059 evals=3 113.5s
+[w0/gpu0] solving 104 (Follow_loss)
+[w0/gpu0] saved 104: claude=ok eval=ok speedup=3.253451413696177 evals=3 75.6s
+[w0/gpu0] solving 105 (Model)
+[w2/gpu2] saved 100: claude=ok eval=ok speedup=6.490885635365028 evals=5 286.1s
+[w2/gpu2] solving 106 (ChannelNorm)
+[w0/gpu0] saved 105: claude=ok eval=ok speedup=2.0813474301642136 evals=2 76.6s
+[w0/gpu0] solving 107 (MultiHeadAttention)
+[w1/gpu1] saved 102: claude=ok eval=ok speedup=41.23282666449254 evals=4 286.7s
+[w1/gpu1] solving 108 (GatedConv1d)
+[w2/gpu2] saved 106: claude=ok eval=ok speedup=6.811296973509067 evals=4 105.0s
+[w2/gpu2] solving 109 (LayerNorm1d)
+[w2/gpu2] saved 109: claude=ok eval=ok speedup=18.97355813140775 evals=2 38.7s
+[w2/gpu2] solving 110 (Focal_loss)
+[w1/gpu1] saved 108: claude=ok eval=ok speedup=6.569929447454104 evals=2 90.7s
+[w1/gpu1] solving 111 (ItemQueryAttention)
+[w2/gpu2] saved 110: claude=ok eval=ok speedup=2.6851198984456315 evals=3 96.8s
+[w2/gpu2] solving 112 (ChannelPool)
+[w2/gpu2] saved 112: claude=ok eval=ok speedup=6.2027442810327935 evals=3 69.2s
+[w2/gpu2] solving 113 (AMSoftmaxLoss)
+[w1/gpu1] saved 111: claude=ok eval=ok speedup=25.830222007269484 evals=4 187.2s
+[w1/gpu1] solving 114 (MaskedConv1d)
+[w3/gpu3] saved 88: claude=ok eval=ok speedup=1.8753635537826852 evals=5 1509.4s
+[w3/gpu3] solving 115 (GRUCell)
+[w2/gpu2] saved 113: claude=ok eval=ok speedup=5.151459509858304 evals=2 93.2s
+[w2/gpu2] solving 116 (Downsample)
+[w0/gpu0] saved 107: claude=ok eval=ok speedup=9.441950243250968 evals=5 344.7s
+[w0/gpu0] solving 117 (AttentivePoolingModule)
+[w1/gpu1] saved 114: claude=ok eval=ok speedup=4.858150223844436 evals=4 104.1s
+[w1/gpu1] solving 118 (SDPAttention)
+[w3/gpu3] saved 115: claude=ok eval=ok speedup=20.734745712833714 evals=2 108.8s
+[w3/gpu3] solving 119 (SoftmaxLoss)
+[w2/gpu2] saved 116: claude=ok eval=ok speedup=8.378558009566117 evals=3 121.6s
+[w2/gpu2] solving 120 (make_residual_dense_ver1)
+[w1/gpu1] saved 118: claude=ok eval=ok speedup=3.5523859297494504 evals=2 98.9s
+[w1/gpu1] solving 121 (SelfAttentionPooling)
+[w2/gpu2] saved 120: claude=ok eval=ok speedup=9.005332844233209 evals=2 132.1s
+[w2/gpu2] solving 122 (AP)
+[w0/gpu0] saved 117: claude=ok eval=ok speedup=6.331315488509179 evals=4 279.5s
+[w0/gpu0] solving 123 (SAP)
+[w3/gpu3] saved 119: claude=ok eval=ok speedup=6.155198083298162 evals=6 342.8s
+[w3/gpu3] solving 124 (Upsample)
+[w0/gpu0] saved 123: claude=ok eval=ok speedup=7.834436260520739 evals=5 288.9s
+[w0/gpu0] solving 125 (BasicConv)
+[w3/gpu3] saved 124: claude=ok eval=ok speedup=9.112521401189206 evals=2 139.1s
+[w3/gpu3] solving 126 (AttentionModuleV2)
+[w1/gpu1] saved 121: claude=ok eval=ok speedup=2.0438758399699566 evals=3 466.2s
+[w1/gpu1] solving 127 (make_dense)
+[w1/gpu1] saved 127: claude=ok eval=ok speedup=4.66549529798254 evals=4 98.9s
+[w1/gpu1] solving 128 (Scale_and_shift)
+[w1/gpu1] saved 128: claude=ok eval=ok speedup=1.9797671263843764 evals=3 49.3s
+[w1/gpu1] solving 129 (make_residual_dense_ver2)
+[w0/gpu0] saved 125: claude=ok eval=ok speedup=1.752976976082174 evals=4 202.2s
+[w0/gpu0] solving 130 (DDPG)
+[w2/gpu2] saved 122: claude=ok eval=ok speedup=7.952221106129431 evals=4 540.3s
+[w2/gpu2] solving 131 (Cell)
+[w3/gpu3] saved 126: claude=ok eval=ok speedup=27.198040169543386 evals=3 318.0s
+[w3/gpu3] solving 132 (ResizeConv1d)
+[w1/gpu1] saved 129: claude=ok eval=ok speedup=8.3569932413391 evals=3 159.8s
+[w1/gpu1] solving 133 (Mish)
+[w1/gpu1] saved 133: claude=ok eval=ok speedup=2.3838321155235622 evals=3 54.9s
+[w1/gpu1] solving 134 (ASP)
+[w3/gpu3] saved 132: claude=ok eval=ok speedup=5.56627474226938 evals=3 101.8s
+[w3/gpu3] solving 135 (Policy_Net)
+[w2/gpu2] saved 131: claude=ok eval=ok speedup=11.789106116834196 evals=2 221.0s
+[w2/gpu2] solving 136 (Value_Net)
+[w0/gpu0] saved 130: claude=ok eval=ok speedup=5.121197901693858 evals=6 405.4s
+[w0/gpu0] solving 137 (make_dense_LReLU)
+[w0/gpu0] saved 137: claude=ok eval=ok speedup=6.403352719319754 evals=2 66.4s
+[w0/gpu0] solving 138 (AmdimNCELoss)
+[w3/gpu3] saved 135: claude=ok eval=ok speedup=3.5375899440448055 evals=8 258.0s
+[w3/gpu3] solving 139 (SpatialGate)
+[w1/gpu1] saved 134: claude=ok eval=incorrect speedup=6.520444918472486 evals=1 339.6s
+[w1/gpu1] solving 140 (BayesLinear)
+[w3/gpu3] saved 139: claude=ok eval=ok speedup=10.349043180654462 evals=4 146.3s
+[w3/gpu3] solving 141 (MinPool)
+[w3/gpu3] saved 141: claude=ok eval=ok speedup=3.987870834027307 evals=4 144.8s
+[w3/gpu3] solving 142 (QNetwork)
+[w0/gpu0] saved 138: claude=ok eval=ok speedup=14.726362988164702 evals=6 336.3s
+[w0/gpu0] solving 143 (SELoss)
+[w0/gpu0] saved 143: claude=ok eval=ok speedup=3.339927443993003 evals=2 54.2s
+[w0/gpu0] solving 144 (BayesConv1d)
+[w2/gpu2] saved 136: claude=ok eval=ok speedup=3.151194506982534 evals=4 670.3s
+[w2/gpu2] solving 145 (Actor)
+[w1/gpu1] saved 140: claude=ok eval=ok speedup=7.230753118958847 evals=5 408.7s
+[w1/gpu1] solving 146 (Conv2dTime)
+[w1/gpu1] saved 146: claude=ok eval=ok speedup=7.487861693368809 evals=4 173.5s
+[w1/gpu1] solving 147 (AttentionLayer)
+[w3/gpu3] saved 142: claude=ok eval=ok speedup=5.301523781193818 evals=8 409.9s
+[w3/gpu3] solving 148 (ActorCriticMLP)
+[w0/gpu0] saved 144: claude=ok eval=ok speedup=3.62627465628926 evals=4 359.1s
+[w0/gpu0] solving 149 (GlobalAveragePool)
+[w2/gpu2] saved 145: claude=ok eval=ok speedup=2.1846217276355127 evals=3 357.0s
+[w2/gpu2] solving 150 (SpatialAttention2d)
+[w0/gpu0] saved 149: claude=ok eval=ok speedup=0.7029676770276075 evals=3 71.5s
+[w0/gpu0] solving 151 (Critic)
+[w3/gpu3] saved 148: claude=ok eval=ok speedup=5.467255548401242 evals=3 132.3s
+[w3/gpu3] solving 152 (GlobalMaxPool)
+[w3/gpu3] saved 152: claude=ok eval=ok speedup=1.7036926672460357 evals=4 75.1s
+[w3/gpu3] solving 153 (Policy)
+[w2/gpu2] saved 150: claude=ok eval=ok speedup=8.273719703389395 evals=6 147.7s
+[w2/gpu2] solving 154 (Delta)
+[w1/gpu1] saved 147: claude=ok eval=ok speedup=3.6766189058397702 evals=4 329.9s
+[w1/gpu1] solving 155 (ScaledLeakyReLU)
+[w1/gpu1] saved 155: claude=ok eval=ok speedup=1.8166917613715194 evals=4 61.3s
+[w1/gpu1] solving 156 (HSwish)
+[w1/gpu1] saved 156: claude=ok eval=ok speedup=6.848407351727201 evals=3 45.5s
+[w1/gpu1] solving 157 (SchedulerTestNet)
+[w0/gpu0] saved 151: claude=ok eval=ok speedup=1.798354321574843 evals=4 355.1s
+[w0/gpu0] solving 158 (GAB)
+[w1/gpu1] saved 157: claude=ok eval=ok speedup=5.9887112003394165 evals=4 80.2s
+[w1/gpu1] solving 159 (CaffeNormalize)
+[w3/gpu3] saved 153: claude=ok eval=ok speedup=3.0055518324346324 evals=6 263.2s
+[w3/gpu3] solving 160 (SCse)
+[w2/gpu2] saved 154: claude=ok eval=ok speedup=15.357631284551173 evals=4 256.2s
+[w2/gpu2] solving 161 (ClippedReLU)
+[w2/gpu2] saved 161: claude=ok eval=ok speedup=0.8895717676379425 evals=3 46.1s
+[w2/gpu2] solving 162 (Rosenbrock)
+[w1/gpu1] saved 159: claude=ok eval=ok speedup=8.102284213570654 evals=3 64.6s
+[w1/gpu1] solving 163 (FakeRKHSConvNet)
+[w0/gpu0] saved 158: claude=ok eval=ok speedup=10.809305466888055 evals=3 137.8s
+[w0/gpu0] solving 164 (LayerNorm)
+[w3/gpu3] saved 160: claude=ok eval=ok speedup=10.430177828502504 evals=4 148.1s
+[w3/gpu3] solving 165 (NoiseInjection)
+[w2/gpu2] saved 162: claude=ok eval=ok speedup=9.986844010607829 evals=3 112.9s
+[w2/gpu2] solving 166 (EqualConv2d)
+[w0/gpu0] saved 164: claude=ok eval=ok speedup=11.558901685369335 evals=1 38.8s
+[w0/gpu0] solving 167 (InputInjection)
+[w3/gpu3] saved 165: claude=ok eval=ok speedup=3.6742774452217297 evals=5 109.0s
+[w3/gpu3] solving 168 (NormalProposal)
+[w2/gpu2] saved 166: claude=ok eval=ok speedup=2.8184027644115432 evals=3 155.0s
+[w2/gpu2] solving 169 (Discriminator)
+[w0/gpu0] saved 167: claude=ok eval=ok speedup=2.854783831698041 evals=4 196.0s
+[w0/gpu0] solving 170 (DDPGActorVersion1)
+[w1/gpu1] saved 163: claude=ok eval=ok speedup=9.41874948334377 evals=3 368.7s
+[w1/gpu1] solving 171 (ExampleBackbone)
+[w2/gpu2] saved 169: claude=ok eval=ok speedup=2.6587707572052426 evals=4 136.8s
+[w2/gpu2] solving 172 (ConvRelu)
+[w3/gpu3] saved 168: claude=ok eval=ok speedup=16.375151282859175 evals=5 204.2s
+[w3/gpu3] solving 173 (NormalSamples)
+[w0/gpu0] saved 170: claude=ok eval=ok speedup=4.292322057734967 evals=4 154.9s
+[w0/gpu0] solving 174 (Gblock)
+[w2/gpu2] saved 172: claude=ok eval=ok speedup=3.6817432841760582 evals=5 86.8s
+[w2/gpu2] solving 175 (EqualLinear)
+[w1/gpu1] saved 171: claude=ok eval=ok speedup=5.088950893909745 evals=7 171.9s
+[w1/gpu1] solving 176 (NodeAdaptiveEncoder)
+[w2/gpu2] saved 175: claude=ok eval=ok speedup=2.7697800879289187 evals=3 99.2s
+[w2/gpu2] solving 177 (PPMConcat)
+[w1/gpu1] saved 176: claude=ok eval=ok speedup=22.015719088630036 evals=1 43.6s
+[w1/gpu1] solving 178 (Deep_Neural_Network)
+[w3/gpu3] saved 173: claude=ok eval=ok speedup=5.6664231191325385 evals=6 320.2s
+[w3/gpu3] solving 179 (MADDPGActorVersion1)
+[w2/gpu2] saved 177: claude=ok eval=ok speedup=9.050785411731011 evals=5 168.1s
+[w2/gpu2] solving 180 (ModulatedConv2d)
+[w0/gpu0] saved 174: claude=ok eval=ok speedup=7.982877002320731 evals=8 324.8s
+[w0/gpu0] solving 181 (Linear)
+[w3/gpu3] saved 179: claude=ok eval=ok speedup=4.887423148126919 evals=3 103.0s
+[w3/gpu3] solving 182 (DDPGCriticVersion1)
+[w0/gpu0] saved 181: claude=ok eval=ok speedup=7.173858558564365 evals=4 107.9s
+[w0/gpu0] solving 183 (ToRGB)
+[w1/gpu1] saved 178: claude=ok eval=ok speedup=3.7347267326999702 evals=7 317.3s
+[w1/gpu1] solving 184 (Neural_Net)
+[w3/gpu3] saved 182: claude=ok eval=ok speedup=8.423681083175662 evals=4 176.9s
+[w3/gpu3] solving 185 (FocalLossBinary)
+[w2/gpu2] saved 180: claude=ok eval=ok speedup=8.261190165621525 evals=4 264.0s
+[w2/gpu2] solving 186 (Vgg16)
+[w0/gpu0] saved 183: claude=ok eval=ok speedup=8.69189373478911 evals=3 138.0s
+[w0/gpu0] solving 187 (Dueling_QNetwork)
+[w1/gpu1] saved 184: claude=ok eval=ok speedup=7.6321918791679035 evals=5 134.9s
+[w1/gpu1] solving 188 (NAC)
+[w3/gpu3] saved 185: claude=ok eval=ok speedup=7.294812069424322 evals=3 195.3s
+[w3/gpu3] solving 189 (AttwNetHead)
+[w1/gpu1] saved 188: claude=ok eval=ok speedup=2.8753007895846925 evals=5 170.8s
+[w1/gpu1] solving 190 (Embeddings)
+[w0/gpu0] saved 187: claude=ok eval=ok speedup=8.850608169661367 evals=3 180.5s
+[w0/gpu0] solving 191 (ConvBlockINEDense)
+[w1/gpu1] saved 190: claude=ok eval=ok speedup=2.93026330957428 evals=2 48.8s
+[w1/gpu1] solving 192 (Net)
+[w2/gpu2] saved 186: claude=ok eval=ok speedup=1.150809841096609 evals=6 257.0s
+[w2/gpu2] solving 193 (HadamardProduct)
+[w1/gpu1] saved 192: claude=ok eval=ok speedup=5.305462858004974 evals=3 96.8s
+[w1/gpu1] solving 194 (Classifier)
+[w2/gpu2] saved 193: claude=ok eval=ok speedup=5.366517462205121 evals=4 94.1s
+[w2/gpu2] solving 195 (LCCALayer)
+[w3/gpu3] saved 189: claude=ok eval=ok speedup=8.019429350974352 evals=4 240.1s
+[w3/gpu3] solving 196 (Generator)
+[w2/gpu2] saved 195: claude=ok eval=ok speedup=3.3959785899075916 evals=2 112.5s
+[w2/gpu2] solving 197 (BDiceLoss)
+[w1/gpu1] saved 194: claude=ok eval=ok speedup=4.389557363088897 evals=7 157.7s
+[w1/gpu1] solving 198 (BCELoss2c)
+[w3/gpu3] saved 196: claude=ok eval=ok speedup=2.8808861148995857 evals=5 106.9s
+[w3/gpu3] solving 199 (BCELoss)
+[w0/gpu0] saved 191: claude=ok eval=ok speedup=10.8487323504734 evals=4 331.0s
+[w0/gpu0] solving 200 (NALU)
+[w2/gpu2] saved 197: claude=ok eval=ok speedup=18.89376653064451 evals=5 106.8s
+[w2/gpu2] solving 201 (WeightedBDiceLoss)
+[w1/gpu1] saved 198: claude=ok eval=ok speedup=12.531519490221626 evals=4 99.5s
+[w1/gpu1] solving 202 (DiceLoss)
+[w3/gpu3] saved 199: claude=ok eval=ok speedup=21.77714712679393 evals=2 86.5s
+[w3/gpu3] solving 203 (StableBCELoss)
+[w2/gpu2] saved 201: claude=ok eval=ok speedup=14.059606876589413 evals=3 73.4s
+[w2/gpu2] solving 204 (MultiHeadAttention)
+[w0/gpu0] saved 200: claude=ok eval=ok speedup=12.46083685502964 evals=4 127.2s
+[w0/gpu0] solving 205 (MSELoss)
+[2026-06-06T22:29:18.435] error: *** JOB 6653 ON slurm-gb300-133-181 CANCELLED AT 2026-06-06T22:29:18 DUE to SIGNAL Terminated ***

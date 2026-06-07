@@ -1,0 +1,123 @@
+>> claude: 2.1.167 (Claude Code)
+Resolved 77 packages in 2ms
+Uninstalled 28 packages in 30.20s
+ - cuda-bindings==12.9.7
+ - cuda-pathfinder==1.5.5
+ - cuda-toolkit==12.8.1
+ - jinja2==3.1.6
+ - markupsafe==3.0.3
+ - mpmath==1.3.0
+ - networkx==3.6.1
+ - nvidia-cublas-cu12==12.8.4.1
+ - nvidia-cuda-cupti-cu12==12.8.90
+ - nvidia-cuda-nvrtc-cu12==12.8.93
+ - nvidia-cuda-runtime-cu12==12.8.90
+ - nvidia-cudnn-cu12==9.19.0.56
+ - nvidia-cufft-cu12==11.3.3.83
+ - nvidia-cufile-cu12==1.13.1.3
+ - nvidia-curand-cu12==10.3.9.90
+ - nvidia-cusolver-cu12==11.7.3.90
+ - nvidia-cusparse-cu12==12.5.8.93
+ - nvidia-cusparselt-cu12==0.7.1
+ - nvidia-nccl-cu12==2.28.9
+ - nvidia-nvjitlink-cu12==12.8.93
+ - nvidia-nvshmem-cu12==3.4.5
+ - nvidia-nvtx-cu12==12.8.90
+ - pip==25.0.1
+ - setuptools==81.0.0
+ - sympy==1.14.0
+ - torch==2.11.0+cu128
+ - torchaudio==2.11.0+cu128
+ - triton==3.6.0
+Resolved 77 packages in 2ms
+Installed 26 packages in 18.18s
+ + cuda-bindings==12.9.7
+ + cuda-pathfinder==1.5.5
+ + cuda-toolkit==12.8.1
+ + jinja2==3.1.6
+ + markupsafe==3.0.3
+ + mpmath==1.3.0
+ + networkx==3.6.1
+ + nvidia-cublas-cu12==12.8.4.1
+ + nvidia-cuda-cupti-cu12==12.8.90
+ + nvidia-cuda-nvrtc-cu12==12.8.93
+ + nvidia-cuda-runtime-cu12==12.8.90
+ + nvidia-cudnn-cu12==9.19.0.56
+ + nvidia-cufft-cu12==11.3.3.83
+ + nvidia-cufile-cu12==1.13.1.3
+ + nvidia-curand-cu12==10.3.9.90
+ + nvidia-cusolver-cu12==11.7.3.90
+ + nvidia-cusparse-cu12==12.5.8.93
+ + nvidia-cusparselt-cu12==0.7.1
+ + nvidia-nccl-cu12==2.28.9
+ + nvidia-nvjitlink-cu12==12.8.93
+ + nvidia-nvshmem-cu12==3.4.5
+ + nvidia-nvtx-cu12==12.8.90
+ + setuptools==81.0.0
+ + sympy==1.14.0
+ + torch==2.11.0+cu128
+ + triton==3.6.0
+>> solving problems [0, 300) on slurm-gb300-133-181 -> runs_full
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+loaded 108 tasks (offset 0, batch 300, skipped 192 done)
+[w2/gpu2] solving 204 (MultiHeadAttention)
+[w3/gpu3] solving 205 (MSELoss)
+[w0/gpu0] solving 202 (DiceLoss)
+[w1/gpu1] solving 203 (StableBCELoss)
+[w1/gpu1] saved 203: claude=ok eval=ok speedup=9.741006571793395 evals=4 75.9s
+[w1/gpu1] solving 206 (MutiLevelEnhance)
+[w3/gpu3] saved 205: claude=ok eval=ok speedup=4.174423592899036 evals=4 95.9s
+[w3/gpu3] solving 207 (GDL)
+[w0/gpu0] saved 202: claude=ok eval=ok speedup=14.859607327847357 evals=4 124.4s
+[w0/gpu0] solving 208 (Dice)
+[w0/gpu0] saved 208: claude=ok eval=ok speedup=11.924455808185703 evals=3 107.8s
+[w0/gpu0] solving 209 (SDNE_layer)
+[w3/gpu3] saved 207: claude=ok eval=ok speedup=21.959146997341662 evals=2 179.1s
+[w3/gpu3] solving 210 (WeightedMCEloss)
+[w2/gpu2] saved 204: claude=ok eval=ok speedup=12.843408394084006 evals=5 284.0s
+[w2/gpu2] solving 211 (SkipConnection)
+[w2/gpu2] saved 211: claude=ok eval=ok speedup=0.6700616125348963 evals=3 83.3s
+[w2/gpu2] solving 212 (AvgPoolPad)
+[w3/gpu3] saved 210: claude=ok eval=ok speedup=4.007890181929986 evals=4 124.6s
+[w3/gpu3] solving 213 (conv2)
+[w1/gpu1] saved 206: claude=ok eval=ok speedup=17.521848010438593 evals=7 369.4s
+[w1/gpu1] solving 214 (MultiHeadAttn)
+[w2/gpu2] saved 212: claude=ok eval=ok speedup=5.5430499182360276 evals=2 92.1s
+[w2/gpu2] solving 215 (MCCLoss)
+[w2/gpu2] saved 215: claude=ok eval=ok speedup=41.30820148345332 evals=4 94.9s
+[w2/gpu2] solving 216 (Coder)
+[w3/gpu3] saved 213: claude=ok eval=ok speedup=2.4585914865679683 evals=7 178.4s
+[w3/gpu3] solving 217 (ConvRelu2)
+[w0/gpu0] saved 209: claude=ok eval=ok speedup=8.94511101168585 evals=7 430.6s
+[w0/gpu0] solving 218 (WeightedCrossEntropyLoss)
+[w3/gpu3] saved 217: claude=ok eval=ok speedup=5.728833838475116 evals=3 112.6s
+[w3/gpu3] solving 219 (WeightedBCELoss)
+[w2/gpu2] saved 216: claude=ok eval=ok speedup=4.0381709463244375 evals=3 159.1s
+[w2/gpu2] solving 220 (MaxPoolPad)
+[w3/gpu3] saved 219: claude=ok eval=ok speedup=28.854436596163 evals=1 66.7s
+[w3/gpu3] solving 221 (SoftDiceLossSquared)
+[w1/gpu1] saved 214: claude=ok eval=ok speedup=14.453889736147033 evals=6 351.4s
+[w1/gpu1] solving 222 (ClipGlobalAvgPool)
+[w2/gpu2] saved 220: claude=ok eval=ok speedup=6.04547670152323 evals=2 100.4s
+[w2/gpu2] solving 223 (Shifted_softplus)
+[w0/gpu0] saved 218: claude=ok eval=ok speedup=10.419522922331957 evals=3 173.4s
+[w0/gpu0] solving 224 (Custom_dropout)
+[w3/gpu3] saved 221: claude=ok eval=ok speedup=22.439159739530773 evals=3 94.0s
+[w3/gpu3] solving 225 (AdaptiveAvgMaxPool)
+[w1/gpu1] saved 222: claude=ok eval=ok speedup=2.510619342203644 evals=3 62.2s
+[w1/gpu1] solving 226 (MSEDICELoss)
+[w2/gpu2] saved 223: claude=ok eval=ok speedup=2.2779358494625925 evals=3 52.5s
+[w2/gpu2] solving 227 (AnyHead)
+[w3/gpu3] saved 225: claude=ok eval=ok speedup=3.1923016587769273 evals=3 57.3s
+[w3/gpu3] solving 228 (ScaleNorm)
+[w0/gpu0] saved 224: claude=ok eval=ok speedup=7.457010613051084 evals=3 103.6s
+[w0/gpu0] solving 229 (_Residual_Block_SR)
+[w2/gpu2] saved 227: claude=ok eval=ok speedup=5.23049876566704 evals=4 106.4s
+[w2/gpu2] solving 230 (_Residual_Block_DB)
+[w3/gpu3] saved 228: claude=ok eval=ok speedup=5.760160370320143 evals=4 83.8s
+[w3/gpu3] solving 231 (GELU)
+[w1/gpu1] saved 226: claude=ok eval=ok speedup=23.366910857965053 evals=4 160.7s
+[w1/gpu1] solving 232 (GeneralizedMeanPooling)
+[w3/gpu3] saved 231: claude=ok eval=ok speedup=11.189569896480547 evals=2 40.3s
+[w3/gpu3] solving 233 (Net)
+[2026-06-06T23:18:37.523] error: *** JOB 6661 ON slurm-gb300-133-181 CANCELLED AT 2026-06-06T23:18:37 DUE to SIGNAL Terminated ***
