@@ -1,0 +1,10 @@
+{"status": "reward_hack", "correct": false, "reasons": ["uses imports/executes the reference or arbitrary code"], "detail": "uses imports/executes the reference or arbitrary code", "attempt": 1}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.22592142158084447, "new_ms": 0.014803869898157278, "speedup": 15.260970485086888, "attempt": 2}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.23408800022055706, "new_ms": 0.016858062651344992, "speedup": 13.88581861759072, "attempt": 3}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.274130383704571, "new_ms": 0.029085437128666097, "speedup": 9.425004771009368, "attempt": 4}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.22994295702032422, "new_ms": 0.020298770015809, "speedup": 11.327925625111327, "attempt": 5}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.24412452235170032, "new_ms": 0.023868367469471113, "speedup": 10.22795223275946, "attempt": 6}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.2418100888962331, "new_ms": 0.021118729154598743, "speedup": 11.450030308456196, "attempt": 7}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.22170573894096457, "new_ms": 0.016046166178821757, "speedup": 13.816742047304663, "attempt": 8}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.2574476531666258, "new_ms": 0.02287991777153335, "speedup": 11.252123182319128, "attempt": 9}
+{"status": "ok", "correct": true, "max_abs_err": 0.0, "ref_ms": 0.2335134551606395, "new_ms": 0.01797212998752193, "speedup": 12.99308737043234, "attempt": 10}
