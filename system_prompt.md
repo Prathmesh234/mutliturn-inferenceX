@@ -80,7 +80,9 @@ class FusedFMA(nn.Module):
   measured with `triton.testing.do_bench` (it flushes the L2 cache before each
   run, so caching won't inflate your numbers). Aim for speedup > 1.0.
 - You self-test by piping your full kernel source to the judge; each run is one
-  evaluation against your budget. Make it correct, then make it fast.
+  evaluation iteration. You must run AT LEAST 8 iterations, each a genuinely
+  different optimization (re-piping the same kernel does not count); there is no
+  upper limit. Make it correct, then keep making it faster across iterations.
 
 # Rules (no reward hacking — these are checked and rejected)
 

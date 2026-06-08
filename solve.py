@@ -15,8 +15,8 @@ Design (kept deliberately simple):
 Per-problem flow inside a worker:
   1. write the PyTorch reference to work/<uuid>/reference.py
   2. run `claude -p` (no turn cap) -> it pipes kernels to judge.py, which saves
-     work/<uuid>/submission.py and feeds back correctness+speedup; the iteration
-     budget is --max-evals judge runs (full trace captured; rate limits waited out)
+     work/<uuid>/submission.py and feeds back correctness+speedup; it must run at
+     least --min-evals judge runs, no cap (full trace captured; rate limits waited out)
   3. authoritative re-score of submission.py on this worker's GPU
   4. append one record {uuid, trace, generated_code, eval, eval_trajectory, ...}
 """
@@ -36,7 +36,7 @@ HERE = Path(__file__).resolve().parent
 JUDGE = HERE / "judge.py"
 
 
-def build_prompt(entry, max_evals, ref_path):
+def build_prompt(entry, min_evals, ref_path):
     return f"""You are an expert GPU kernel engineer specializing in Triton.
 
 The file `{ref_path}` contains a PyTorch module named `{entry}` (a subclass of
@@ -61,13 +61,18 @@ import torch
 ... your entire kernel source, defining class {entry}New ...
 PYEOF
 
-The judge prints correctness + speedup vs PyTorch and how many evaluations remain.
+The judge prints correctness + speedup vs PyTorch and how many iterations you've done.
 Iterate: if not correct, fix and pipe again; if correct, make it FASTER and pipe again.
 
-IMPORTANT: each pipe to the judge is ONE evaluation iteration, and you have at
-most {max_evals}. Thinking and drafting are free; only running the judge counts.
-Your BEST correct version is kept automatically, so experiment freely. Stop when
-satisfied or when the judge says the budget is exhausted."""
+IMPORTANT: each pipe to the judge is ONE evaluation iteration. You are REQUIRED to
+run AT LEAST {min_evals} iterations, each exploring a GENUINELY DIFFERENT optimization
+(block size, num_warps/num_stages, tiling, kernel fusion, coalesced/vectorized loads,
+fp32 accumulation, a different algorithm, ...). Re-piping an identical kernel does NOT
+count. There is NO upper limit -- keep going while you can still improve. Thinking and
+drafting are free; only running the judge counts. Your BEST correct version is kept
+automatically, so experiment freely. Do not stop before the judge confirms you've met
+the {min_evals}-iteration minimum; after that, stop only once further optimization
+isn't helping."""
 
 
 def scan_done(outdir):
@@ -173,6 +178,7 @@ def worker(worker_id, gpu_id, q, args):
         env["JUDGE_REF"] = str(workdir / "reference.py")
         env["JUDGE_WORKDIR"] = str(workdir)
         env["JUDGE_ENTRY"] = entry
+        env["JUDGE_MIN_EVALS"] = str(args.min_evals)
         env["JUDGE_MAX_EVALS"] = str(args.max_evals)
         if args.fresh_compile:
             env["JUDGE_FRESH_COMPILE"] = "1"
@@ -180,7 +186,7 @@ def worker(worker_id, gpu_id, q, args):
         log(f"solving {uuid} ({entry})")
         t0 = time.time()
         cres = run_claude_with_retry(
-            build_prompt(entry, args.max_evals, str(workdir / "reference.py")),
+            build_prompt(entry, args.min_evals, str(workdir / "reference.py")),
             workdir, args, log, env)
 
         # Claude's own optimization trajectory (one entry per judge run).
@@ -259,9 +265,12 @@ def parse_args():
     ap.add_argument("--model", default="claude-opus-4-8")
     ap.add_argument("--effort", default="medium",
                     help="reasoning effort level for the model (e.g. low/medium/high)")
-    ap.add_argument("--max-evals", type=int, default=8,
-                    help="evaluation/iteration budget: max `python judge.py` runs "
-                         "Claude may do per problem (replaces --max-turns)")
+    ap.add_argument("--min-evals", type=int, default=8,
+                    help="REQUIRED floor: Claude must run at least this many judge "
+                         "iterations (each a distinct optimization) before it may stop")
+    ap.add_argument("--max-evals", type=int, default=0,
+                    help="optional ceiling on judge runs per problem; <=0 means no cap "
+                         "(the wall-clock --claude-timeout is the backstop)")
     ap.add_argument("--claude-timeout", type=int, default=1800,
                     help="hard wall-clock backstop (s) for a single claude -p call "
                          "(there is no --max-turns cap anymore)")
