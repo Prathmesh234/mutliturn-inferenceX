@@ -1,0 +1,1090 @@
++ nvidia-smi -L
+GPU 0: NVIDIA GB300 (UUID: GPU-2a3f9487-86ac-8317-8c68-cd4d684bf5b2)
+GPU 1: NVIDIA GB300 (UUID: GPU-eb2c036f-532a-fcab-138b-5815f3f7bc48)
+GPU 2: NVIDIA GB300 (UUID: GPU-89626bdb-e0e1-6a13-746d-9a0ac46e5ffd)
+GPU 3: NVIDIA GB300 (UUID: GPU-0dc3a94d-d8c4-f3d0-2dca-a1ae94ce7b04)
++ cd /mnt/home/ppbhatt500/InferenceX
++ MODEL=/mnt/vast/tom.chen/dsv4
++ TP=4
++ DATASET=/mnt/home/ppbhatt500/gpumode-triton/replay/batch_3x.replay.jsonl
++ RESULT_DIR=/mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang
++ CONCURRENCIES=4,8,16
++ WARMUP=1
++ bash benchmarks/single_node/agentic/dsv4_fp4_b300_sglang_replay.sh
+++ dirname benchmarks/single_node/agentic/dsv4_fp4_b300_sglang_replay.sh
++ source benchmarks/single_node/agentic/../../benchmark_lib.sh
+++ export PYTHONDONTWRITEBYTECODE=1
+++ PYTHONDONTWRITEBYTECODE=1
+++ export PYTHONPYCACHEPREFIX=/tmp/inferencex-pycache
+++ PYTHONPYCACHEPREFIX=/tmp/inferencex-pycache
+++ mkdir -p /tmp/inferencex-pycache
+++ export PORT=8888
+++ PORT=8888
+++ GPU_MONITOR_PID=
+++ GPU_METRICS_CSV=/workspace/gpu_metrics.csv
+++ export GPU_METRICS_CSV
+++ INFMAX_CONTAINER_WORKSPACE=/workspace
+++ AGENTIC_DIR=/workspace/utils/agentic-benchmark
+++ AIPERF_DIR=/workspace/utils/aiperf
++ check_env_vars MODEL TP DATASET RESULT_DIR
++ missing_vars=()
++ local missing_vars
++ for var_name in "$@"
++ [[ -z /mnt/vast/tom.chen/dsv4 ]]
++ for var_name in "$@"
++ [[ -z 4 ]]
++ for var_name in "$@"
++ [[ -z /mnt/home/ppbhatt500/gpumode-triton/replay/batch_3x.replay.jsonl ]]
++ for var_name in "$@"
++ [[ -z /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang ]]
++ [[ 0 -gt 0 ]]
++ CONCURRENCIES=4,8,16
++ WARMUP=1
++ MAX_MODEL_LEN=262144
++ '[' -z '' ']'
+++ echo 4,8,16
+++ tr , '\n'
+++ sort -n
+++ tail -1
++ MAX_NUM_SEQS=16
++ [[ -n 6719 ]]
++ echo 'JOB 6719 running on slurm-gb300-133-185'
+JOB 6719 running on slurm-gb300-133-185
++ [[ /mnt/vast/tom.chen/dsv4 != /* ]]
++ nvidia-smi
+Sun Jun  7 23:04:30 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.126.20             Driver Version: 580.126.20     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GB300                   On  |   00000008:06:00.0 Off |                    0 |
+| N/A   33C    P0            175W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GB300                   On  |   00000009:06:00.0 Off |                    0 |
+| N/A   33C    P0            171W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GB300                   On  |   00000018:06:00.0 Off |                    0 |
+| N/A   33C    P0            171W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GB300                   On  |   00000019:06:00.0 Off |                    0 |
+| N/A   33C    P0            179W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
++ mkdir -p /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang
++ SERVER_LOG=/mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/server.log
++ export PYTHONNOUSERSITE=1
++ PYTHONNOUSERSITE=1
++ export TORCH_CUDA_ARCH_LIST=10.0
++ TORCH_CUDA_ARCH_LIST=10.0
++++ dirname benchmarks/single_node/agentic/dsv4_fp4_b300_sglang_replay.sh
+++ cd benchmarks/single_node/agentic/..
+++ pwd
++ CHAT_TEMPLATE=/mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja
++ SGLANG_CMD=(python3 -m sglang.launch_server --model-path "$MODEL" --host 0.0.0.0 --port "$PORT" --tensor-parallel-size "$TP" --trust-remote-code --page-size 256 --context-length "$MAX_MODEL_LEN" --max-running-requests "$MAX_NUM_SEQS" --cuda-graph-max-bs "$MAX_NUM_SEQS" --tool-call-parser deepseekv4 --reasoning-parser deepseek-v4 --chat-template "$CHAT_TEMPLATE" --enable-metrics --watchdog-timeout 1800)
++ tee /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/sglang_command.txt
++ printf '%q ' python3 -m sglang.launch_server --model-path /mnt/vast/tom.chen/dsv4 --host 0.0.0.0 --port 8888 --tensor-parallel-size 4 --trust-remote-code --page-size 256 --context-length 262144 --max-running-requests 16 --cuda-graph-max-bs 16 --tool-call-parser deepseekv4 --reasoning-parser deepseek-v4 --chat-template /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja --enable-metrics --watchdog-timeout 1800
+python3 -m sglang.launch_server --model-path /mnt/vast/tom.chen/dsv4 --host 0.0.0.0 --port 8888 --tensor-parallel-size 4 --trust-remote-code --page-size 256 --context-length 262144 --max-running-requests 16 --cuda-graph-max-bs 16 --tool-call-parser deepseekv4 --reasoning-parser deepseek-v4 --chat-template /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja --enable-metrics --watchdog-timeout 1800 + printf '\n'
++ SERVER_PID=2775236
++ echo 'Server PID: 2775236 (max-running-requests=16)'
+Server PID: 2775236 (max-running-requests=16)
++ wait_for_server_ready --port 8888 --server-log /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/server.log --server-pid 2775236
++ python3 -m sglang.launch_server --model-path /mnt/vast/tom.chen/dsv4 --host 0.0.0.0 --port 8888 --tensor-parallel-size 4 --trust-remote-code --page-size 256 --context-length 262144 --max-running-requests 16 --cuda-graph-max-bs 16 --tool-call-parser deepseekv4 --reasoning-parser deepseek-v4 --chat-template /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja --enable-metrics --watchdog-timeout 1800
++ set +x
+[2026-06-07 23:04:44] WARNING hf_transformers_utils.py:193: SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-07 23:04:44] WARNING hf_transformers_utils.py:212: SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-07 23:04:45] INFO model_config.py:431: Auto-detected routed-expert safetensors dtype=I8; SGLANG_DSV4_FP4_EXPERTS=True
+[2026-06-07 23:04:45] INFO model_config.py:448: Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:04:45] INFO server_args.py:1183: Use compressed attention backend for DeepseekV4ForCausalLM, setting page_size to 256.
+[2026-06-07 23:04:45] WARNING server_args.py:1195: Setting KV cache dtype to fp8_e4m3 for DeepseekV4ForCausalLM.
+[2026-06-07 23:04:45] INFO server_args.py:1216: Setting swa_full_tokens_ratio to 0.1 for DeepseekV4ForCausalLM.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-07 23:04:45] server_args=ServerArgs(model_path='/mnt/vast/tom.chen/dsv4', tokenizer_path='/mnt/vast/tom.chen/dsv4', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=True, context_length=262144, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='0.0.0.0', port=8888, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='fp8_e4m3', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.91, max_running_requests=16, max_queued_requests=None, max_total_tokens=None, chunked_prefill_size=16384, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=256, swa_full_tokens_ratio=0.1, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=4, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=2218142, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=1800.0, soft_watchdog_timeout=None, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=True, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='/mnt/vast/tom.chen/dsv4', weight_version='default', chat_template='/mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja', hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser='deepseek-v4', tool_call_parser='deepseekv4', tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, enable_lora_overlap_loading=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='compressed', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='auto', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=False, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='auto', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='auto', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', disable_hicache_numa_detect=False, hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, enable_hisparse=False, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=16, cuda_graph_bs=[1, 2, 4, 8, 12, 16], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=16384, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192, 8704, 9216, 9728, 10240, 10752, 11264, 11776, 12288, 12800, 13312, 13824, 14336, 14848, 15360, 15872, 16384], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, enable_return_indexer_topk=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+[2026-06-07 23:04:45] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:04:46] Loading chat template from argument: /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja
+[2026-06-07 23:04:46] Detected user specified Jinja chat template with content format: string
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-07 23:04:59 TP2] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-07 23:04:59 TP2] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-07 23:04:59 TP2] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+[2026-06-07 23:05:00 TP2] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-07 23:05:00 TP2] Init torch distributed begin.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+[2026-06-07 23:05:00 TP1] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-07 23:05:00 TP1] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-07 23:05:00 TP1] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:05:00 TP0] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-07 23:05:00 TP0] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-07 23:05:00 TP0] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:05:00 TP3] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-07 23:05:00 TP3] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-07 23:05:00 TP3] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:05:00 TP1] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:05:00 TP0] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:05:00 TP1] Init torch distributed begin.
+[2026-06-07 23:05:00 TP3] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-07 23:05:00 TP0] Init torch distributed begin.
+[2026-06-07 23:05:00 TP3] Init torch distributed begin.
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[2026-06-07 23:05:01 TP0] sglang is using nccl==2.27.7
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[2026-06-07 23:05:20 TP3] Init torch distributed ends. mem usage=1.34 GB
+[2026-06-07 23:05:20 TP2] Init torch distributed ends. mem usage=1.50 GB
+[2026-06-07 23:05:20 TP0] Init torch distributed ends. mem usage=1.46 GB
+[2026-06-07 23:05:20 TP1] Init torch distributed ends. mem usage=1.50 GB
+[2026-06-07 23:05:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-07 23:05:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-07 23:05:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-07 23:05:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-07 23:05:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-07 23:05:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-07 23:05:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-07 23:05:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-07 23:05:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-07 23:05:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-07 23:05:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-07 23:05:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-07 23:05:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-07 23:05:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-07 23:05:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-07 23:05:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-07 23:05:23 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-07 23:05:23 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-07 23:05:23 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-07 23:05:23 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-07 23:05:23 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-07 23:05:23 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-07 23:05:23 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-07 23:05:23 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-07 23:05:23 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-07 23:05:23 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-07 23:05:23 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-07 23:05:23 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-07 23:05:26 TP2] Load weight begin. avail mem=274.36 GB
+[2026-06-07 23:05:26 TP3] Load weight begin. avail mem=274.51 GB
+[2026-06-07 23:05:26 TP0] Load weight begin. avail mem=274.39 GB
+[2026-06-07 23:05:26 TP0] Detected fp8 checkpoint.
+[2026-06-07 23:05:26 TP0] 2604B checkpoint requires different clamping for shared and routed experts Shared experts fusion optimization is disabled.
+[2026-06-07 23:05:27 TP1] Load weight begin. avail mem=274.36 GB
+Loading safetensors checkpoint shards:   0% Completed | 0/64 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   3% Completed | 2/64 [00:02<01:12,  1.17s/it]
+Loading safetensors checkpoint shards:   5% Completed | 3/64 [00:04<01:46,  1.75s/it]
+Loading safetensors checkpoint shards:   6% Completed | 4/64 [00:07<01:56,  1.94s/it]
+Loading safetensors checkpoint shards:   8% Completed | 5/64 [00:09<02:11,  2.23s/it]
+Loading safetensors checkpoint shards:   9% Completed | 6/64 [00:13<02:25,  2.51s/it]
+Loading safetensors checkpoint shards:  11% Completed | 7/64 [00:16<02:34,  2.70s/it]
+Loading safetensors checkpoint shards:  12% Completed | 8/64 [00:18<02:27,  2.64s/it]
+Loading safetensors checkpoint shards:  14% Completed | 9/64 [00:21<02:29,  2.71s/it]
+Loading safetensors checkpoint shards:  16% Completed | 10/64 [00:24<02:28,  2.75s/it]
+Loading safetensors checkpoint shards:  17% Completed | 11/64 [00:27<02:26,  2.77s/it]
+Loading safetensors checkpoint shards:  19% Completed | 12/64 [00:29<02:24,  2.78s/it]
+Loading safetensors checkpoint shards:  20% Completed | 13/64 [00:32<02:24,  2.84s/it]
+Loading safetensors checkpoint shards:  22% Completed | 14/64 [00:36<02:30,  3.00s/it]
+Loading safetensors checkpoint shards:  23% Completed | 15/64 [00:38<02:21,  2.90s/it]
+Loading safetensors checkpoint shards:  25% Completed | 16/64 [00:41<02:18,  2.88s/it]
+Loading safetensors checkpoint shards:  27% Completed | 17/64 [00:44<02:12,  2.82s/it]
+Loading safetensors checkpoint shards:  28% Completed | 18/64 [00:46<02:03,  2.68s/it]
+Loading safetensors checkpoint shards:  30% Completed | 19/64 [00:49<01:58,  2.63s/it]
+Loading safetensors checkpoint shards:  31% Completed | 20/64 [00:51<01:52,  2.55s/it]
+Loading safetensors checkpoint shards:  33% Completed | 21/64 [00:54<01:47,  2.50s/it]
+Loading safetensors checkpoint shards:  34% Completed | 22/64 [00:56<01:47,  2.57s/it]
+Loading safetensors checkpoint shards:  36% Completed | 23/64 [00:59<01:49,  2.67s/it]
+Loading safetensors checkpoint shards:  38% Completed | 24/64 [01:02<01:51,  2.79s/it]
+Loading safetensors checkpoint shards:  39% Completed | 25/64 [01:05<01:52,  2.88s/it]
+Loading safetensors checkpoint shards:  41% Completed | 26/64 [01:08<01:45,  2.78s/it]
+Loading safetensors checkpoint shards:  42% Completed | 27/64 [01:10<01:39,  2.69s/it]
+Loading safetensors checkpoint shards:  44% Completed | 28/64 [01:13<01:38,  2.73s/it]
+Loading safetensors checkpoint shards:  45% Completed | 29/64 [01:16<01:33,  2.66s/it]
+Loading safetensors checkpoint shards:  47% Completed | 30/64 [01:19<01:35,  2.80s/it]
+Loading safetensors checkpoint shards:  48% Completed | 31/64 [01:22<01:33,  2.82s/it]
+Loading safetensors checkpoint shards:  50% Completed | 32/64 [01:24<01:28,  2.76s/it]
+Loading safetensors checkpoint shards:  52% Completed | 33/64 [01:27<01:21,  2.64s/it]
+Loading safetensors checkpoint shards:  53% Completed | 34/64 [01:29<01:18,  2.62s/it]
+Loading safetensors checkpoint shards:  55% Completed | 35/64 [01:32<01:17,  2.66s/it]
+Loading safetensors checkpoint shards:  56% Completed | 36/64 [01:35<01:16,  2.72s/it]
+Loading safetensors checkpoint shards:  58% Completed | 37/64 [01:38<01:15,  2.81s/it]
+Loading safetensors checkpoint shards:  59% Completed | 38/64 [01:40<01:08,  2.65s/it]
+Loading safetensors checkpoint shards:  61% Completed | 39/64 [01:42<01:03,  2.52s/it]
+Loading safetensors checkpoint shards:  62% Completed | 40/64 [01:45<01:02,  2.59s/it]
+Loading safetensors checkpoint shards:  64% Completed | 41/64 [01:48<01:00,  2.63s/it]
+Loading safetensors checkpoint shards:  66% Completed | 42/64 [01:51<00:58,  2.65s/it]
+Loading safetensors checkpoint shards:  67% Completed | 43/64 [01:53<00:54,  2.59s/it]
+Loading safetensors checkpoint shards:  69% Completed | 44/64 [01:55<00:50,  2.54s/it]
+Loading safetensors checkpoint shards:  70% Completed | 45/64 [01:58<00:48,  2.53s/it]
+Loading safetensors checkpoint shards:  72% Completed | 46/64 [02:01<00:46,  2.60s/it]
+Loading safetensors checkpoint shards:  73% Completed | 47/64 [02:03<00:43,  2.54s/it]
+Loading safetensors checkpoint shards:  75% Completed | 48/64 [02:06<00:40,  2.50s/it]
+Loading safetensors checkpoint shards:  77% Completed | 49/64 [02:08<00:36,  2.44s/it]
+Loading safetensors checkpoint shards:  78% Completed | 50/64 [02:10<00:33,  2.36s/it]
+Loading safetensors checkpoint shards:  80% Completed | 51/64 [02:12<00:30,  2.32s/it]
+Loading safetensors checkpoint shards:  81% Completed | 52/64 [02:15<00:28,  2.41s/it]
+Loading safetensors checkpoint shards:  83% Completed | 53/64 [02:17<00:27,  2.46s/it]
+Loading safetensors checkpoint shards:  84% Completed | 54/64 [02:20<00:25,  2.59s/it]
+Loading safetensors checkpoint shards:  86% Completed | 55/64 [02:23<00:23,  2.66s/it]
+Loading safetensors checkpoint shards:  88% Completed | 56/64 [02:26<00:22,  2.80s/it]
+Loading safetensors checkpoint shards:  89% Completed | 57/64 [02:29<00:19,  2.74s/it]
+Loading safetensors checkpoint shards:  91% Completed | 58/64 [02:31<00:16,  2.70s/it]
+Loading safetensors checkpoint shards:  92% Completed | 59/64 [02:35<00:14,  2.84s/it]
+Loading safetensors checkpoint shards:  94% Completed | 60/64 [02:38<00:11,  2.95s/it]
+Loading safetensors checkpoint shards:  95% Completed | 61/64 [02:41<00:08,  2.96s/it]
+Loading safetensors checkpoint shards:  97% Completed | 62/64 [02:43<00:05,  2.81s/it]
+Loading safetensors checkpoint shards: 100% Completed | 64/64 [02:46<00:00,  2.15s/it]
+Loading safetensors checkpoint shards: 100% Completed | 64/64 [02:46<00:00,  2.60s/it]
+
+[2026-06-07 23:09:25 TP2] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-07 23:09:25 TP2] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=37.65 GB, mem usage=236.71 GB.
+[2026-06-07 23:09:25 TP1] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-07 23:09:25 TP1] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=37.65 GB, mem usage=236.71 GB.
+[2026-06-07 23:09:25 TP3] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-07 23:09:25 TP3] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=37.80 GB, mem usage=236.71 GB.
+[2026-06-07 23:09:25 TP0] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-07 23:09:25 TP0] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=37.68 GB, mem usage=236.71 GB.
+[2026-06-07 23:09:25 TP0] Using KV cache dtype: torch.float8_e4m3fn
+[2026-06-07 23:09:25 TP0] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-07 23:09:25 TP2] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-07 23:09:25 TP1] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-07 23:09:25 TP0] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-07 23:09:25 TP2] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-07 23:09:25 TP3] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-07 23:09:25 TP1] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-07 23:09:25 TP3] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-07 23:09:25 TP0] Memory profiling: available_gpu_memory=37.65 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.91, rest_memory=12.95 GB
+[2026-06-07 23:09:25 TP3] Memory profiling: available_gpu_memory=37.65 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.91, rest_memory=12.95 GB
+[2026-06-07 23:09:25 TP0] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=12.95 GB, full_token=585472
+[2026-06-07 23:09:25 TP0] DSv4 pool sizes: full=585472, swa=58368, c4=146368, c128=4574, c4_state=3648, c128_state=58368
+[2026-06-07 23:09:25 TP3] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=12.95 GB, full_token=585472
+[2026-06-07 23:09:25 TP2] Memory profiling: available_gpu_memory=37.65 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.91, rest_memory=12.95 GB
+[2026-06-07 23:09:25 TP3] DSv4 pool sizes: full=585472, swa=58368, c4=146368, c128=4574, c4_state=3648, c128_state=58368
+[2026-06-07 23:09:25 TP1] Memory profiling: available_gpu_memory=37.65 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.91, rest_memory=12.95 GB
+[2026-06-07 23:09:25 TP2] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=12.95 GB, full_token=585472
+[2026-06-07 23:09:25 TP1] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=12.95 GB, full_token=585472
+[2026-06-07 23:09:25 TP2] DSv4 pool sizes: full=585472, swa=58368, c4=146368, c128=4574, c4_state=3648, c128_state=58368
+[2026-06-07 23:09:25 TP1] DSv4 pool sizes: full=585472, swa=58368, c4=146368, c128=4574, c4_state=3648, c128_state=58368
+[2026-06-07 23:09:25 TP0] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=16 swa_size=58368 c4_size=146368 c4_logical_size=146368 c128_size=4574 c4_state_pool_size=3648 c128_state_pool_size=58368
+[2026-06-07 23:09:25 TP3] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=16 swa_size=58368 c4_size=146368 c4_logical_size=146368 c128_size=4574 c4_state_pool_size=3648 c128_state_pool_size=58368
+[2026-06-07 23:09:25 TP2] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=16 swa_size=58368 c4_size=146368 c4_logical_size=146368 c128_size=4574 c4_state_pool_size=3648 c128_state_pool_size=58368
+[2026-06-07 23:09:25 TP1] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=16 swa_size=58368 c4_size=146368 c4_logical_size=146368 c128_size=4574 c4_state_pool_size=3648 c128_state_pool_size=58368
+[2026-06-07 23:09:25 TP2] Memory pool end. avail mem=24.51 GB
+[2026-06-07 23:09:25 TP0] Memory pool end. avail mem=24.54 GB
+[2026-06-07 23:09:25 TP1] Memory pool end. avail mem=24.51 GB
+[2026-06-07 23:09:25 TP3] Memory pool end. avail mem=24.67 GB
+[2026-06-07 23:09:26 TP1] Capture cuda graph begin. This can take up to several minutes. avail mem=24.43 GB
+[2026-06-07 23:09:26 TP0] Capture cuda graph begin. This can take up to several minutes. avail mem=24.46 GB
+[2026-06-07 23:09:26 TP2] Capture cuda graph begin. This can take up to several minutes. avail mem=24.43 GB
+[2026-06-07 23:09:26 TP3] Capture cuda graph begin. This can take up to several minutes. avail mem=24.59 GB
+[2026-06-07 23:09:26 TP0] Capture cuda graph bs [1, 2, 4, 8, 12, 16]
+  0%|          | 0/6 [00:00<?, ?it/s]Capturing batches (bs=16 avail_mem=24.46 GB):   0%|          | 0/6 [00:00<?, ?it/s][2026-06-07 23:09:44 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2026-06-07 23:09:44 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=2048, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2026-06-07 23:09:44 TP0] Required memory for warmup: 0.357421875GB, Available memory: 24.44140625GB
+
+DeepGEMM warmup:   0%|          | 0/32768 [00:00<?, ?it/s][A
+DeepGEMM warmup:   0%|          | 1/32768 [00:01<15:50:29,  1.74s/it][A
+DeepGEMM warmup:   0%|          | 145/32768 [00:03<11:01, 49.28it/s] [A
+DeepGEMM warmup:   1%|          | 257/32768 [00:05<09:43, 55.76it/s][A
+DeepGEMM warmup:   1%|          | 289/32768 [00:06<13:04, 41.41it/s][A
+DeepGEMM warmup:   1%|▏         | 433/32768 [00:08<09:30, 56.72it/s][A
+DeepGEMM warmup:   2%|▏         | 513/32768 [00:10<10:03, 53.40it/s][A
+DeepGEMM warmup:   2%|▏         | 577/32768 [00:12<11:12, 47.86it/s][A
+DeepGEMM warmup:   2%|▏         | 721/32768 [00:13<09:02, 59.09it/s][A
+DeepGEMM warmup:   2%|▏         | 769/32768 [00:15<10:49, 49.25it/s][A
+DeepGEMM warmup:   3%|▎         | 865/32768 [00:17<10:22, 51.22it/s][A
+DeepGEMM warmup:   3%|▎         | 1009/32768 [00:19<08:41, 60.91it/s][A
+DeepGEMM warmup:   3%|▎         | 1025/32768 [00:20<11:40, 45.32it/s][A
+DeepGEMM warmup:   4%|▎         | 1153/32768 [00:22<09:47, 53.81it/s][A
+DeepGEMM warmup:   4%|▍         | 1297/32768 [00:24<08:26, 62.13it/s][A
+DeepGEMM warmup:   4%|▍         | 1441/32768 [00:25<07:36, 68.62it/s][A
+DeepGEMM warmup:   5%|▍         | 1585/32768 [00:27<07:11, 72.23it/s][A
+DeepGEMM warmup:   5%|▌         | 1729/32768 [00:29<06:54, 74.92it/s][A
+DeepGEMM warmup:   6%|▌         | 1873/32768 [00:31<06:48, 75.67it/s][A
+DeepGEMM warmup:   6%|▌         | 2017/32768 [00:33<06:38, 77.17it/s][A
+DeepGEMM warmup:   9%|▉         | 2958/32768 [00:33<01:40, 295.69it/s][A
+DeepGEMM warmup:  11%|█▏        | 3713/32768 [00:35<01:37, 296.52it/s][A
+DeepGEMM warmup:  14%|█▍        | 4687/32768 [00:35<00:52, 534.43it/s][A
+DeepGEMM warmup:  16%|█▌        | 5127/32768 [00:37<01:07, 408.69it/s][A
+DeepGEMM warmup:  19%|█▉        | 6179/32768 [00:37<00:37, 706.34it/s][A
+DeepGEMM warmup:  22%|██▏       | 7255/32768 [00:38<00:22, 1112.05it/s][A
+DeepGEMM warmup:  25%|██▌       | 8347/32768 [00:38<00:14, 1646.65it/s][A
+DeepGEMM warmup:  29%|██▉       | 9432/32768 [00:38<00:10, 2311.39it/s][A
+DeepGEMM warmup:  32%|███▏      | 10536/32768 [00:38<00:07, 3127.85it/s][A
+DeepGEMM warmup:  36%|███▌      | 11645/32768 [00:38<00:05, 4066.04it/s][A
+DeepGEMM warmup:  39%|███▊      | 12649/32768 [00:38<00:04, 4871.37it/s][A
+DeepGEMM warmup:  42%|████▏     | 13631/32768 [00:38<00:03, 5604.85it/s][A
+DeepGEMM warmup:  45%|████▍     | 14584/32768 [00:38<00:02, 6185.49it/s][A
+DeepGEMM warmup:  47%|████▋     | 15501/32768 [00:38<00:02, 6595.61it/s][A
+DeepGEMM warmup:  50%|████▉     | 16381/32768 [00:39<00:02, 6848.35it/s][A
+DeepGEMM warmup:  53%|█████▎    | 17225/32768 [00:39<00:02, 6971.73it/s][A
+DeepGEMM warmup:  55%|█████▌    | 18035/32768 [00:39<00:02, 6973.84it/s][A
+DeepGEMM warmup:  57%|█████▋    | 18812/32768 [00:39<00:02, 6930.26it/s][A
+DeepGEMM warmup:  60%|█████▉    | 19560/32768 [00:39<00:01, 6820.72it/s][A
+DeepGEMM warmup:  62%|██████▏   | 20280/32768 [00:39<00:01, 6695.65it/s][A
+DeepGEMM warmup:  64%|██████▍   | 20976/32768 [00:39<00:01, 6566.11it/s][A
+DeepGEMM warmup:  66%|██████▌   | 21651/32768 [00:39<00:01, 6418.54it/s][A
+DeepGEMM warmup:  68%|██████▊   | 22305/32768 [00:39<00:01, 6257.94it/s][A
+DeepGEMM warmup:  70%|███████   | 22939/32768 [00:40<00:01, 6143.52it/s][A
+DeepGEMM warmup:  72%|███████▏  | 23559/32768 [00:40<00:01, 5996.23it/s][A
+DeepGEMM warmup:  74%|███████▎  | 24163/32768 [00:40<00:01, 5823.96it/s][A
+DeepGEMM warmup:  76%|███████▌  | 24748/32768 [00:40<00:01, 5705.20it/s][A
+DeepGEMM warmup:  77%|███████▋  | 25320/32768 [00:40<00:01, 5610.34it/s][A
+DeepGEMM warmup:  79%|███████▉  | 25882/32768 [00:40<00:01, 5490.39it/s][A
+DeepGEMM warmup:  81%|████████  | 26432/32768 [00:40<00:01, 5352.75it/s][A
+DeepGEMM warmup:  82%|████████▏ | 26968/32768 [00:40<00:01, 5257.89it/s][A
+DeepGEMM warmup:  84%|████████▍ | 27494/32768 [00:40<00:01, 5191.88it/s][A
+DeepGEMM warmup:  85%|████████▌ | 28014/32768 [00:41<00:00, 5079.62it/s][A
+DeepGEMM warmup:  87%|████████▋ | 28522/32768 [00:41<00:00, 4970.63it/s][A
+DeepGEMM warmup:  89%|████████▊ | 29020/32768 [00:41<00:00, 4892.68it/s][A
+DeepGEMM warmup:  90%|█████████ | 29510/32768 [00:41<00:00, 4836.58it/s][A
+DeepGEMM warmup:  92%|█████████▏| 29994/32768 [00:41<00:00, 4779.74it/s][A
+DeepGEMM warmup:  93%|█████████▎| 30472/32768 [00:41<00:00, 4674.61it/s][A
+DeepGEMM warmup:  94%|█████████▍| 30940/32768 [00:41<00:00, 4601.02it/s][A
+DeepGEMM warmup:  96%|█████████▌| 31401/32768 [00:41<00:00, 4549.08it/s][A
+DeepGEMM warmup:  97%|█████████▋| 31856/32768 [00:41<00:00, 4511.72it/s][A
+DeepGEMM warmup:  99%|█████████▊| 32308/32768 [00:41<00:00, 4444.80it/s][A
+DeepGEMM warmup: 100%|█████████▉| 32753/32768 [00:42<00:00, 4361.29it/s][ADeepGEMM warmup: 100%|██████████| 32768/32768 [00:42<00:00, 778.63it/s] 
+[2026-06-07 23:10:51 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2026-06-07 23:10:51 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=16384, K=1536, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2026-06-07 23:10:51 TP0] Required memory for warmup: 1.0703125GB, Available memory: 24.416015625GB
+
+DeepGEMM warmup:   0%|          | 0/32768 [00:00<?, ?it/s][A
+DeepGEMM warmup:   0%|          | 1/32768 [00:01<16:04:07,  1.77s/it][A
+DeepGEMM warmup:   0%|          | 17/32768 [00:03<1:36:00,  5.69it/s][A
+DeepGEMM warmup:   0%|          | 33/32768 [00:05<1:14:26,  7.33it/s][A
+DeepGEMM warmup:   0%|          | 49/32768 [00:06<1:07:25,  8.09it/s][A
+DeepGEMM warmup:   0%|          | 65/32768 [00:08<1:03:59,  8.52it/s][A
+DeepGEMM warmup:   0%|          | 81/32768 [00:10<1:02:38,  8.70it/s][A
+DeepGEMM warmup:   0%|          | 97/32768 [00:12<1:02:13,  8.75it/s][A
+DeepGEMM warmup:   0%|          | 113/32768 [00:14<1:01:59,  8.78it/s][A
+DeepGEMM warmup:   0%|          | 129/32768 [00:15<1:01:27,  8.85it/s][A
+DeepGEMM warmup:   1%|          | 257/32768 [00:17<19:11, 28.24it/s]  [A
+DeepGEMM warmup:   1%|          | 289/32768 [00:19<21:28, 25.20it/s][A
+DeepGEMM warmup:   1%|          | 321/32768 [00:21<23:15, 23.26it/s][A
+DeepGEMM warmup:   1%|          | 353/32768 [00:22<24:45, 21.82it/s][A
+DeepGEMM warmup:   2%|▏         | 577/32768 [00:24<09:55, 54.10it/s][A
+DeepGEMM warmup:   2%|▏         | 625/32768 [00:26<11:34, 46.27it/s][A
+DeepGEMM warmup:   3%|▎         | 1121/32768 [00:27<04:27, 118.35it/s][A
+DeepGEMM warmup:   7%|▋         | 2209/32768 [00:28<01:20, 378.44it/s][A
+DeepGEMM warmup:  10%|█         | 3303/32768 [00:28<00:40, 730.91it/s][A
+DeepGEMM warmup:  13%|█▎        | 4404/32768 [00:28<00:23, 1198.64it/s][A
+DeepGEMM warmup:  17%|█▋        | 5520/32768 [00:28<00:15, 1806.62it/s][A
+DeepGEMM warmup:  20%|█▉        | 6495/32768 [00:28<00:10, 2443.69it/s][A
+DeepGEMM warmup:  23%|██▎       | 7377/32768 [00:28<00:08, 3078.22it/s][A
+DeepGEMM warmup:  25%|██▌       | 8243/32768 [00:28<00:06, 3724.42it/s][A
+DeepGEMM warmup:  28%|██▊       | 9078/32768 [00:28<00:05, 4305.16it/s][A
+DeepGEMM warmup:  30%|███       | 9874/32768 [00:28<00:04, 4777.90it/s][A
+DeepGEMM warmup:  32%|███▏      | 10631/32768 [00:29<00:04, 5103.22it/s][A
+DeepGEMM warmup:  35%|███▍      | 11347/32768 [00:29<00:04, 5304.77it/s][A
+DeepGEMM warmup:  37%|███▋      | 12027/32768 [00:29<00:03, 5390.45it/s][A
+DeepGEMM warmup:  39%|███▊      | 12672/32768 [00:29<00:03, 5402.96it/s][A
+DeepGEMM warmup:  41%|████      | 13287/32768 [00:29<00:03, 5350.90it/s][A
+DeepGEMM warmup:  42%|████▏     | 13874/32768 [00:29<00:03, 5267.56it/s][A
+DeepGEMM warmup:  44%|████▍     | 14437/32768 [00:29<00:03, 5158.07it/s][A
+DeepGEMM warmup:  46%|████▌     | 14977/32768 [00:29<00:03, 5030.84it/s][A
+DeepGEMM warmup:  47%|████▋     | 15497/32768 [00:30<00:03, 4902.84it/s][A
+DeepGEMM warmup:  49%|████▉     | 15999/32768 [00:30<00:03, 4775.09it/s][A
+DeepGEMM warmup:  50%|█████     | 16484/32768 [00:30<00:03, 4645.54it/s][A
+DeepGEMM warmup:  52%|█████▏    | 16954/32768 [00:30<00:03, 4524.79it/s][A
+DeepGEMM warmup:  53%|█████▎    | 17410/32768 [00:30<00:03, 4410.06it/s][A
+DeepGEMM warmup:  54%|█████▍    | 17853/32768 [00:30<00:03, 4301.25it/s][A
+DeepGEMM warmup:  56%|█████▌    | 18285/32768 [00:30<00:03, 4200.24it/s][A
+DeepGEMM warmup:  57%|█████▋    | 18706/32768 [00:30<00:03, 4102.56it/s][A
+DeepGEMM warmup:  58%|█████▊    | 19117/32768 [00:30<00:03, 4013.91it/s][A
+DeepGEMM warmup:  60%|█████▉    | 19519/32768 [00:31<00:03, 3930.49it/s][A
+DeepGEMM warmup:  61%|██████    | 19912/32768 [00:31<00:03, 3852.86it/s][A
+DeepGEMM warmup:  62%|██████▏   | 20298/32768 [00:31<00:03, 3779.22it/s][A
+DeepGEMM warmup:  63%|██████▎   | 20676/32768 [00:31<00:03, 3709.58it/s][A
+DeepGEMM warmup:  64%|██████▍   | 21047/32768 [00:31<00:03, 3643.67it/s][A
+DeepGEMM warmup:  65%|██████▌   | 21412/32768 [00:31<00:03, 3581.26it/s][A
+DeepGEMM warmup:  66%|██████▋   | 21770/32768 [00:31<00:03, 3524.51it/s][A
+DeepGEMM warmup:  68%|██████▊   | 22123/32768 [00:31<00:03, 3468.83it/s][A
+DeepGEMM warmup:  69%|██████▊   | 22470/32768 [00:31<00:03, 3417.72it/s][A
+DeepGEMM warmup:  70%|██████▉   | 22812/32768 [00:31<00:02, 3366.86it/s][A
+DeepGEMM warmup:  71%|███████   | 23149/32768 [00:32<00:02, 3318.69it/s][A
+DeepGEMM warmup:  72%|███████▏  | 23481/32768 [00:32<00:02, 3273.18it/s][A
+DeepGEMM warmup:  73%|███████▎  | 23809/32768 [00:32<00:02, 3229.87it/s][A
+DeepGEMM warmup:  74%|███████▎  | 24132/32768 [00:32<00:02, 3188.53it/s][A
+DeepGEMM warmup:  75%|███████▍  | 24451/32768 [00:32<00:02, 3148.26it/s][A
+DeepGEMM warmup:  76%|███████▌  | 24766/32768 [00:32<00:02, 3110.18it/s][A
+DeepGEMM warmup:  77%|███████▋  | 25077/32768 [00:32<00:02, 3074.94it/s][A
+DeepGEMM warmup:  77%|███████▋  | 25385/32768 [00:32<00:02, 3038.79it/s][A
+DeepGEMM warmup:  78%|███████▊  | 25689/32768 [00:32<00:02, 3001.89it/s][A
+DeepGEMM warmup:  79%|███████▉  | 25990/32768 [00:33<00:02, 2968.87it/s][A
+DeepGEMM warmup:  80%|████████  | 26287/32768 [00:33<00:02, 2937.69it/s][A
+DeepGEMM warmup:  81%|████████  | 26581/32768 [00:33<00:02, 2906.49it/s][A
+DeepGEMM warmup:  82%|████████▏ | 26872/32768 [00:33<00:02, 2876.21it/s][A
+DeepGEMM warmup:  83%|████████▎ | 27160/32768 [00:33<00:01, 2846.45it/s][A
+DeepGEMM warmup:  84%|████████▍ | 27445/32768 [00:33<00:01, 2817.54it/s][A
+DeepGEMM warmup:  85%|████████▍ | 27727/32768 [00:33<00:01, 2789.01it/s][A
+DeepGEMM warmup:  85%|████████▌ | 28006/32768 [00:33<00:01, 2762.70it/s][A
+DeepGEMM warmup:  86%|████████▋ | 28283/32768 [00:33<00:01, 2736.83it/s][A
+DeepGEMM warmup:  87%|████████▋ | 28557/32768 [00:33<00:01, 2711.76it/s][A
+DeepGEMM warmup:  88%|████████▊ | 28829/32768 [00:34<00:01, 2686.78it/s][A
+DeepGEMM warmup:  89%|████████▉ | 29098/32768 [00:34<00:01, 2663.64it/s][A
+DeepGEMM warmup:  90%|████████▉ | 29365/32768 [00:34<00:01, 2641.77it/s][A
+DeepGEMM warmup:  90%|█████████ | 29630/32768 [00:34<00:01, 2619.90it/s][A
+DeepGEMM warmup:  91%|█████████ | 29892/32768 [00:34<00:01, 2597.83it/s][A
+DeepGEMM warmup:  92%|█████████▏| 30152/32768 [00:34<00:01, 2575.52it/s][A
+DeepGEMM warmup:  93%|█████████▎| 30410/32768 [00:34<00:00, 2554.27it/s][A
+DeepGEMM warmup:  94%|█████████▎| 30666/32768 [00:34<00:00, 2533.85it/s][A
+DeepGEMM warmup:  94%|█████████▍| 30920/32768 [00:34<00:00, 2513.78it/s][A
+DeepGEMM warmup:  95%|█████████▌| 31172/32768 [00:34<00:00, 2493.92it/s][A
+DeepGEMM warmup:  96%|█████████▌| 31422/32768 [00:35<00:00, 2474.52it/s][A
+DeepGEMM warmup:  97%|█████████▋| 31670/32768 [00:35<00:00, 2455.52it/s][A
+DeepGEMM warmup:  97%|█████████▋| 31916/32768 [00:35<00:00, 2437.00it/s][A
+DeepGEMM warmup:  98%|█████████▊| 32160/32768 [00:35<00:00, 2418.97it/s][A
+DeepGEMM warmup:  99%|█████████▉| 32402/32768 [00:35<00:00, 2400.90it/s][A
+DeepGEMM warmup: 100%|█████████▉| 32643/32768 [00:35<00:00, 2383.90it/s][ADeepGEMM warmup: 100%|██████████| 32768/32768 [00:35<00:00, 919.51it/s] 
+[2026-06-07 23:11:27 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2026-06-07 23:11:27 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=7168, K=4096, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2026-06-07 23:11:27 TP0] Required memory for warmup: 0.58984375GB, Available memory: 24.4140625GB
+
+DeepGEMM warmup:   0%|          | 0/32768 [00:00<?, ?it/s][A
+DeepGEMM warmup:   0%|          | 33/32768 [00:01<28:20, 19.25it/s][A
+DeepGEMM warmup:   0%|          | 65/32768 [00:03<28:50, 18.90it/s][A
+DeepGEMM warmup:   0%|          | 97/32768 [00:05<28:49, 18.89it/s][A
+DeepGEMM warmup:   0%|          | 129/32768 [00:06<28:48, 18.88it/s][A
+DeepGEMM warmup:   1%|          | 257/32768 [00:08<13:53, 38.98it/s][A
+DeepGEMM warmup:   1%|          | 289/32768 [00:10<16:51, 32.12it/s][A
+DeepGEMM warmup:   1%|          | 321/32768 [00:11<19:27, 27.78it/s][A
+DeepGEMM warmup:   1%|          | 353/32768 [00:13<21:44, 24.85it/s][A
+DeepGEMM warmup:   1%|          | 385/32768 [00:15<23:36, 22.86it/s][A
+DeepGEMM warmup:   2%|▏         | 513/32768 [00:17<13:52, 38.75it/s][A
+DeepGEMM warmup:   2%|▏         | 561/32768 [00:18<15:07, 35.48it/s][A
+DeepGEMM warmup:   3%|▎         | 1025/32768 [00:20<04:57, 106.57it/s][A
+DeepGEMM warmup:   3%|▎         | 1041/32768 [00:22<06:52, 76.87it/s] [A
+DeepGEMM warmup:   3%|▎         | 1121/32768 [00:24<07:46, 67.83it/s][A
+DeepGEMM warmup:   4%|▎         | 1201/32768 [00:25<08:37, 61.04it/s][A
+DeepGEMM warmup:   5%|▌         | 1665/32768 [00:27<04:14, 122.15it/s][A
+DeepGEMM warmup:   8%|▊         | 2714/32768 [00:27<01:21, 370.99it/s][A
+DeepGEMM warmup:  12%|█▏        | 3806/32768 [00:27<00:40, 720.70it/s][A
+DeepGEMM warmup:  15%|█▍        | 4909/32768 [00:27<00:23, 1186.83it/s][A
+DeepGEMM warmup:  18%|█▊        | 6032/32768 [00:27<00:14, 1796.17it/s][A
+DeepGEMM warmup:  21%|██        | 6910/32768 [00:28<00:10, 2353.17it/s][A
+DeepGEMM warmup:  24%|██▎       | 7762/32768 [00:28<00:08, 2960.32it/s][A
+DeepGEMM warmup:  26%|██▌       | 8596/32768 [00:28<00:06, 3580.06it/s][A
+DeepGEMM warmup:  29%|██▊       | 9400/32768 [00:28<00:05, 4139.84it/s][A
+DeepGEMM warmup:  31%|███       | 10167/32768 [00:28<00:04, 4579.86it/s][A
+DeepGEMM warmup:  33%|███▎      | 10893/32768 [00:28<00:04, 4888.83it/s][A
+DeepGEMM warmup:  35%|███▌      | 11580/32768 [00:28<00:04, 5076.60it/s][A
+DeepGEMM warmup:  37%|███▋      | 12231/32768 [00:28<00:03, 5149.25it/s][A
+DeepGEMM warmup:  39%|███▉      | 12847/32768 [00:29<00:03, 5148.34it/s][A
+DeepGEMM warmup:  41%|████      | 13433/32768 [00:29<00:03, 5102.91it/s][A
+DeepGEMM warmup:  43%|████▎     | 13993/32768 [00:29<00:03, 5025.84it/s][A
+DeepGEMM warmup:  44%|████▍     | 14530/32768 [00:29<00:03, 4911.98it/s][A
+DeepGEMM warmup:  46%|████▌     | 15045/32768 [00:29<00:03, 4801.06it/s][A
+DeepGEMM warmup:  47%|████▋     | 15541/32768 [00:29<00:03, 4677.87it/s][A
+DeepGEMM warmup:  49%|████▉     | 16020/32768 [00:29<00:03, 4561.59it/s][A
+DeepGEMM warmup:  50%|█████     | 16483/32768 [00:29<00:03, 4439.46it/s][A
+DeepGEMM warmup:  52%|█████▏    | 16932/32768 [00:29<00:03, 4333.56it/s][A
+DeepGEMM warmup:  53%|█████▎    | 17369/32768 [00:30<00:03, 4223.38it/s][A
+DeepGEMM warmup:  54%|█████▍    | 17794/32768 [00:30<00:03, 4130.09it/s][A
+DeepGEMM warmup:  56%|█████▌    | 18208/32768 [00:30<00:03, 4039.44it/s][A
+DeepGEMM warmup:  57%|█████▋    | 18613/32768 [00:30<00:03, 3954.45it/s][A
+DeepGEMM warmup:  58%|█████▊    | 19009/32768 [00:30<00:03, 3869.32it/s][A
+DeepGEMM warmup:  59%|█████▉    | 19396/32768 [00:30<00:03, 3788.80it/s][A
+DeepGEMM warmup:  60%|██████    | 19775/32768 [00:30<00:03, 3717.07it/s][A
+DeepGEMM warmup:  61%|██████▏   | 20147/32768 [00:30<00:03, 3650.47it/s][A
+DeepGEMM warmup:  63%|██████▎   | 20512/32768 [00:30<00:03, 3587.44it/s][A
+DeepGEMM warmup:  64%|██████▎   | 20871/32768 [00:31<00:03, 3525.81it/s][A
+DeepGEMM warmup:  65%|██████▍   | 21224/32768 [00:31<00:03, 3461.95it/s][A
+DeepGEMM warmup:  66%|██████▌   | 21571/32768 [00:31<00:03, 3411.73it/s][A
+DeepGEMM warmup:  67%|██████▋   | 21913/32768 [00:31<00:03, 3354.23it/s][A
+DeepGEMM warmup:  68%|██████▊   | 22249/32768 [00:31<00:03, 3311.29it/s][A
+DeepGEMM warmup:  69%|██████▉   | 22581/32768 [00:31<00:03, 3260.74it/s][A
+DeepGEMM warmup:  70%|██████▉   | 22907/32768 [00:31<00:03, 3221.13it/s][A
+DeepGEMM warmup:  71%|███████   | 23230/32768 [00:31<00:03, 3175.41it/s][A
+DeepGEMM warmup:  72%|███████▏  | 23548/32768 [00:31<00:02, 3132.22it/s][A
+DeepGEMM warmup:  73%|███████▎  | 23862/32768 [00:31<00:02, 3088.50it/s][A
+DeepGEMM warmup:  74%|███████▍  | 24171/32768 [00:32<00:02, 3055.29it/s][A
+DeepGEMM warmup:  75%|███████▍  | 24477/32768 [00:32<00:02, 3014.06it/s][A
+DeepGEMM warmup:  76%|███████▌  | 24779/32768 [00:32<00:02, 2983.02it/s][A
+DeepGEMM warmup:  77%|███████▋  | 25078/32768 [00:32<00:02, 2948.89it/s][A
+DeepGEMM warmup:  77%|███████▋  | 25373/32768 [00:32<00:02, 2917.20it/s][A
+DeepGEMM warmup:  78%|███████▊  | 25665/32768 [00:32<00:02, 2878.94it/s][A
+DeepGEMM warmup:  79%|███████▉  | 25953/32768 [00:32<00:02, 2850.65it/s][A
+DeepGEMM warmup:  80%|████████  | 26239/32768 [00:32<00:02, 2820.70it/s][A
+DeepGEMM warmup:  81%|████████  | 26522/32768 [00:32<00:02, 2791.58it/s][A
+DeepGEMM warmup:  82%|████████▏ | 26802/32768 [00:32<00:02, 2768.61it/s][A
+DeepGEMM warmup:  83%|████████▎ | 27079/32768 [00:33<00:02, 2739.11it/s][A
+DeepGEMM warmup:  83%|████████▎ | 27353/32768 [00:33<00:01, 2716.35it/s][A
+DeepGEMM warmup:  84%|████████▍ | 27625/32768 [00:33<00:01, 2692.41it/s][A
+DeepGEMM warmup:  85%|████████▌ | 27895/32768 [00:33<00:01, 2665.58it/s][A
+DeepGEMM warmup:  86%|████████▌ | 28162/32768 [00:33<00:01, 2638.19it/s][A
+DeepGEMM warmup:  87%|████████▋ | 28426/32768 [00:33<00:01, 2613.77it/s][A
+DeepGEMM warmup:  88%|████████▊ | 28688/32768 [00:33<00:01, 2594.08it/s][A
+DeepGEMM warmup:  88%|████████▊ | 28948/32768 [00:33<00:01, 2569.33it/s][A
+DeepGEMM warmup:  89%|████████▉ | 29205/32768 [00:33<00:01, 2549.51it/s][A
+DeepGEMM warmup:  90%|████████▉ | 29460/32768 [00:34<00:01, 2532.53it/s][A
+DeepGEMM warmup:  91%|█████████ | 29714/32768 [00:34<00:01, 2508.43it/s][A
+DeepGEMM warmup:  91%|█████████▏| 29965/32768 [00:34<00:01, 2488.83it/s][A
+DeepGEMM warmup:  92%|█████████▏| 30214/32768 [00:34<00:01, 2464.86it/s][A
+DeepGEMM warmup:  93%|█████████▎| 30461/32768 [00:34<00:00, 2447.54it/s][A
+DeepGEMM warmup:  94%|█████████▎| 30706/32768 [00:34<00:00, 2431.28it/s][A
+DeepGEMM warmup:  94%|█████████▍| 30950/32768 [00:34<00:00, 2409.69it/s][A
+DeepGEMM warmup:  95%|█████████▌| 31191/32768 [00:34<00:00, 2393.84it/s][A
+DeepGEMM warmup:  96%|█████████▌| 31431/32768 [00:34<00:00, 2378.37it/s][A
+DeepGEMM warmup:  97%|█████████▋| 31669/32768 [00:34<00:00, 2360.02it/s][A
+DeepGEMM warmup:  97%|█████████▋| 31905/32768 [00:35<00:00, 2346.12it/s][A
+DeepGEMM warmup:  98%|█████████▊| 32140/32768 [00:35<00:00, 2331.47it/s][A
+DeepGEMM warmup:  99%|█████████▉| 32374/32768 [00:35<00:00, 2313.48it/s][A
+DeepGEMM warmup: 100%|█████████▉| 32606/32768 [00:35<00:00, 2298.71it/s][ADeepGEMM warmup: 100%|██████████| 32768/32768 [00:35<00:00, 924.89it/s] 
+[2026-06-07 23:12:03 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2026-06-07 23:12:03 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=1536, K=7168, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2026-06-07 23:12:03 TP0] Required memory for warmup: 0.32275390625GB, Available memory: 24.4140625GB
+
+DeepGEMM warmup:   0%|          | 0/32768 [00:00<?, ?it/s][A
+DeepGEMM warmup:   1%|          | 193/32768 [00:01<04:56, 109.83it/s][A
+DeepGEMM warmup:   1%|          | 257/32768 [00:03<07:57, 68.14it/s] [A
+DeepGEMM warmup:   1%|          | 385/32768 [00:05<07:36, 70.89it/s][A
+DeepGEMM warmup:   2%|▏         | 577/32768 [00:06<06:08, 87.39it/s][A
+DeepGEMM warmup:   2%|▏         | 641/32768 [00:08<07:42, 69.40it/s][A
+DeepGEMM warmup:   2%|▏         | 769/32768 [00:10<07:30, 71.05it/s][A
+DeepGEMM warmup:   3%|▎         | 961/32768 [00:12<06:17, 84.29it/s][A
+DeepGEMM warmup:   4%|▎         | 1153/32768 [00:13<05:42, 92.18it/s][A
+DeepGEMM warmup:   4%|▍         | 1345/32768 [00:15<05:20, 98.11it/s][A
+DeepGEMM warmup:   4%|▍         | 1409/32768 [00:17<06:35, 79.33it/s][A
+DeepGEMM warmup:   5%|▍         | 1537/32768 [00:18<06:42, 77.61it/s][A
+DeepGEMM warmup:   5%|▌         | 1729/32768 [00:20<05:54, 87.52it/s][A
+DeepGEMM warmup:   5%|▌         | 1761/32768 [00:22<07:43, 66.91it/s][A
+DeepGEMM warmup:   6%|▌         | 1921/32768 [00:24<06:51, 74.95it/s][A
+DeepGEMM warmup:   6%|▋         | 2113/32768 [00:25<05:56, 86.06it/s][A
+DeepGEMM warmup:   7%|▋         | 2177/32768 [00:27<07:09, 71.30it/s][A
+DeepGEMM warmup:   7%|▋         | 2305/32768 [00:29<06:59, 72.55it/s][A
+DeepGEMM warmup:   8%|▊         | 2497/32768 [00:31<06:00, 83.92it/s][A
+DeepGEMM warmup:   8%|▊         | 2689/32768 [00:32<05:25, 92.32it/s][A
+DeepGEMM warmup:  11%|█▏        | 3755/32768 [00:32<01:23, 349.38it/s][A
+DeepGEMM warmup:  15%|█▍        | 4820/32768 [00:32<00:40, 695.29it/s][A
+DeepGEMM warmup:  16%|█▋        | 5368/32768 [00:34<00:52, 518.44it/s][A
+DeepGEMM warmup:  20%|█▉        | 6469/32768 [00:34<00:29, 893.54it/s][A
+DeepGEMM warmup:  23%|██▎       | 7578/32768 [00:34<00:18, 1389.02it/s][A
+DeepGEMM warmup:  27%|██▋       | 8689/32768 [00:35<00:11, 2019.94it/s][A
+DeepGEMM warmup:  30%|██▉       | 9789/32768 [00:35<00:08, 2781.83it/s][A
+DeepGEMM warmup:  33%|███▎      | 10812/32768 [00:35<00:06, 3587.04it/s][A
+DeepGEMM warmup:  36%|███▋      | 11921/32768 [00:35<00:04, 4590.55it/s][A
+DeepGEMM warmup:  40%|███▉      | 13048/32768 [00:35<00:03, 5661.89it/s][A
+DeepGEMM warmup:  43%|████▎     | 14159/32768 [00:35<00:02, 6677.63it/s][A
+DeepGEMM warmup:  46%|████▋     | 15222/32768 [00:35<00:02, 7486.57it/s][A
+DeepGEMM warmup:  50%|████▉     | 16280/32768 [00:35<00:02, 7986.26it/s][A
+DeepGEMM warmup:  53%|█████▎    | 17305/32768 [00:35<00:01, 8264.39it/s][A
+DeepGEMM warmup:  56%|█████▌    | 18294/32768 [00:35<00:01, 8388.42it/s][A
+DeepGEMM warmup:  59%|█████▊    | 19248/32768 [00:36<00:01, 8328.47it/s][A
+DeepGEMM warmup:  62%|██████▏   | 20161/32768 [00:36<00:01, 8219.01it/s][A
+DeepGEMM warmup:  64%|██████▍   | 21039/32768 [00:36<00:01, 8082.56it/s][A
+DeepGEMM warmup:  67%|██████▋   | 21886/32768 [00:36<00:01, 7886.66it/s][A
+DeepGEMM warmup:  69%|██████▉   | 22702/32768 [00:36<00:01, 7710.72it/s][A
+DeepGEMM warmup:  72%|███████▏  | 23492/32768 [00:36<00:01, 7504.15it/s][A
+DeepGEMM warmup:  74%|███████▍  | 24255/32768 [00:36<00:01, 7350.24it/s][A
+DeepGEMM warmup:  76%|███████▋  | 24999/32768 [00:36<00:01, 7159.44it/s][A
+DeepGEMM warmup:  78%|███████▊  | 25721/32768 [00:36<00:01, 6999.53it/s][A
+DeepGEMM warmup:  81%|████████  | 26425/32768 [00:37<00:00, 6804.06it/s][A
+DeepGEMM warmup:  83%|████████▎ | 27108/32768 [00:37<00:00, 6669.21it/s][A
+DeepGEMM warmup:  85%|████████▍ | 27777/32768 [00:37<00:00, 6545.77it/s][A
+DeepGEMM warmup:  87%|████████▋ | 28433/32768 [00:37<00:00, 6408.66it/s][A
+DeepGEMM warmup:  89%|████████▊ | 29075/32768 [00:37<00:00, 6238.81it/s][A
+DeepGEMM warmup:  91%|█████████ | 29700/32768 [00:37<00:00, 6118.73it/s][A
+DeepGEMM warmup:  93%|█████████▎| 30312/32768 [00:37<00:00, 6033.40it/s][A
+DeepGEMM warmup:  94%|█████████▍| 30916/32768 [00:37<00:00, 5924.83it/s][A
+DeepGEMM warmup:  96%|█████████▌| 31509/32768 [00:37<00:00, 5816.06it/s][A
+DeepGEMM warmup:  98%|█████████▊| 32091/32768 [00:38<00:00, 5695.19it/s][A
+DeepGEMM warmup: 100%|█████████▉| 32661/32768 [00:38<00:00, 5610.64it/s][ADeepGEMM warmup: 100%|██████████| 32768/32768 [00:38<00:00, 858.52it/s] 
+[2026-06-07 23:12:41 TP0] Entering DeepGEMM JIT Pre-Compile session. It may take a long time (typically 10-20 mins) if you have not run `sglang.compile_deep_gemm`. It is recommended to run `sglang.compile_deep_gemm` with same args as `sglang.launch_server` for pre-compilation to reduce the overhead if you have not run it before. For example: `python3 -m sglang.compile_deep_gemm --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code`
+[2026-06-07 23:12:41 TP0] Try DeepGEMM JIT Compiling for <GEMM_NT_F8F8BF16> N=7168, K=768, num_groups=1 with all Ms. It only takes a little time (typically 1 sec) if you have run `python3 -m sglang.compile_deep_gemm`. 
+[2026-06-07 23:12:41 TP0] Required memory for warmup: 0.466064453125GB, Available memory: 24.4140625GB
+
+DeepGEMM warmup:   0%|          | 0/32768 [00:00<?, ?it/s][A
+DeepGEMM warmup:   0%|          | 33/32768 [00:01<28:55, 18.86it/s][A
+DeepGEMM warmup:   0%|          | 65/32768 [00:03<29:00, 18.78it/s][A
+DeepGEMM warmup:   0%|          | 97/32768 [00:05<28:51, 18.87it/s][A
+DeepGEMM warmup:   0%|          | 129/32768 [00:06<28:53, 18.82it/s][A
+DeepGEMM warmup:   1%|          | 257/32768 [00:08<13:52, 39.04it/s][A
+DeepGEMM warmup:   1%|          | 289/32768 [00:10<16:53, 32.06it/s][A
+DeepGEMM warmup:   1%|          | 321/32768 [00:11<19:32, 27.68it/s][A
+DeepGEMM warmup:   1%|          | 353/32768 [00:13<21:53, 24.68it/s][A
+DeepGEMM warmup:   1%|          | 385/32768 [00:15<23:42, 22.77it/s][A
+DeepGEMM warmup:   2%|▏         | 513/32768 [00:17<13:56, 38.57it/s][A
+DeepGEMM warmup:   2%|▏         | 561/32768 [00:18<15:10, 35.36it/s][A
+DeepGEMM warmup:   3%|▎         | 1025/32768 [00:20<04:59, 105.93it/s][A
+DeepGEMM warmup:   3%|▎         | 1041/32768 [00:22<06:55, 76.42it/s] [A
+DeepGEMM warmup:   3%|▎         | 1121/32768 [00:24<07:49, 67.38it/s][A
+DeepGEMM warmup:   4%|▎         | 1201/32768 [00:25<08:39, 60.72it/s][A
+DeepGEMM warmup:   5%|▌         | 1665/32768 [00:27<04:14, 122.38it/s][A
+DeepGEMM warmup:   8%|▊         | 2681/32768 [00:27<01:22, 363.76it/s][A
+DeepGEMM warmup:  11%|█▏        | 3746/32768 [00:27<00:41, 705.38it/s][A
+DeepGEMM warmup:  15%|█▍        | 4810/32768 [00:27<00:24, 1155.38it/s][A
+DeepGEMM warmup:  18%|█▊        | 5897/32768 [00:28<00:15, 1745.75it/s][A
+DeepGEMM warmup:  21%|██▏       | 7001/32768 [00:28<00:10, 2488.14it/s][A
+DeepGEMM warmup:  25%|██▍       | 8125/32768 [00:28<00:07, 3384.42it/s][A
+DeepGEMM warmup:  28%|██▊       | 9241/32768 [00:28<00:05, 4376.73it/s][A
+DeepGEMM warmup:  32%|███▏      | 10346/32768 [00:28<00:04, 5405.17it/s][A
+DeepGEMM warmup:  35%|███▍      | 11460/32768 [00:28<00:03, 6439.68it/s][A
+DeepGEMM warmup:  38%|███▊      | 12574/32768 [00:28<00:02, 7401.90it/s][A
+DeepGEMM warmup:  42%|████▏     | 13666/32768 [00:28<00:02, 8197.19it/s][A
+DeepGEMM warmup:  45%|████▌     | 14770/32768 [00:28<00:02, 8891.55it/s][A
+DeepGEMM warmup:  48%|████▊     | 15859/32768 [00:28<00:01, 9366.93it/s][A
+DeepGEMM warmup:  52%|█████▏    | 16942/32768 [00:29<00:01, 9379.48it/s][A
+DeepGEMM warmup:  55%|█████▍    | 17983/32768 [00:29<00:01, 9257.57it/s][A
+DeepGEMM warmup:  58%|█████▊    | 18981/32768 [00:29<00:01, 9075.10it/s][A
+DeepGEMM warmup:  61%|██████    | 19939/32768 [00:29<00:01, 8852.05it/s][A
+DeepGEMM warmup:  64%|██████▎   | 20860/32768 [00:29<00:01, 8614.39it/s][A
+DeepGEMM warmup:  66%|██████▋   | 21746/32768 [00:29<00:01, 8361.58it/s][A
+DeepGEMM warmup:  69%|██████▉   | 22599/32768 [00:29<00:01, 8119.62it/s][A
+DeepGEMM warmup:  71%|███████▏  | 23423/32768 [00:29<00:01, 7895.55it/s][A
+DeepGEMM warmup:  74%|███████▍  | 24221/32768 [00:29<00:01, 7668.81it/s][A
+DeepGEMM warmup:  76%|███████▋  | 24994/32768 [00:30<00:01, 7457.35it/s][A
+DeepGEMM warmup:  79%|███████▊  | 25744/32768 [00:30<00:00, 7256.25it/s][A
+DeepGEMM warmup:  81%|████████  | 26472/32768 [00:30<00:00, 7067.95it/s][A
+DeepGEMM warmup:  83%|████████▎ | 27181/32768 [00:30<00:00, 6902.06it/s][A
+DeepGEMM warmup:  85%|████████▌ | 27872/32768 [00:30<00:00, 6746.83it/s][A
+DeepGEMM warmup:  87%|████████▋ | 28547/32768 [00:30<00:00, 6593.67it/s][A
+DeepGEMM warmup:  89%|████████▉ | 29207/32768 [00:30<00:00, 6453.68it/s][A
+DeepGEMM warmup:  91%|█████████ | 29853/32768 [00:30<00:00, 6322.30it/s][A
+DeepGEMM warmup:  93%|█████████▎| 30485/32768 [00:30<00:00, 6191.57it/s][A
+DeepGEMM warmup:  95%|█████████▍| 31104/32768 [00:31<00:00, 6067.60it/s][A
+DeepGEMM warmup:  97%|█████████▋| 31711/32768 [00:31<00:00, 5958.94it/s][A
+DeepGEMM warmup:  99%|█████████▊| 32307/32768 [00:31<00:00, 5861.22it/s][ADeepGEMM warmup: 100%|██████████| 32768/32768 [00:31<00:00, 1044.62it/s]
+Capturing batches (bs=16 avail_mem=24.46 GB):   0%|          | 0/6 [03:46<?, ?it/s]
+[2026-06-07 23:13:13 TP0] Registering 0 cuda graph addresses
+[2026-06-07 23:13:13 TP2] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 2990, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 350, in __init__
+    self.init_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 539, in init_model_worker
+    self.init_tp_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 501, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 242, in __init__
+    self._init_model_runner()
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 325, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 398, in __init__
+    self.initialize()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 598, in initialize
+    self.init_device_graphs()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 2074, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 366, in __init__
+    self.capture()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 522, in capture
+    _capture_one_stream()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 509, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 734, in capture_one_batch_size
+    run_once()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 721, in run_once
+    logits_output_or_pp_proxy_tensors = forward(
+                                        ^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1465, in forward
+    hidden_states = self.model.forward(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1324, in forward
+    hidden_states = layer(
+                    ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1151, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 658, in forward
+    return self.forward_normal_dual_stream(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 701, in forward_normal_dual_stream
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 956, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 975, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 996, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/quantization/fp8.py", line 1408, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 219, in fused_experts
+    inplace_fused_experts(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 94, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 341, in fused_experts_impl
+    hidden_states.shape[1] == w1.shape[2] - padded_size
+AssertionError: Hidden size mismatch
+
+[2026-06-07 23:13:13] Received sigquit from a child process. It usually means the child failed.
+[2026-06-07 23:13:13 TP1] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 2990, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 350, in __init__
+    self.init_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 539, in init_model_worker
+    self.init_tp_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 501, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 242, in __init__
+    self._init_model_runner()
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 325, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 398, in __init__
+    self.initialize()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 598, in initialize
+    self.init_device_graphs()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 2074, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 366, in __init__
+    self.capture()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 522, in capture
+    _capture_one_stream()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 509, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 734, in capture_one_batch_size
+    run_once()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 721, in run_once
+    logits_output_or_pp_proxy_tensors = forward(
+                                        ^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1465, in forward
+    hidden_states = self.model.forward(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1324, in forward
+    hidden_states = layer(
+                    ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1151, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 658, in forward
+    return self.forward_normal_dual_stream(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 701, in forward_normal_dual_stream
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 956, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 975, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 996, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/quantization/fp8.py", line 1408, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 219, in fused_experts
+    inplace_fused_experts(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 94, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 341, in fused_experts_impl
+    hidden_states.shape[1] == w1.shape[2] - padded_size
+AssertionError: Hidden size mismatch
+
+[2026-06-07 23:13:13] Received sigquit from a child process. It usually means the child failed.
+[2026-06-07 23:13:13 TP3] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 2990, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 350, in __init__
+    self.init_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 539, in init_model_worker
+    self.init_tp_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 501, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 242, in __init__
+    self._init_model_runner()
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 325, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 398, in __init__
+    self.initialize()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 598, in initialize
+    self.init_device_graphs()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 2074, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 366, in __init__
+    self.capture()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 522, in capture
+    _capture_one_stream()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 509, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 734, in capture_one_batch_size
+    run_once()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 721, in run_once
+    logits_output_or_pp_proxy_tensors = forward(
+                                        ^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1465, in forward
+    hidden_states = self.model.forward(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1324, in forward
+    hidden_states = layer(
+                    ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1151, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 658, in forward
+    return self.forward_normal_dual_stream(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 701, in forward_normal_dual_stream
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 956, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 975, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 996, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/quantization/fp8.py", line 1408, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 219, in fused_experts
+    inplace_fused_experts(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 94, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 341, in fused_experts_impl
+    hidden_states.shape[1] == w1.shape[2] - padded_size
+AssertionError: Hidden size mismatch
+
+[2026-06-07 23:13:13] Received sigquit from a child process. It usually means the child failed.
+[2026-06-07 23:13:13 TP0] Scheduler hit an exception: Traceback (most recent call last):
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 2990, in run_scheduler_process
+    scheduler = Scheduler(
+                ^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 350, in __init__
+    self.init_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 539, in init_model_worker
+    self.init_tp_model_worker()
+  File "/workspace/sglang/python/sglang/srt/managers/scheduler.py", line 501, in init_tp_model_worker
+    self.tp_worker = TpModelWorker(
+                     ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 242, in __init__
+    self._init_model_runner()
+  File "/workspace/sglang/python/sglang/srt/managers/tp_worker.py", line 325, in _init_model_runner
+    self._model_runner = ModelRunner(
+                         ^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 398, in __init__
+    self.initialize()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 598, in initialize
+    self.init_device_graphs()
+  File "/workspace/sglang/python/sglang/srt/model_executor/model_runner.py", line 2074, in init_device_graphs
+    self.graph_runner = graph_runners[self.device](self)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 366, in __init__
+    self.capture()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 522, in capture
+    _capture_one_stream()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 509, in _capture_one_stream
+    ) = self.capture_one_batch_size(bs, forward, stream_idx)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 734, in capture_one_batch_size
+    run_once()
+  File "/workspace/sglang/python/sglang/srt/model_executor/cuda_graph_runner.py", line 721, in run_once
+    logits_output_or_pp_proxy_tensors = forward(
+                                        ^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/utils/_contextlib.py", line 120, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1465, in forward
+    hidden_states = self.model.forward(
+                    ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1324, in forward
+    hidden_states = layer(
+                    ^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v4.py", line 1151, in forward
+    hidden_states = self.mlp(
+                    ^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 658, in forward
+    return self.forward_normal_dual_stream(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/models/deepseek_v2.py", line 701, in forward_normal_dual_stream
+    final_hidden_states = self.experts(hidden_states, topk_output)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1775, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/dist-packages/torch/nn/modules/module.py", line 1786, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 956, in forward
+    return self.forward_impl(hidden_states, topk_output)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 975, in forward_impl
+    combine_input = self.run_moe_core(
+                    ^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/layer.py", line 996, in run_moe_core
+    return self.quant_method.apply(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/quantization/fp8.py", line 1408, in apply
+    return self.runner.run(dispatch_output, quant_info)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/runner.py", line 78, in run
+    return self.fused_func(dispatch_output, quant_info, self.config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/moe_runner/triton.py", line 339, in fused_experts_none_to_triton
+    output = fused_experts(
+             ^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 219, in fused_experts
+    inplace_fused_experts(
+  File "/usr/local/lib/python3.12/dist-packages/torch/_ops.py", line 1255, in __call__
+    return self._op(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 94, in inplace_fused_experts
+    fused_experts_impl(
+  File "/workspace/sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py", line 341, in fused_experts_impl
+    hidden_states.shape[1] == w1.shape[2] - padded_size
+AssertionError: Hidden size mismatch
+
+[2026-06-07 23:13:13] Received sigquit from a child process. It usually means the child failed.
+benchmarks/single_node/agentic/../../benchmark_lib.sh: line 106: 2775236 Killed                  "${SGLANG_CMD[@]}" > "$SERVER_LOG" 2>&1
+Server died before becoming healthy. Exiting.
