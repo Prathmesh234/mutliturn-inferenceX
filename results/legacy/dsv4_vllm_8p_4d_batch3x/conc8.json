@@ -1,0 +1,44 @@
+{
+  "concurrency": 8,
+  "runtime_s": 3088.94,
+  "completed_turns": 696,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.2253,
+  "output_throughput_tok_per_s": 304.37,
+  "total_token_throughput_tok_per_s": 1628.44,
+  "ttft_ms": {
+    "mean": 647.03,
+    "p50": 468.07,
+    "p90": 875.74,
+    "p99": 6682.78
+  },
+  "tpot_ms": {
+    "mean": 23.15,
+    "p50": 23.58,
+    "p99": 24.2
+  },
+  "itl_ms": {
+    "mean": 23.06,
+    "p99": 32.45
+  },
+  "e2e_ms": {
+    "mean": 31760.97,
+    "p50": 16091.56,
+    "p99": 151910.73
+  },
+  "isl": {
+    "mean": 5876.4,
+    "median": 5220,
+    "p95": 12094
+  },
+  "osl": {
+    "mean": 1350.8,
+    "median": 671,
+    "p95": 5304
+  },
+  "cache_hit_rate": 0.4271,
+  "cached_tokens_total": 1746944,
+  "input_tokens_total": 4089983,
+  "output_tokens_total": 940182,
+  "errors_sample": []
+}

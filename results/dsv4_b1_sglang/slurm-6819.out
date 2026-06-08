@@ -1,0 +1,762 @@
++ nvidia-smi -L
+GPU 0: NVIDIA GB300 (UUID: GPU-9f347705-1fdb-c3bd-d209-9e10b5c9548e)
+GPU 1: NVIDIA GB300 (UUID: GPU-34156de1-9fdb-acc9-cd52-c4a2ee0d6c07)
+GPU 2: NVIDIA GB300 (UUID: GPU-5f3435ce-b96f-9b14-13a3-c47dfa5bc163)
+GPU 3: NVIDIA GB300 (UUID: GPU-ae1587da-a35f-65f5-d6f6-b57175370525)
++ cd /mnt/home/ppbhatt500/InferenceX
++ MODEL=/mnt/vast/tom.chen/dsv4
++ TP=4
++ DATASET=/mnt/home/ppbhatt500/gpumode-triton/replay/batch_long.replay.jsonl
++ RESULT_DIR=/mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang
++ CONCURRENCIES=4,8,16,32,64,128
++ WARMUP=1
++ WARMUP_SESSIONS=15
++ bash benchmarks/single_node/agentic/dsv4_fp4_b300_sglang_replay.sh
+++ dirname benchmarks/single_node/agentic/dsv4_fp4_b300_sglang_replay.sh
++ source benchmarks/single_node/agentic/../../benchmark_lib.sh
+++ export PYTHONDONTWRITEBYTECODE=1
+++ PYTHONDONTWRITEBYTECODE=1
+++ export PYTHONPYCACHEPREFIX=/tmp/inferencex-pycache
+++ PYTHONPYCACHEPREFIX=/tmp/inferencex-pycache
+++ mkdir -p /tmp/inferencex-pycache
+++ export PORT=8888
+++ PORT=8888
+++ GPU_MONITOR_PID=
+++ GPU_METRICS_CSV=/workspace/gpu_metrics.csv
+++ export GPU_METRICS_CSV
+++ INFMAX_CONTAINER_WORKSPACE=/workspace
+++ AGENTIC_DIR=/workspace/utils/agentic-benchmark
+++ AIPERF_DIR=/workspace/utils/aiperf
++ check_env_vars MODEL TP DATASET RESULT_DIR
++ missing_vars=()
++ local missing_vars
++ for var_name in "$@"
++ [[ -z /mnt/vast/tom.chen/dsv4 ]]
++ for var_name in "$@"
++ [[ -z 4 ]]
++ for var_name in "$@"
++ [[ -z /mnt/home/ppbhatt500/gpumode-triton/replay/batch_long.replay.jsonl ]]
++ for var_name in "$@"
++ [[ -z /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang ]]
++ [[ 0 -gt 0 ]]
++ CONCURRENCIES=4,8,16,32,64,128
++ WARMUP=1
++ WARMUP_SESSIONS=15
++ MAX_MODEL_LEN=262144
++ '[' -z '' ']'
+++ echo 4,8,16,32,64,128
+++ tr , '\n'
+++ sort -n
+++ tail -1
++ MAX_NUM_SEQS=128
++ [[ -n 6819 ]]
++ echo 'JOB 6819 running on slurm-gb300-133-187'
+JOB 6819 running on slurm-gb300-133-187
++ [[ /mnt/vast/tom.chen/dsv4 != /* ]]
++ nvidia-smi
+Mon Jun  8 05:18:30 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.126.20             Driver Version: 580.126.20     CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GB300                   On  |   00000008:06:00.0 Off |                    0 |
+| N/A   32C    P0            176W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   1  NVIDIA GB300                   On  |   00000009:06:00.0 Off |                    0 |
+| N/A   31C    P0            175W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   2  NVIDIA GB300                   On  |   00000018:06:00.0 Off |                    0 |
+| N/A   31C    P0            171W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+|   3  NVIDIA GB300                   On  |   00000019:06:00.0 Off |                    0 |
+| N/A   32C    P0            173W / 1400W |       0MiB / 284208MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
++ mkdir -p /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang
++ SERVER_LOG=/mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/server.log
++ export PYTHONNOUSERSITE=1
++ PYTHONNOUSERSITE=1
++ export TORCH_CUDA_ARCH_LIST=10.0
++ TORCH_CUDA_ARCH_LIST=10.0
++ export SGLANG_JIT_DEEPGEMM_PRECOMPILE=0
++ SGLANG_JIT_DEEPGEMM_PRECOMPILE=0
++ export SGLANG_OPT_SWA_SPLIT_LEAF_ON_INSERT=1
++ SGLANG_OPT_SWA_SPLIT_LEAF_ON_INSERT=1
++++ dirname benchmarks/single_node/agentic/dsv4_fp4_b300_sglang_replay.sh
+++ cd benchmarks/single_node/agentic/..
+++ pwd
++ CHAT_TEMPLATE=/mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja
++ SGLANG_CMD=(python3 -m sglang.launch_server --model-path "$MODEL" --served-model-name "$MODEL" --host 0.0.0.0 --port "$PORT" --tensor-parallel-size "$TP" --trust-remote-code --moe-runner-backend flashinfer_mxfp4 --chunked-prefill-size 8192 --disable-flashinfer-autotune --mem-fraction-static 0.90 --swa-full-tokens-ratio 0.1 --max-running-requests "$MAX_NUM_SEQS" --chat-template "$CHAT_TEMPLATE" --enable-metrics --watchdog-timeout 1800)
++ tee /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/sglang_command.txt
++ printf '%q ' python3 -m sglang.launch_server --model-path /mnt/vast/tom.chen/dsv4 --served-model-name /mnt/vast/tom.chen/dsv4 --host 0.0.0.0 --port 8888 --tensor-parallel-size 4 --trust-remote-code --moe-runner-backend flashinfer_mxfp4 --chunked-prefill-size 8192 --disable-flashinfer-autotune --mem-fraction-static 0.90 --swa-full-tokens-ratio 0.1 --max-running-requests 128 --chat-template /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja --enable-metrics --watchdog-timeout 1800
+python3 -m sglang.launch_server --model-path /mnt/vast/tom.chen/dsv4 --served-model-name /mnt/vast/tom.chen/dsv4 --host 0.0.0.0 --port 8888 --tensor-parallel-size 4 --trust-remote-code --moe-runner-backend flashinfer_mxfp4 --chunked-prefill-size 8192 --disable-flashinfer-autotune --mem-fraction-static 0.90 --swa-full-tokens-ratio 0.1 --max-running-requests 128 --chat-template /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja --enable-metrics --watchdog-timeout 1800 + printf '\n'
++ SERVER_PID=3699682
++ echo 'Server PID: 3699682 (max-running-requests=128)'
+Server PID: 3699682 (max-running-requests=128)
++ wait_for_server_ready --port 8888 --server-log /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/server.log --server-pid 3699682
++ python3 -m sglang.launch_server --model-path /mnt/vast/tom.chen/dsv4 --served-model-name /mnt/vast/tom.chen/dsv4 --host 0.0.0.0 --port 8888 --tensor-parallel-size 4 --trust-remote-code --moe-runner-backend flashinfer_mxfp4 --chunked-prefill-size 8192 --disable-flashinfer-autotune --mem-fraction-static 0.90 --swa-full-tokens-ratio 0.1 --max-running-requests 128 --chat-template /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja --enable-metrics --watchdog-timeout 1800
++ set +x
+[2026-06-08 05:18:45] WARNING hf_transformers_utils.py:193: SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-08 05:18:45] WARNING hf_transformers_utils.py:212: SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-08 05:18:45] INFO model_config.py:431: Auto-detected routed-expert safetensors dtype=I8; SGLANG_DSV4_FP4_EXPERTS=True
+[2026-06-08 05:18:45] INFO model_config.py:448: Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:18:45] INFO server_args.py:1183: Use compressed attention backend for DeepseekV4ForCausalLM, setting page_size to 256.
+[2026-06-08 05:18:45] WARNING server_args.py:1195: Setting KV cache dtype to fp8_e4m3 for DeepseekV4ForCausalLM.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-08 05:18:46] server_args=ServerArgs(model_path='/mnt/vast/tom.chen/dsv4', tokenizer_path='/mnt/vast/tom.chen/dsv4', tokenizer_mode='auto', tokenizer_worker_num=1, skip_tokenizer_init=False, load_format='auto', model_loader_extra_config='{}', trust_remote_code=True, context_length=None, is_embedding=False, enable_multimodal=None, revision=None, model_impl='auto', host='0.0.0.0', port=8888, fastapi_root_path='', grpc_mode=False, skip_server_warmup=False, warmups=None, nccl_port=None, checkpoint_engine_wait_weights_before_ready=False, dtype='auto', quantization=None, quantization_param_path=None, kv_cache_dtype='fp8_e4m3', enable_fp32_lm_head=False, modelopt_quant=None, modelopt_checkpoint_restore_path=None, modelopt_checkpoint_save_path=None, modelopt_export_path=None, quantize_and_serve=False, rl_quant_profile=None, mem_fraction_static=0.9, max_running_requests=128, max_queued_requests=None, max_total_tokens=None, chunked_prefill_size=8192, enable_dynamic_chunking=False, max_prefill_tokens=16384, prefill_max_requests=None, schedule_policy='fcfs', enable_priority_scheduling=False, abort_on_priority_when_disabled=False, schedule_low_priority_values_first=False, priority_scheduling_preemption_threshold=10, schedule_conservativeness=1.0, page_size=256, swa_full_tokens_ratio=0.1, disable_hybrid_swa_memory=False, radix_eviction_policy='lru', enable_prefill_delayer=False, prefill_delayer_max_delay_passes=30, prefill_delayer_token_usage_low_watermark=None, prefill_delayer_forward_passes_buckets=None, prefill_delayer_wait_seconds_buckets=None, device='cuda', tp_size=4, pp_size=1, pp_max_micro_batch_size=None, pp_async_batch_depth=0, stream_interval=1, stream_output=False, random_seed=591532656, constrained_json_whitespace_pattern=None, constrained_json_disable_any_whitespace=False, watchdog_timeout=1800.0, soft_watchdog_timeout=None, dist_timeout=None, download_dir=None, model_checksum=None, base_gpu_id=0, gpu_id_step=1, sleep_on_idle=False, custom_sigquit_handler=None, log_level='info', log_level_http=None, log_requests=False, log_requests_level=2, log_requests_format='text', log_requests_target=None, uvicorn_access_log_exclude_prefixes=[], crash_dump_folder=None, show_time_cost=False, enable_metrics=True, enable_metrics_for_all_schedulers=False, tokenizer_metrics_custom_labels_header='x-custom-labels', tokenizer_metrics_allowed_custom_labels=None, bucket_time_to_first_token=None, bucket_inter_token_latency=None, bucket_e2e_request_latency=None, collect_tokens_histogram=False, prompt_tokens_buckets=None, generation_tokens_buckets=None, gc_warning_threshold_secs=0.0, decode_log_interval=40, enable_request_time_stats_logging=False, kv_events_config=None, enable_trace=False, otlp_traces_endpoint='localhost:4317', export_metrics_to_file=False, export_metrics_to_file_dir=None, api_key=None, admin_api_key=None, served_model_name='/mnt/vast/tom.chen/dsv4', weight_version='default', chat_template='/mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja', hf_chat_template_name=None, completion_template=None, file_storage_path='sglang_storage', enable_cache_report=False, reasoning_parser=None, tool_call_parser=None, tool_server=None, sampling_defaults='model', dp_size=1, load_balance_method='round_robin', dist_init_addr=None, nnodes=1, node_rank=0, json_model_override_args='{}', preferred_sampling_params=None, enable_lora=None, enable_lora_overlap_loading=None, max_lora_rank=None, lora_target_modules=None, lora_paths=None, max_loaded_loras=None, max_loras_per_batch=8, lora_eviction_policy='lru', lora_backend='csgmv', max_lora_chunk_size=16, attention_backend='compressed', decode_attention_backend=None, prefill_attention_backend=None, sampling_backend='flashinfer', grammar_backend='xgrammar', mm_attention_backend=None, fp8_gemm_runner_backend='auto', fp4_gemm_runner_backend='auto', nsa_prefill_backend=None, nsa_decode_backend=None, disable_flashinfer_autotune=True, speculative_algorithm=None, speculative_draft_model_path=None, speculative_draft_model_revision=None, speculative_draft_load_format=None, speculative_num_steps=None, speculative_eagle_topk=None, speculative_num_draft_tokens=None, speculative_accept_threshold_single=1.0, speculative_accept_threshold_acc=1.0, speculative_token_map=None, speculative_attention_mode='prefill', speculative_draft_attention_backend=None, speculative_moe_runner_backend='flashinfer_mxfp4', speculative_moe_a2a_backend=None, speculative_draft_model_quantization=None, speculative_ngram_min_match_window_size=1, speculative_ngram_max_match_window_size=12, speculative_ngram_min_bfs_breadth=1, speculative_ngram_max_bfs_breadth=10, speculative_ngram_match_type='BFS', speculative_ngram_branch_length=18, speculative_ngram_capacity=10000000, enable_multi_layer_eagle=False, ep_size=1, moe_a2a_backend='none', moe_runner_backend='flashinfer_mxfp4', flashinfer_mxfp4_moe_precision='default', enable_flashinfer_allreduce_fusion=False, deepep_mode='auto', ep_num_redundant_experts=0, ep_dispatch_algorithm=None, init_expert_location='trivial', enable_eplb=False, eplb_algorithm='auto', eplb_rebalance_num_iterations=1000, eplb_rebalance_layers_per_chunk=None, eplb_min_rebalancing_utilization_threshold=1.0, expert_distribution_recorder_mode=None, expert_distribution_recorder_buffer_size=1000, enable_expert_distribution_metrics=False, deepep_config=None, moe_dense_tp_size=None, elastic_ep_backend=None, mooncake_ib_device=None, max_mamba_cache_size=None, mamba_ssm_dtype='float32', mamba_full_memory_ratio=0.9, mamba_scheduler_strategy='no_buffer', mamba_track_interval=256, enable_hierarchical_cache=False, hicache_ratio=2.0, hicache_size=0, hicache_write_policy='write_through', hicache_io_backend='kernel', hicache_mem_layout='layer_first', disable_hicache_numa_detect=False, hicache_storage_backend=None, hicache_storage_prefetch_policy='best_effort', hicache_storage_backend_extra_config=None, enable_hisparse=False, hierarchical_sparse_attention_extra_config=None, enable_lmcache=False, kt_weight_path=None, kt_method='AMXINT4', kt_cpuinfer=None, kt_threadpool_count=2, kt_num_gpu_experts=None, kt_max_deferred_experts_per_token=None, dllm_algorithm=None, dllm_algorithm_config=None, enable_double_sparsity=False, ds_channel_config_path=None, ds_heavy_channel_num=32, ds_heavy_token_num=256, ds_heavy_channel_type='qk', ds_sparse_decode_threshold=4096, cpu_offload_gb=0, offload_group_size=-1, offload_num_in_group=1, offload_prefetch_step=1, offload_mode='cpu', multi_item_scoring_delimiter=None, disable_radix_cache=False, cuda_graph_max_bs=512, cuda_graph_bs=[1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], disable_cuda_graph=False, disable_cuda_graph_padding=False, enable_profile_cuda_graph=False, enable_cudagraph_gc=False, enable_layerwise_nvtx_marker=False, enable_nccl_nvls=False, enable_symm_mem=False, disable_flashinfer_cutlass_moe_fp4_allgather=False, enable_tokenizer_batch_encode=False, disable_tokenizer_batch_decode=False, disable_outlines_disk_cache=False, disable_custom_all_reduce=False, enable_mscclpp=False, enable_torch_symm_mem=False, disable_overlap_schedule=False, enable_mixed_chunk=False, enable_dp_attention=False, enable_dp_lm_head=False, enable_two_batch_overlap=False, enable_single_batch_overlap=False, tbo_token_distribution_threshold=0.48, enable_torch_compile=False, enable_piecewise_cuda_graph=False, enable_torch_compile_debug_mode=False, torch_compile_max_bs=32, piecewise_cuda_graph_max_tokens=8192, piecewise_cuda_graph_tokens=[4, 8, 12, 16, 20, 24, 28, 32, 48, 64, 80, 96, 112, 128, 144, 160, 176, 192, 208, 224, 240, 256, 288, 320, 352, 384, 416, 448, 480, 512, 640, 704, 768, 832, 896, 960, 1024, 1280, 1536, 1792, 2048, 2304, 2560, 2816, 3072, 3328, 3584, 3840, 4096, 4608, 5120, 5632, 6144, 6656, 7168, 7680, 8192], piecewise_cuda_graph_compiler='eager', torchao_config='', enable_nan_detection=False, enable_p2p_check=False, triton_attention_reduce_in_fp32=False, triton_attention_num_kv_splits=8, triton_attention_split_tile_size=None, num_continuous_decode_steps=1, delete_ckpt_after_loading=False, enable_memory_saver=False, enable_weights_cpu_backup=False, enable_draft_weights_cpu_backup=False, allow_auto_truncate=False, enable_custom_logit_processor=False, flashinfer_mla_disable_ragged=False, disable_shared_experts_fusion=False, disable_chunked_prefix_cache=False, disable_fast_image_processor=False, keep_mm_feature_on_device=False, enable_return_hidden_states=False, enable_return_routed_experts=False, enable_return_indexer_topk=False, scheduler_recv_interval=1, numa_node=None, enable_deterministic_inference=False, rl_on_policy_target=None, enable_attn_tp_input_scattered=False, enable_nsa_prefill_context_parallel=False, nsa_prefill_cp_mode='in-seq-split', enable_fused_qk_norm_rope=False, enable_precise_embedding_interpolation=False, enable_dynamic_batch_tokenizer=False, dynamic_batch_tokenizer_batch_size=32, dynamic_batch_tokenizer_batch_timeout=0.002, debug_tensor_dump_output_folder=None, debug_tensor_dump_layers=None, debug_tensor_dump_input_file=None, debug_tensor_dump_inject=False, disaggregation_mode='null', disaggregation_transfer_backend='mooncake', disaggregation_bootstrap_port=8998, disaggregation_decode_tp=None, disaggregation_decode_dp=None, disaggregation_prefill_pp=1, disaggregation_ib_device=None, disaggregation_decode_enable_offload_kvcache=False, disaggregation_decode_enable_fake_auto=False, num_reserved_decode_tokens=512, disaggregation_decode_polling_interval=1, encoder_only=False, language_only=False, encoder_transfer_backend='zmq_to_scheduler', encoder_urls=[], custom_weight_loader=[], weight_loader_disable_mmap=False, remote_instance_weight_loader_seed_instance_ip=None, remote_instance_weight_loader_seed_instance_service_port=None, remote_instance_weight_loader_send_weights_group_ports=None, remote_instance_weight_loader_backend='nccl', remote_instance_weight_loader_start_seed_via_transfer_engine=False, enable_pdmux=False, pdmux_config_path=None, sm_group_num=8, mm_max_concurrent_calls=32, mm_per_request_timeout=10.0, enable_broadcast_mm_inputs_process=False, enable_prefix_mm_cache=False, mm_enable_dp_encoder=False, mm_process_config={}, limit_mm_data_per_request=None, decrypted_config_file=None, decrypted_draft_config_file=None, forward_hooks=None)
+[2026-06-08 05:18:46] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:18:46] Loading chat template from argument: /mnt/home/ppbhatt500/InferenceX/benchmarks/single_node/chat_templates/deepseek_v4_thinking.jinja
+[2026-06-08 05:18:46] Detected user specified Jinja chat template with content format: string
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-08 05:18:59 TP1] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-08 05:18:59 TP1] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-08 05:18:59 TP1] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:18:59 TP2] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-08 05:18:59 TP2] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-08 05:18:59 TP2] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:19:00 TP1] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:19:00 TP2] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:19:00 TP1] Init torch distributed begin.
+[2026-06-08 05:19:00 TP2] Init torch distributed begin.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-08 05:19:00 TP0] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-08 05:19:00 TP0] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-08 05:19:00 TP0] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.cudart module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.runtime module instead.
+<frozen importlib._bootstrap_external>:1297: FutureWarning: The cuda.nvrtc module is deprecated and will be removed in a future release, please switch to use the cuda.bindings.nvrtc module instead.
+[2026-06-08 05:19:00 TP3] SGLANG_APPLY_CONFIG_BACKUP=auto: checkpoint has num_hidden_layers=61, dispatching to 'large'.
+[2026-06-08 05:19:00 TP3] SGLANG_APPLY_CONFIG_BACKUP=large: using packaged /workspace/sglang/python/sglang/srt/configs/config_backup_large.json instead of the checkpoint's config.json at /mnt/vast/tom.chen/dsv4.
+[2026-06-08 05:19:00 TP3] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:19:00 TP0] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:19:00 TP0] Init torch distributed begin.
+[2026-06-08 05:19:00 TP3] Hybrid swa model: self.hf_config.architectures=['DeepseekV4ForCausalLM']
+[2026-06-08 05:19:00 TP3] Init torch distributed begin.
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[2026-06-08 05:19:01 TP0] sglang is using nccl==2.27.7
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[Gloo] Rank 0 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 1 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 2 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[Gloo] Rank 3 is connected to 3 peer ranks. Expected number of connected peer ranks is : 3
+[2026-06-08 05:19:20 TP3] Init torch distributed ends. mem usage=1.34 GB
+[2026-06-08 05:19:20 TP0] Init torch distributed ends. mem usage=1.46 GB
+[2026-06-08 05:19:20 TP2] Init torch distributed ends. mem usage=1.50 GB
+[2026-06-08 05:19:20 TP1] Init torch distributed ends. mem usage=1.50 GB
+[2026-06-08 05:19:21 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-08 05:19:21 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-08 05:19:21 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-08 05:19:21 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.falcon_h1: No module named 'cutlass'
+[2026-06-08 05:19:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-08 05:19:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-08 05:19:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-08 05:19:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-08 05:19:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-08 05:19:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-08 05:19:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-08 05:19:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.glmasr: cannot import name 'GlmAsrConfig' from 'transformers' (/usr/local/lib/python3.12/dist-packages/transformers/__init__.py)
+[2026-06-08 05:19:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-08 05:19:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-08 05:19:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_nemotron: No module named 'cutlass'
+[2026-06-08 05:19:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-08 05:19:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.jet_vlm: No module named 'cutlass'
+[2026-06-08 05:19:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-08 05:19:22 TP2] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-08 05:19:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-08 05:19:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-08 05:19:22 TP3] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-08 05:19:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-08 05:19:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-08 05:19:22 TP0] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-08 05:19:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.nano_nemotron_vl: No module named 'cutlass'
+[2026-06-08 05:19:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h: No module named 'cutlass'
+[2026-06-08 05:19:22 TP1] In import_model_classes: Ignore import error when loading sglang.srt.models.nemotron_h_mtp: No module named 'cutlass'
+[2026-06-08 05:19:26 TP2] Load weight begin. avail mem=274.36 GB
+[2026-06-08 05:19:26 TP3] Load weight begin. avail mem=274.51 GB
+[2026-06-08 05:19:26 TP0] Load weight begin. avail mem=274.39 GB
+[2026-06-08 05:19:26 TP0] Detected fp8 checkpoint.
+[2026-06-08 05:19:26 TP0] 2604B checkpoint requires different clamping for shared and routed experts Shared experts fusion optimization is disabled.
+[2026-06-08 05:19:26 TP1] Load weight begin. avail mem=274.36 GB
+Loading safetensors checkpoint shards:   0% Completed | 0/64 [00:00<?, ?it/s]
+Loading safetensors checkpoint shards:   3% Completed | 2/64 [00:02<01:18,  1.27s/it]
+Loading safetensors checkpoint shards:   5% Completed | 3/64 [00:05<01:59,  1.95s/it]
+Loading safetensors checkpoint shards:   6% Completed | 4/64 [00:07<02:09,  2.15s/it]
+Loading safetensors checkpoint shards:   8% Completed | 5/64 [00:10<02:13,  2.26s/it]
+Loading safetensors checkpoint shards:   9% Completed | 6/64 [00:13<02:20,  2.43s/it]
+Loading safetensors checkpoint shards:  11% Completed | 7/64 [00:16<02:29,  2.63s/it]
+Loading safetensors checkpoint shards:  12% Completed | 8/64 [00:19<02:35,  2.78s/it]
+Loading safetensors checkpoint shards:  14% Completed | 9/64 [00:21<02:25,  2.64s/it]
+Loading safetensors checkpoint shards:  16% Completed | 10/64 [00:24<02:18,  2.56s/it]
+Loading safetensors checkpoint shards:  17% Completed | 11/64 [00:26<02:16,  2.58s/it]
+Loading safetensors checkpoint shards:  19% Completed | 12/64 [00:29<02:13,  2.56s/it]
+Loading safetensors checkpoint shards:  20% Completed | 13/64 [00:31<02:09,  2.54s/it]
+Loading safetensors checkpoint shards:  22% Completed | 14/64 [00:34<02:09,  2.59s/it]
+Loading safetensors checkpoint shards:  23% Completed | 15/64 [00:36<02:06,  2.58s/it]
+Loading safetensors checkpoint shards:  25% Completed | 16/64 [00:39<02:02,  2.54s/it]
+Loading safetensors checkpoint shards:  27% Completed | 17/64 [00:41<01:55,  2.47s/it]
+Loading safetensors checkpoint shards:  28% Completed | 18/64 [00:44<01:53,  2.47s/it]
+Loading safetensors checkpoint shards:  30% Completed | 19/64 [00:46<01:54,  2.54s/it]
+Loading safetensors checkpoint shards:  31% Completed | 20/64 [00:49<01:49,  2.49s/it]
+Loading safetensors checkpoint shards:  33% Completed | 21/64 [00:51<01:44,  2.43s/it]
+Loading safetensors checkpoint shards:  34% Completed | 22/64 [00:54<01:45,  2.50s/it]
+Loading safetensors checkpoint shards:  36% Completed | 23/64 [00:56<01:39,  2.43s/it]
+Loading safetensors checkpoint shards:  38% Completed | 24/64 [00:58<01:37,  2.44s/it]
+Loading safetensors checkpoint shards:  39% Completed | 25/64 [01:01<01:36,  2.48s/it]
+Loading safetensors checkpoint shards:  41% Completed | 26/64 [01:03<01:33,  2.46s/it]
+Loading safetensors checkpoint shards:  42% Completed | 27/64 [01:06<01:31,  2.49s/it]
+Loading safetensors checkpoint shards:  44% Completed | 28/64 [01:08<01:27,  2.44s/it]
+Loading safetensors checkpoint shards:  45% Completed | 29/64 [01:11<01:27,  2.49s/it]
+Loading safetensors checkpoint shards:  47% Completed | 30/64 [01:13<01:25,  2.50s/it]
+Loading safetensors checkpoint shards:  48% Completed | 31/64 [01:16<01:26,  2.62s/it]
+Loading safetensors checkpoint shards:  50% Completed | 32/64 [01:19<01:22,  2.59s/it]
+Loading safetensors checkpoint shards:  52% Completed | 33/64 [01:21<01:18,  2.55s/it]
+Loading safetensors checkpoint shards:  53% Completed | 34/64 [01:24<01:14,  2.50s/it]
+Loading safetensors checkpoint shards:  55% Completed | 35/64 [01:26<01:10,  2.43s/it]
+Loading safetensors checkpoint shards:  56% Completed | 36/64 [01:28<01:08,  2.44s/it]
+Loading safetensors checkpoint shards:  58% Completed | 37/64 [01:31<01:07,  2.50s/it]
+Loading safetensors checkpoint shards:  59% Completed | 38/64 [01:34<01:06,  2.57s/it]
+Loading safetensors checkpoint shards:  61% Completed | 39/64 [01:37<01:05,  2.63s/it]
+Loading safetensors checkpoint shards:  62% Completed | 40/64 [01:39<01:02,  2.62s/it]
+Loading safetensors checkpoint shards:  64% Completed | 41/64 [01:42<01:01,  2.68s/it]
+Loading safetensors checkpoint shards:  66% Completed | 42/64 [01:45<01:00,  2.77s/it]
+Loading safetensors checkpoint shards:  67% Completed | 43/64 [01:48<00:58,  2.78s/it]
+Loading safetensors checkpoint shards:  69% Completed | 44/64 [01:51<00:56,  2.80s/it]
+Loading safetensors checkpoint shards:  70% Completed | 45/64 [01:53<00:52,  2.78s/it]
+Loading safetensors checkpoint shards:  72% Completed | 46/64 [01:56<00:50,  2.82s/it]
+Loading safetensors checkpoint shards:  73% Completed | 47/64 [01:59<00:49,  2.91s/it]
+Loading safetensors checkpoint shards:  75% Completed | 48/64 [02:02<00:47,  2.94s/it]
+Loading safetensors checkpoint shards:  77% Completed | 49/64 [02:05<00:43,  2.89s/it]
+Loading safetensors checkpoint shards:  78% Completed | 50/64 [02:08<00:41,  2.97s/it]
+Loading safetensors checkpoint shards:  80% Completed | 51/64 [02:11<00:37,  2.92s/it]
+Loading safetensors checkpoint shards:  81% Completed | 52/64 [02:14<00:34,  2.89s/it]
+Loading safetensors checkpoint shards:  83% Completed | 53/64 [02:16<00:29,  2.69s/it]
+Loading safetensors checkpoint shards:  84% Completed | 54/64 [02:19<00:26,  2.64s/it]
+Loading safetensors checkpoint shards:  86% Completed | 55/64 [02:21<00:23,  2.58s/it]
+Loading safetensors checkpoint shards:  88% Completed | 56/64 [02:24<00:20,  2.59s/it]
+Loading safetensors checkpoint shards:  89% Completed | 57/64 [02:27<00:18,  2.71s/it]
+Loading safetensors checkpoint shards:  91% Completed | 58/64 [02:30<00:16,  2.76s/it]
+Loading safetensors checkpoint shards:  92% Completed | 59/64 [02:33<00:14,  2.81s/it]
+Loading safetensors checkpoint shards:  94% Completed | 60/64 [02:35<00:11,  2.80s/it]
+Loading safetensors checkpoint shards:  95% Completed | 61/64 [02:38<00:08,  2.90s/it]
+Loading safetensors checkpoint shards:  97% Completed | 62/64 [02:41<00:05,  2.80s/it]
+Loading safetensors checkpoint shards: 100% Completed | 64/64 [02:44<00:00,  2.11s/it]
+Loading safetensors checkpoint shards: 100% Completed | 64/64 [02:44<00:00,  2.56s/it]
+
+[2026-06-08 05:23:24 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.0.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.1.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.2.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.3.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.4.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.5.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.6.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.7.mlp.experts)...
+[2026-06-08 05:23:28 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.8.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.9.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.10.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.11.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.12.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.13.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.14.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.15.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.16.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.17.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.18.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.19.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.20.mlp.experts)...
+[2026-06-08 05:23:29 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.21.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.22.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.23.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.24.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.25.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.26.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.27.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.28.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.29.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.30.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.31.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.32.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.33.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.34.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.35.mlp.experts)...
+[2026-06-08 05:23:30 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.36.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.37.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.38.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.39.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.40.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.41.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.42.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.43.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.44.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.45.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.46.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.47.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.48.mlp.experts)...
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.49.mlp.experts)...
+[2026-06-08 05:23:31 TP3] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-08 05:23:31 TP3] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=68.69 GB, mem usage=205.82 GB.
+[2026-06-08 05:23:31 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.50.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.51.mlp.experts)...
+[2026-06-08 05:23:32 TP2] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-08 05:23:32 TP2] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=68.53 GB, mem usage=205.82 GB.
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.52.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.53.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.54.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.55.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.56.mlp.experts)...
+[2026-06-08 05:23:32 TP1] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-08 05:23:32 TP1] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=68.53 GB, mem usage=205.82 GB.
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.57.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.58.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.59.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Shuffling FP4 expert weights for TRT-LLM MxFP4 kernel (layer: model.layers.60.mlp.experts)...
+[2026-06-08 05:23:32 TP0] Using FP8 KV cache but no scaling factors provided. Defaulting to scaling factors of 1.0. This may lead to less accurate results!
+[2026-06-08 05:23:32 TP0] Load weight end. type=DeepseekV4ForCausalLM, dtype=torch.bfloat16, avail mem=68.56 GB, mem usage=205.82 GB.
+[2026-06-08 05:23:32 TP0] Using KV cache dtype: torch.float8_e4m3fn
+[2026-06-08 05:23:32 TP2] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-08 05:23:32 TP2] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-08 05:23:32 TP0] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-08 05:23:32 TP0] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-08 05:23:32 TP3] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-08 05:23:32 TP3] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-08 05:23:32 TP1] DSv4 compressed attention: kv_cache_dtype=torch.float8_e4m3fn
+[2026-06-08 05:23:32 TP1] DSv4 compressed attention: state_dtype=torch.float32
+[2026-06-08 05:23:32 TP0] Memory profiling: available_gpu_memory=68.78 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.90, rest_memory=41.34 GB
+[2026-06-08 05:23:32 TP3] Memory profiling: available_gpu_memory=68.78 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.90, rest_memory=41.34 GB
+[2026-06-08 05:23:32 TP0] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=41.34 GB, full_token=1868800
+[2026-06-08 05:23:32 TP3] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=41.34 GB, full_token=1868800
+[2026-06-08 05:23:32 TP0] DSv4 pool sizes: full=1868800, swa=186880, c4=467200, c128=14600, c4_state=11680, c128_state=186880
+[2026-06-08 05:23:32 TP2] Memory profiling: available_gpu_memory=68.78 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.90, rest_memory=41.34 GB
+[2026-06-08 05:23:32 TP1] Memory profiling: available_gpu_memory=68.78 GB, total_gpu_memory=274.42 GB, mem_fraction_static=0.90, rest_memory=41.34 GB
+[2026-06-08 05:23:32 TP3] DSv4 pool sizes: full=1868800, swa=186880, c4=467200, c128=14600, c4_state=11680, c128_state=186880
+[2026-06-08 05:23:32 TP2] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=41.34 GB, full_token=1868800
+[2026-06-08 05:23:32 TP1] DSv4 memory calculation: bytes_per_full_token=23749.84, available_bytes=41.34 GB, full_token=1868800
+[2026-06-08 05:23:32 TP2] DSv4 pool sizes: full=1868800, swa=186880, c4=467200, c128=14600, c4_state=11680, c128_state=186880
+[2026-06-08 05:23:32 TP1] DSv4 pool sizes: full=1868800, swa=186880, c4=467200, c128=14600, c4_state=11680, c128_state=186880
+[2026-06-08 05:23:32 TP3] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=128 swa_size=186880 c4_size=467200 c4_logical_size=467200 c128_size=14600 c4_state_pool_size=11680 c128_state_pool_size=186880
+[2026-06-08 05:23:32 TP0] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=128 swa_size=186880 c4_size=467200 c4_logical_size=467200 c128_size=14600 c4_state_pool_size=11680 c128_state_pool_size=186880
+[2026-06-08 05:23:32 TP2] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=128 swa_size=186880 c4_size=467200 c4_logical_size=467200 c128_size=14600 c4_state_pool_size=11680 c128_state_pool_size=186880
+[2026-06-08 05:23:32 TP1] Initialize DeepSeekV4TokenToKVPool with max_num_reqs=128 swa_size=186880 c4_size=467200 c4_logical_size=467200 c128_size=14600 c4_state_pool_size=11680 c128_state_pool_size=186880
+[2026-06-08 05:23:33 TP2] Memory pool end. avail mem=29.16 GB
+[2026-06-08 05:23:33 TP1] Memory pool end. avail mem=29.16 GB
+[2026-06-08 05:23:33 TP0] Memory pool end. avail mem=29.20 GB
+[2026-06-08 05:23:33 TP3] Memory pool end. avail mem=29.32 GB
+[2026-06-08 05:23:33 TP2] Capture cuda graph begin. This can take up to several minutes. avail mem=29.10 GB
+[2026-06-08 05:23:33 TP0] Capture cuda graph begin. This can take up to several minutes. avail mem=29.13 GB
+[2026-06-08 05:23:33 TP0] Capture cuda graph bs [1, 2, 4, 8, 12, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128]
+[2026-06-08 05:23:33 TP3] Capture cuda graph begin. This can take up to several minutes. avail mem=29.26 GB
+[2026-06-08 05:23:33 TP1] Capture cuda graph begin. This can take up to several minutes. avail mem=29.10 GB
+  0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=29.07 GB):   0%|          | 0/20 [00:00<?, ?it/s]Capturing batches (bs=128 avail_mem=29.07 GB):   5%|▌         | 1/20 [00:20<06:37, 20.92s/it]Capturing batches (bs=120 avail_mem=28.53 GB):   5%|▌         | 1/20 [00:20<06:37, 20.92s/it]Capturing batches (bs=120 avail_mem=28.53 GB):  10%|█         | 2/20 [00:23<02:58,  9.93s/it]Capturing batches (bs=112 avail_mem=28.49 GB):  10%|█         | 2/20 [00:23<02:58,  9.93s/it]Capturing batches (bs=112 avail_mem=28.49 GB):  15%|█▌        | 3/20 [00:24<01:43,  6.07s/it]Capturing batches (bs=104 avail_mem=28.46 GB):  15%|█▌        | 3/20 [00:24<01:43,  6.07s/it]Capturing batches (bs=104 avail_mem=28.46 GB):  20%|██        | 4/20 [00:26<01:08,  4.30s/it]Capturing batches (bs=96 avail_mem=28.42 GB):  20%|██        | 4/20 [00:26<01:08,  4.30s/it] Capturing batches (bs=96 avail_mem=28.42 GB):  25%|██▌       | 5/20 [00:27<00:50,  3.35s/it]Capturing batches (bs=88 avail_mem=28.39 GB):  25%|██▌       | 5/20 [00:27<00:50,  3.35s/it]Capturing batches (bs=88 avail_mem=28.39 GB):  30%|███       | 6/20 [00:29<00:38,  2.73s/it]Capturing batches (bs=80 avail_mem=28.36 GB):  30%|███       | 6/20 [00:29<00:38,  2.73s/it]Capturing batches (bs=80 avail_mem=28.36 GB):  35%|███▌      | 7/20 [00:30<00:30,  2.34s/it]Capturing batches (bs=72 avail_mem=28.32 GB):  35%|███▌      | 7/20 [00:30<00:30,  2.34s/it]Capturing batches (bs=72 avail_mem=28.32 GB):  40%|████      | 8/20 [00:32<00:25,  2.13s/it]Capturing batches (bs=64 avail_mem=28.29 GB):  40%|████      | 8/20 [00:32<00:25,  2.13s/it]Capturing batches (bs=64 avail_mem=28.29 GB):  45%|████▌     | 9/20 [00:34<00:21,  1.94s/it]Capturing batches (bs=56 avail_mem=28.25 GB):  45%|████▌     | 9/20 [00:34<00:21,  1.94s/it]Capturing batches (bs=56 avail_mem=28.25 GB):  50%|█████     | 10/20 [00:35<00:17,  1.77s/it]Capturing batches (bs=48 avail_mem=28.22 GB):  50%|█████     | 10/20 [00:35<00:17,  1.77s/it]Capturing batches (bs=48 avail_mem=28.22 GB):  55%|█████▌    | 11/20 [00:36<00:15,  1.67s/it]Capturing batches (bs=40 avail_mem=28.19 GB):  55%|█████▌    | 11/20 [00:36<00:15,  1.67s/it]Capturing batches (bs=40 avail_mem=28.19 GB):  60%|██████    | 12/20 [00:38<00:12,  1.60s/it]Capturing batches (bs=32 avail_mem=28.15 GB):  60%|██████    | 12/20 [00:38<00:12,  1.60s/it]Capturing batches (bs=32 avail_mem=28.15 GB):  65%|██████▌   | 13/20 [00:39<00:11,  1.59s/it]Capturing batches (bs=24 avail_mem=28.12 GB):  65%|██████▌   | 13/20 [00:39<00:11,  1.59s/it]Capturing batches (bs=24 avail_mem=28.12 GB):  70%|███████   | 14/20 [00:41<00:09,  1.57s/it]Capturing batches (bs=16 avail_mem=28.09 GB):  70%|███████   | 14/20 [00:41<00:09,  1.57s/it]Capturing batches (bs=16 avail_mem=28.09 GB):  75%|███████▌  | 15/20 [00:43<00:07,  1.60s/it]Capturing batches (bs=12 avail_mem=28.05 GB):  75%|███████▌  | 15/20 [00:43<00:07,  1.60s/it]Capturing batches (bs=12 avail_mem=28.05 GB):  80%|████████  | 16/20 [00:44<00:06,  1.57s/it]Capturing batches (bs=8 avail_mem=28.02 GB):  80%|████████  | 16/20 [00:44<00:06,  1.57s/it] Capturing batches (bs=8 avail_mem=28.02 GB):  85%|████████▌ | 17/20 [00:46<00:04,  1.56s/it]Capturing batches (bs=4 avail_mem=27.99 GB):  85%|████████▌ | 17/20 [00:46<00:04,  1.56s/it]Capturing batches (bs=4 avail_mem=27.99 GB):  90%|█████████ | 18/20 [00:47<00:03,  1.56s/it]Capturing batches (bs=2 avail_mem=27.95 GB):  90%|█████████ | 18/20 [00:47<00:03,  1.56s/it]Capturing batches (bs=2 avail_mem=27.95 GB):  95%|█████████▌| 19/20 [00:49<00:01,  1.59s/it]Capturing batches (bs=1 avail_mem=27.92 GB):  95%|█████████▌| 19/20 [00:49<00:01,  1.59s/it]Capturing batches (bs=1 avail_mem=27.92 GB): 100%|██████████| 20/20 [00:51<00:00,  1.78s/it]Capturing batches (bs=1 avail_mem=27.92 GB): 100%|██████████| 20/20 [00:51<00:00,  2.58s/it]
+[2026-06-08 05:24:25 TP0] Registering 2460 cuda graph addresses
+[2026-06-08 05:24:26 TP1] Capture cuda graph end. Time elapsed: 52.61 s. mem usage=1.24 GB. avail mem=27.86 GB.
+[2026-06-08 05:24:26 TP0] Capture cuda graph end. Time elapsed: 52.72 s. mem usage=1.24 GB. avail mem=27.89 GB.
+[2026-06-08 05:24:26 TP2] Capture cuda graph end. Time elapsed: 52.75 s. mem usage=1.24 GB. avail mem=27.86 GB.
+[2026-06-08 05:24:26 TP3] Capture cuda graph end. Time elapsed: 52.83 s. mem usage=1.24 GB. avail mem=28.01 GB.
+[2026-06-08 05:24:26 TP0] max_total_num_tokens=1868800, chunked_prefill_size=8192, max_prefill_tokens=16384, max_running_requests=128, context_len=1048576, available_gpu_mem=27.89 GB
+[2026-06-08 05:24:27] INFO:     Started server process [3699682]
+[2026-06-08 05:24:27] INFO:     Waiting for application startup.
+[2026-06-08 05:24:27] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-06-08 05:24:27] Using default chat sampling params from model generation config: {'repetition_penalty': 1.0, 'temperature': 1.0, 'top_k': 50, 'top_p': 1.0}
+[2026-06-08 05:24:27] INFO:     Application startup complete.
+[2026-06-08 05:24:27] INFO:     Uvicorn running on http://0.0.0.0:8888 (Press CTRL+C to quit)
+[2026-06-08 05:24:28] INFO:     127.0.0.1:34934 - "GET /model_info HTTP/1.1" 200 OK
+[2026-06-08 05:24:28 TP0] Prefill batch, #new-seq: 1, #new-token: 256, #cached-token: 0, full token usage: 0.00, swa token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[2026-06-08 05:24:31] INFO:     127.0.0.1:34944 - "GET /health HTTP/1.1" 503 Service Unavailable
+[2026-06-08 05:24:33] INFO:     127.0.0.1:34942 - "POST /generate HTTP/1.1" 200 OK
+[2026-06-08 05:24:33] The server is fired up and ready to roll!
+[2026-06-08 05:24:36 TP0] Prefill batch, #new-seq: 1, #new-token: 256, #cached-token: 0, full token usage: 0.00, swa token usage: 0.00, #running-req: 0, #queue-req: 0, 
+[GPU Monitor] Started NVIDIA (PID=3703221, interval=1s, output=/mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/gpu_metrics.csv)
+
+===== concurrency 4 =====
+[replay] concurrency 4: replaying 150 sessions / 1769 turns to completion (no time limit) [+warmup]
+[replay] warmup: untimed pass over 15/150 sessions to prime the prefix cache...
+[replay] warmup done; starting measured pass
+[replay] wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/c4_prom.json (488 series, 414 changed)
+[replay] done: 1769/1769 turns in 10214.5s at concurrency 4 (after warmup)
+{
+  "concurrency": 4,
+  "runtime_s": 10214.54,
+  "completed_turns": 1769,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.1732,
+  "output_throughput_tok_per_s": 258.08,
+  "total_token_throughput_tok_per_s": 1457.24,
+  "ttft_ms": {
+    "mean": 391.57,
+    "p50": 373.4,
+    "p90": 426.46,
+    "p95": 449.31,
+    "p99": 1313.46
+  },
+  "tpot_ms": {
+    "mean": 15.44,
+    "p50": 15.16,
+    "p90": 16.7,
+    "p95": 17.36,
+    "p99": 19.37
+  },
+  "itl_ms": {
+    "mean": 15.34,
+    "p99": 20.1
+  },
+  "e2e_ms": {
+    "mean": 23045.22,
+    "p50": 12015.81,
+    "p90": 62671.51,
+    "p95": 80527.59,
+    "p99": 128956.87
+  },
+  "isl": {
+    "mean": 6924.2,
+    "median": 5771,
+    "p95": 17324
+  },
+  "osl": {
+    "mean": 1490.2,
+    "median": 766,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12248889,
+  "output_tokens_total": 2636137,
+  "errors_sample": []
+}
+
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/conc4.json
+
+===== concurrency 8 =====
+[replay] concurrency 8: replaying 150 sessions / 1769 turns to completion (no time limit) [+warmup]
+[replay] warmup: untimed pass over 15/150 sessions to prime the prefix cache...
+[replay] warmup done; starting measured pass
+[replay] wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/c8_prom.json (488 series, 413 changed)
+[replay] done: 1769/1769 turns in 6085.9s at concurrency 8 (after warmup)
+{
+  "concurrency": 8,
+  "runtime_s": 6085.85,
+  "completed_turns": 1769,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.2907,
+  "output_throughput_tok_per_s": 433.16,
+  "total_token_throughput_tok_per_s": 2445.84,
+  "ttft_ms": {
+    "mean": 386.57,
+    "p50": 380.28,
+    "p90": 426.88,
+    "p95": 444.77,
+    "p99": 702.12
+  },
+  "tpot_ms": {
+    "mean": 18.27,
+    "p50": 18.03,
+    "p90": 20.05,
+    "p95": 21.28,
+    "p99": 24.53
+  },
+  "itl_ms": {
+    "mean": 18.14,
+    "p99": 49.5
+  },
+  "e2e_ms": {
+    "mean": 27182.75,
+    "p50": 14366.52,
+    "p90": 74177.08,
+    "p95": 95283.87,
+    "p99": 148764.17
+  },
+  "isl": {
+    "mean": 6924.2,
+    "median": 5771,
+    "p95": 17324
+  },
+  "osl": {
+    "mean": 1490.2,
+    "median": 766,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12248889,
+  "output_tokens_total": 2636137,
+  "errors_sample": []
+}
+
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/conc8.json
+
+===== concurrency 16 =====
+[replay] concurrency 16: replaying 150 sessions / 1769 turns to completion (no time limit) [+warmup]
+[replay] warmup: untimed pass over 15/150 sessions to prime the prefix cache...
+[replay] warmup done; starting measured pass
+[replay] wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/c16_prom.json (488 series, 414 changed)
+[replay] done: 1769/1769 turns in 3883.3s at concurrency 16 (after warmup)
+{
+  "concurrency": 16,
+  "runtime_s": 3883.32,
+  "completed_turns": 1769,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.4555,
+  "output_throughput_tok_per_s": 678.84,
+  "total_token_throughput_tok_per_s": 3833.07,
+  "ttft_ms": {
+    "mean": 392.35,
+    "p50": 374.97,
+    "p90": 433.42,
+    "p95": 489.56,
+    "p99": 786.48
+  },
+  "tpot_ms": {
+    "mean": 23.17,
+    "p50": 22.77,
+    "p90": 25.77,
+    "p95": 27.25,
+    "p99": 31.18
+  },
+  "itl_ms": {
+    "mean": 22.82,
+    "p99": 134.24
+  },
+  "e2e_ms": {
+    "mean": 34090.24,
+    "p50": 17825.3,
+    "p90": 93399.31,
+    "p95": 120817.39,
+    "p99": 184112.65
+  },
+  "isl": {
+    "mean": 6924.2,
+    "median": 5771,
+    "p95": 17324
+  },
+  "osl": {
+    "mean": 1490.2,
+    "median": 766,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12248889,
+  "output_tokens_total": 2636137,
+  "errors_sample": []
+}
+
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/conc16.json
+
+===== concurrency 32 =====
+[replay] concurrency 32: replaying 150 sessions / 1769 turns to completion (no time limit) [+warmup]
+[replay] warmup: untimed pass over 15/150 sessions to prime the prefix cache...
+[replay] warmup done; starting measured pass
+[replay] wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/c32_prom.json (488 series, 413 changed)
+[replay] done: 1769/1769 turns in 2892.6s at concurrency 32 (after warmup)
+{
+  "concurrency": 32,
+  "runtime_s": 2892.6,
+  "completed_turns": 1769,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.6116,
+  "output_throughput_tok_per_s": 911.34,
+  "total_token_throughput_tok_per_s": 5145.91,
+  "ttft_ms": {
+    "mean": 481.05,
+    "p50": 391.21,
+    "p90": 466.29,
+    "p95": 699.99,
+    "p99": 4299.62
+  },
+  "tpot_ms": {
+    "mean": 31.76,
+    "p50": 31.38,
+    "p90": 35.66,
+    "p95": 38.12,
+    "p99": 55.69
+  },
+  "itl_ms": {
+    "mean": 30.85,
+    "p99": 281.13
+  },
+  "e2e_ms": {
+    "mean": 46029.4,
+    "p50": 23726.71,
+    "p90": 126480.92,
+    "p95": 162518.23,
+    "p99": 239626.44
+  },
+  "isl": {
+    "mean": 6924.2,
+    "median": 5771,
+    "p95": 17324
+  },
+  "osl": {
+    "mean": 1490.2,
+    "median": 766,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12248889,
+  "output_tokens_total": 2636137,
+  "errors_sample": []
+}
+
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/conc32.json
+
+===== concurrency 64 =====
+[replay] concurrency 64: replaying 150 sessions / 1769 turns to completion (no time limit) [+warmup]
+[replay] warmup: untimed pass over 15/150 sessions to prime the prefix cache...
+[replay] warmup done; starting measured pass
+[replay] wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/c64_prom.json (488 series, 413 changed)
+[replay] done: 1769/1769 turns in 2315.5s at concurrency 64 (after warmup)
+{
+  "concurrency": 64,
+  "runtime_s": 2315.53,
+  "completed_turns": 1769,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.764,
+  "output_throughput_tok_per_s": 1138.46,
+  "total_token_throughput_tok_per_s": 6428.34,
+  "ttft_ms": {
+    "mean": 622.99,
+    "p50": 397.9,
+    "p90": 674.91,
+    "p95": 777.8,
+    "p99": 6783.83
+  },
+  "tpot_ms": {
+    "mean": 46.98,
+    "p50": 45.95,
+    "p90": 53.2,
+    "p95": 61.34,
+    "p99": 126.51
+  },
+  "itl_ms": {
+    "mean": 43.28,
+    "p99": 305.89
+  },
+  "e2e_ms": {
+    "mean": 64574.26,
+    "p50": 33275.84,
+    "p90": 171808.74,
+    "p95": 227904.84,
+    "p99": 334035.06
+  },
+  "isl": {
+    "mean": 6924.2,
+    "median": 5771,
+    "p95": 17324
+  },
+  "osl": {
+    "mean": 1490.2,
+    "median": 766,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12248889,
+  "output_tokens_total": 2636137,
+  "errors_sample": []
+}
+
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/conc64.json
+
+===== concurrency 128 =====
+[replay] concurrency 128: replaying 150 sessions / 1769 turns to completion (no time limit) [+warmup]
+[replay] warmup: untimed pass over 15/150 sessions to prime the prefix cache...
+[replay] warmup done; starting measured pass
+[replay] wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/c128_prom.json (488 series, 414 changed)
+[replay] done: 1769/1769 turns in 2032.1s at concurrency 128 (after warmup)
+{
+  "concurrency": 128,
+  "runtime_s": 2032.11,
+  "completed_turns": 1769,
+  "failed_turns": 0,
+  "request_throughput_per_s": 0.8705,
+  "output_throughput_tok_per_s": 1297.24,
+  "total_token_throughput_tok_per_s": 7324.93,
+  "ttft_ms": {
+    "mean": 979.77,
+    "p50": 678.42,
+    "p90": 1852.4,
+    "p95": 2976.28,
+    "p99": 5263.19
+  },
+  "tpot_ms": {
+    "mean": 63.76,
+    "p50": 61.87,
+    "p90": 79.29,
+    "p95": 136.18,
+    "p99": 199.95
+  },
+  "itl_ms": {
+    "mean": 55.11,
+    "p99": 354.11
+  },
+  "e2e_ms": {
+    "mean": 82369.78,
+    "p50": 38895.9,
+    "p90": 211927.57,
+    "p95": 292816.75,
+    "p99": 426022.75
+  },
+  "isl": {
+    "mean": 6924.2,
+    "median": 5771,
+    "p95": 17324
+  },
+  "osl": {
+    "mean": 1490.2,
+    "median": 766,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12248889,
+  "output_tokens_total": 2636137,
+  "errors_sample": []
+}
+
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/conc128.json
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/pareto.csv
+wrote /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/pareto.png
+
+conc | out_tok/s | req/s | ttft_p99 | tpot_p50 | cache_hit
+   4 |     258.1 |  0.17 |   1313.5 |    15.16 |     0.000
+   8 |     433.2 |  0.29 |    702.1 |    18.03 |     0.000
+  16 |     678.8 |  0.46 |    786.5 |    22.77 |     0.000
+  32 |     911.3 |  0.61 |   4299.6 |    31.38 |     0.000
+  64 |    1138.5 |  0.76 |   6783.8 |    45.95 |     0.000
+ 128 |    1297.2 |  0.87 |   5263.2 |    61.87 |     0.000
+[GPU Monitor] Stopped (PID=3703221)
+[GPU Monitor] Collected 141361 rows -> /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang/gpu_metrics.csv
+Pareto results in /mnt/home/ppbhatt500/gpumode-triton/results/dsv4_b1_sglang (pareto.csv, pareto.png, conc*.json)

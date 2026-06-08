@@ -1,0 +1,55 @@
+{
+  "concurrency": 128,
+  "runtime_s": 1172.31,
+  "completed_turns": 1404,
+  "failed_turns": 365,
+  "request_throughput_per_s": 1.1976,
+  "output_throughput_tok_per_s": 1925.76,
+  "total_token_throughput_tok_per_s": 10793.18,
+  "ttft_ms": {
+    "mean": 4400.77,
+    "p50": 1673.28,
+    "p90": 8321.16,
+    "p95": 14365.59,
+    "p99": 44012.57
+  },
+  "tpot_ms": {
+    "mean": 616.45,
+    "p50": 655.89,
+    "p90": 744.44,
+    "p95": 783.53,
+    "p99": 1042.14
+  },
+  "itl_ms": {
+    "mean": 609.01,
+    "p99": 947.59
+  },
+  "e2e_ms": {
+    "mean": 47700.05,
+    "p50": 26247.92,
+    "p90": 121426.23,
+    "p95": 159439.24,
+    "p99": 227477.79
+  },
+  "isl": {
+    "mean": 7404.1,
+    "median": 6304,
+    "p95": 16879
+  },
+  "osl": {
+    "mean": 1608.0,
+    "median": 950,
+    "p95": 5387
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 10395406,
+  "output_tokens_total": 2257593,
+  "errors_sample": [
+    "no tokens streamed",
+    "no tokens streamed",
+    "no tokens streamed",
+    "no tokens streamed",
+    "no tokens streamed"
+  ]
+}

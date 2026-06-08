@@ -1,0 +1,4 @@
+concurrency,completed_turns,failed_turns,request_throughput_per_s,output_throughput_tok_per_s,total_token_throughput_tok_per_s,ttft_p50_ms,ttft_p99_ms,tpot_p50_ms,tpot_p99_ms,e2e_p50_ms,e2e_p99_ms,isl_median,osl_median,cache_hit_rate
+4,696,0,0.1401,189.3,1012.8,423.66,7831.57,20.32,22.05,13944.76,142328.02,5220,671,0.5919
+8,696,0,0.2259,305.1,1632.35,454.45,2050.71,23.56,24.16,16172.61,157602.3,5220,671,0.537
+16,696,0,0.3432,463.62,2480.46,542.17,3955.4,27.61,28.4,18948.76,172193.66,5220,671,0.4681

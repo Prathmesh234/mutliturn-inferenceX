@@ -133,6 +133,57 @@ async def replay_turn(session_http, url, model, messages, max_tokens,
     return r
 
 
+def _parse_prom(text: str) -> dict:
+    """Parse Prometheus text exposition into {series_line: value}."""
+    out: dict[str, float] = {}
+    for line in text.splitlines():
+        line = line.strip()
+        if not line or line.startswith("#"):
+            continue
+        sp = line.rsplit(" ", 1)   # `name{labels} value`
+        if len(sp) != 2:
+            continue
+        try:
+            out[sp[0]] = float(sp[1])
+        except ValueError:
+            continue
+    return out
+
+
+async def _scrape_prom(http, url: str):
+    """GET the server /metrics endpoint and parse it (best-effort, never fatal)."""
+    try:
+        async with http.get(url) as resp:
+            return _parse_prom(await resp.text())
+    except Exception as e:  # noqa: BLE001
+        print(f"[replay] prom scrape failed ({url}): {e}", flush=True)
+        return None
+
+
+def _write_prom(args, before, after):
+    """Write c<conc>_prom.json: before/after server counters + their delta."""
+    try:
+        rd = Path(args.result_dir); rd.mkdir(parents=True, exist_ok=True)
+        delta = {}
+        if before and after:
+            for k, v in after.items():
+                if k in before and (v - before[k]) != 0:
+                    delta[k] = round(v - before[k], 6)
+        out = rd / f"c{args.concurrency}_prom.json"
+        out.write_text(json.dumps({
+            "concurrency": args.concurrency,
+            "prom_url": args.prom_url,
+            "n_series": len(after) if after else 0,
+            "before": before or {},
+            "after": after or {},
+            "delta": delta,
+        }, indent=2))
+        print(f"[replay] wrote {out} ({len(after or {})} series, "
+              f"{len(delta)} changed)", flush=True)
+    except Exception as e:  # noqa: BLE001
+        print(f"[replay] prom write skipped: {e}", flush=True)
+
+
 async def run_benchmark(args):
     import aiohttp
 
@@ -172,14 +223,14 @@ async def run_benchmark(args):
 
     async with aiohttp.ClientSession(connector=conn, headers=headers) as http:
 
-        async def drain(record: bool):
+        async def drain(record: bool, limit: int):
             counter = {"i": 0}
 
             async def worker():
                 while True:
                     i = counter["i"]
                     counter["i"] += 1
-                    if i >= len(work):
+                    if i >= limit:
                         return
                     s = work[i]
                     msgs = s["messages"]
@@ -192,22 +243,30 @@ async def run_benchmark(args):
                         if record:
                             results.append(tr)   # record EVERY turn — nothing censored
 
-            await asyncio.gather(*[worker() for _ in range(n_workers)])
+            await asyncio.gather(*[worker() for _ in range(min(n_workers, limit))])
 
-        # Warmup: one untimed pass over ALL sessions to prime the server prefix
-        # cache, so EVERY concurrency point is measured from the same warm cache
-        # state. Without it, the FIRST point in a sweep absorbs the entire global
-        # cold start — which for big-prefill models like DSv4 dominates the p99
-        # TTFT tail and makes the curve read backwards vs concurrency.
+        # Warmup: an untimed pass to prime the server prefix cache before the
+        # measured pass. With --warmup-sessions N, only the first N sessions are
+        # warmed (a cheap prime) instead of the whole dataset — the measured pass
+        # below always covers ALL sessions.
         if args.warmup:
-            print(f"[replay] warmup: untimed pass over {len(work)} sessions / "
-                  f"{total_turns} turns to prime the prefix cache...", flush=True)
-            await drain(record=False)
+            wlim = args.warmup_sessions if args.warmup_sessions and args.warmup_sessions > 0 else len(work)
+            wlim = min(wlim, len(work))
+            print(f"[replay] warmup: untimed pass over {wlim}/{len(work)} sessions "
+                  f"to prime the prefix cache...", flush=True)
+            await drain(record=False, limit=wlim)
             print("[replay] warmup done; starting measured pass", flush=True)
 
+        # Snapshot server-side Prometheus counters bracketing the measured pass.
+        prom_before = await _scrape_prom(http, args.prom_url) if args.prom_url else None
+
         t0 = time.perf_counter()
-        await drain(record=True)
+        await drain(record=True, limit=len(work))
         runtime = time.perf_counter() - t0
+
+        if args.prom_url:
+            prom_after = await _scrape_prom(http, args.prom_url)
+            _write_prom(args, prom_before, prom_after)
 
     print(f"[replay] done: {len(results)}/{total_turns} turns in {runtime:.1f}s "
           f"at concurrency {args.concurrency}"
@@ -314,6 +373,14 @@ def parse_args():
                     help="run one untimed full pass over the dataset before the "
                          "measured pass, to prime the server prefix cache so every "
                          "concurrency point starts from the same warm cache state.")
+    ap.add_argument("--warmup-sessions", type=int, default=0,
+                    help="if >0, the untimed warmup pass covers only the first N "
+                         "sessions (a cheap prime) instead of the whole dataset; "
+                         "the measured pass still covers all sessions.")
+    ap.add_argument("--prom-url", default=None,
+                    help="if set, scrape this Prometheus /metrics URL before and "
+                         "after the measured pass and write c<conc>_prom.json "
+                         "(server-side counters: prefix-cache hits, KV usage, etc.).")
     ap.add_argument("--request-timeout", type=float, default=1800)
     ap.add_argument("--use-think-time", action="store_true",
                     help="sleep the recorded inter-turn idle gap before each turn "

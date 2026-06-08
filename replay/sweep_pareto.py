@@ -96,22 +96,22 @@ def plot_pareto(rows: list[dict], path: Path, title: str):
     ttft_p99 = [s["ttft_ms"]["p99"] for s in rows]
     tpot_p99 = [s["tpot_ms"]["p99"] for s in rows]
 
-    # Plot the p99 tail only (the median/p50 curve was removed per request).
+    # Throughput (y) vs latency (x): y = output throughput, x = p99 TTFT / TPOT.
     panels = (
         (ttft_p99, "TTFT (ms)"),
         (tpot_p99, "TPOT (ms)"),
     )
     fig, ax = plt.subplots(1, 2, figsize=(13, 5.2))
     for a, (p99, lab) in zip(ax, panels):
-        a.plot(thr, p99, "-o", color="#c25a3a", lw=2, label="p99 (tail)")
-        for x, yy, c in zip(thr, p99, conc):
-            a.annotate(f"c{c}", (x, yy), textcoords="offset points",
+        a.plot(p99, thr, "-o", color="#c25a3a", lw=2, label="p99 (tail)")
+        for xx, yy, c in zip(p99, thr, conc):
+            a.annotate(f"c{c}", (xx, yy), textcoords="offset points",
                        xytext=(6, 4), fontsize=8)
-        a.set_xlabel("Output throughput (tok/s)")
-        a.set_ylabel(lab)
+        a.set_xlabel(lab)
+        a.set_ylabel("Output throughput (tok/s)")
         a.grid(True, alpha=0.3)
         a.legend(fontsize=8, loc="best")
-        a.set_title(lab + " vs throughput")
+        a.set_title("throughput vs " + lab)
     fig.suptitle(title)
     fig.tight_layout()
     fig.savefig(path, dpi=130)

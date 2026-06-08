@@ -374,3 +374,2696 @@
   dsv4_vllm_4p_8d        conc=0 pareto=no prom=yes
 --- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
 
+================ 2026-06-08 04:21:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        27:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:07:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      2:51:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      2:52:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      2:53:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=0 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=0 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:26:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        32:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:12:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      2:56:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      2:57:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      2:58:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=0 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:31:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        37:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:17:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:01:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:02:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:03:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:36:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        42:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:22:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:06:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:07:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:08:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=0 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:41:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        47:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:27:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:11:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:12:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:13:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:46:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        52:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:32:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:16:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:17:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:18:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:51:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2        57:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:37:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:21:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:22:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:23:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 04:56:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:02:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:42:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:26:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:27:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:28:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 05:01:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:07:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:47:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:31:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:32:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:33:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 05:06:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:12:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:52:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:36:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:37:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:38:20    8:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=YES prom=no
+  kimi_b1                conc=3 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=YES prom=no
+  kimi_b1_sglang         conc=3 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang  ---
+
+================ 2026-06-08 05:11:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:17:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      1:57:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:41:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:42:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:43:20    8:00:00
+    6817             kimi-sglang-c128  PENDING      1         0:00   16:00:00
+    6815             dsv4-sglang-c128  RUNNING      1         0:29   16:00:00
+    6816               kimi-vllm-c128  RUNNING      1         0:29   16:00:00
+    6814               dsv4-vllm-c128  RUNNING      1         0:30   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:16:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:22:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:02:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:46:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:47:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:48:20    8:00:00
+    6817             kimi-sglang-c128  RUNNING      1         0:49   16:00:00
+    6815             dsv4-sglang-c128  RUNNING      1         5:29   16:00:00
+    6816               kimi-vllm-c128  RUNNING      1         5:29   16:00:00
+    6814               dsv4-vllm-c128  RUNNING      1         5:30   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:21:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:27:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:07:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:51:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:52:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:53:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1         2:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1         2:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1         2:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1         2:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:26:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:32:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:12:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      3:56:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      3:57:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      3:58:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1         7:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1         7:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1         7:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1         7:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:31:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:37:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:17:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:01:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:02:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:03:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        12:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        12:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        12:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        12:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:36:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:42:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:22:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:06:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:07:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:08:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        17:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        17:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        17:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        17:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:41:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:47:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:27:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:11:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:12:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:13:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        22:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        22:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        22:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        22:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:46:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:52:17    8:00:00
+    6804            dsv4_sglang_4p_8d  RUNNING      3      2:32:52    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:16:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:17:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:18:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        27:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        27:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        27:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        27:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: none ---
+
+================ 2026-06-08 05:51:04 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      1:57:17    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:21:42    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:22:31    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:23:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        32:51   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        32:51   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        32:51   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        32:52   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 05:56:05 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:02:18    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:26:43    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:27:32    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:28:21    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        37:52   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        37:52   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        37:52   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        37:53   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=1 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:01:05 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:07:18    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:31:43    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:32:32    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:33:21    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        42:52   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        42:52   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        42:52   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        42:53   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:06:05 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:12:18    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:36:43    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:37:32    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:38:21    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        47:52   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        47:52   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        47:52   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        47:53   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:11:05 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:17:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:41:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:42:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:43:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        52:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        52:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        52:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        52:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:16:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:22:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:46:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:47:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:48:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1        57:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1        57:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1        57:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1        57:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=1 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:21:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:27:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:51:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:52:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:53:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:02:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:02:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:02:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:02:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:26:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:32:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      4:56:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      4:57:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      4:58:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:07:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:07:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:07:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:07:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:31:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:37:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      5:01:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:02:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:03:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:12:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:12:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:12:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:12:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:36:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:42:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      5:06:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:07:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:08:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:17:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:17:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:17:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:17:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:41:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:47:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      5:11:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:12:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:13:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:22:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:22:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:22:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:22:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:46:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:52:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      5:16:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:17:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:18:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:27:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:27:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:27:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:27:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:51:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      2:57:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      5:21:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:22:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:23:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:32:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:32:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:32:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:32:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 06:56:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:02:19    8:00:00
+    6792              dsv4_vllm_4p_8d  RUNNING      4      5:26:44    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:27:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:28:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:37:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:37:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:37:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:37:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=1 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=2 pareto=no prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d  ---
+
+================ 2026-06-08 07:01:06 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:07:19    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:32:33    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:33:22    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:42:53   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:42:53   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:42:53   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:42:54   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:06:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:12:20    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:37:34    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:38:23    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:47:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:47:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:47:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:47:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:11:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:17:20    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:42:34    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:43:23    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:52:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:52:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:52:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:52:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=0 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:16:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:22:20    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:47:34    8:00:00
+    6786              dsv4_vllm_4p_4d  RUNNING      3      5:48:23    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      1:57:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      1:57:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      1:57:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      1:57:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=0 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:21:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:27:20    8:00:00
+    6789              dsv4_vllm_8p_4d  RUNNING      4      5:52:34    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      2:02:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:02:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:02:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:02:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=2 pareto=no prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:26:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:32:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      2:07:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:07:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:07:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:07:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:31:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:37:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      2:12:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:12:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:12:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:12:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:36:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:42:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      2:17:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:17:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:17:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:17:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=2 pareto=no prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:41:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6810            dsv4_sglang_4p_4d  RUNNING      2      3:47:20    8:00:00
+    6819             dsv4-sglang-c128  RUNNING      1      2:22:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:22:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:22:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:22:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:46:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:27:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:27:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:27:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:27:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:51:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:32:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:32:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:32:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:32:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 07:56:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:37:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:37:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:37:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:37:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:01:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:42:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:42:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:42:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:42:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:06:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:47:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:47:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:47:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:47:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:11:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:52:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:52:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:52:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:52:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:16:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      2:57:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      2:57:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      2:57:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      2:57:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=1 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:21:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:02:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:02:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:02:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:02:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:26:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:07:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:07:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:07:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:07:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=1 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:31:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:12:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:12:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:12:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:12:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:36:07 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:17:54   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:17:54   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:17:54   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:17:55   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:41:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:22:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:22:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:22:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:22:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:46:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:27:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:27:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:27:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:27:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=0 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=0 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:51:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:32:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:32:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:32:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:32:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 08:56:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:37:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:37:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:37:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:37:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:01:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:42:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:42:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:42:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:42:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:06:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:47:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:47:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:47:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:47:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:11:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:52:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:52:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:52:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:52:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=2 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:16:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      3:57:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      3:57:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      3:57:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      3:57:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=2 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:21:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:02:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:02:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:02:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:02:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:26:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:07:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:07:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:07:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:07:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:31:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:12:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:12:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:12:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:12:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:36:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:17:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:17:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:17:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:17:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:41:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:22:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:22:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:22:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:22:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:46:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:27:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:27:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:27:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:27:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:51:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:32:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:32:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:32:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:32:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=3 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 09:56:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:37:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:37:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:37:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:37:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=3 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:01:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:42:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:42:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:42:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:42:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=4 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:06:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:47:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:47:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:47:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:47:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=4 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:11:08 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:52:55   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:52:55   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:52:55   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:52:56   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=4 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:16:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      4:57:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      4:57:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      4:57:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      4:57:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=4 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:21:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:02:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:02:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:02:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:02:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=4 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:26:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:07:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:07:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:07:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:07:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=4 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=4 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:31:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:12:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:12:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:12:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:12:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=5 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=5 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:36:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:17:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:17:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:17:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:17:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=5 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=5 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:41:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:22:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:22:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:22:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:22:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=5 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=5 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:46:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:27:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:27:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:27:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:27:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=5 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=5 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:51:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:32:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:32:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:32:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:32:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=1 pareto=no prom=no
+  kimi_b1                conc=5 pareto=no prom=no
+  dsv4_b1_sglang         conc=1 pareto=no prom=no
+  kimi_b1_sglang         conc=5 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 10:56:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:37:56   16:00:00
+    6820               kimi-vllm-c128  RUNNING      1      5:37:56   16:00:00
+    6821             kimi-sglang-c128  RUNNING      1      5:37:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:37:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=5 pareto=no prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=5 pareto=no prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:01:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:42:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:42:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:06:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:47:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:47:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:11:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:52:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:52:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:16:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      5:57:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      5:57:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:21:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:02:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:02:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:26:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:07:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:07:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:31:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:12:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:12:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:36:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:17:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:17:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:41:09 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:22:56   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:22:57   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:46:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:27:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:27:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:51:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:32:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:32:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 11:56:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:37:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:37:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:01:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:42:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:42:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:06:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:47:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:47:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:11:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:52:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:52:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:16:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      6:57:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      6:57:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=2 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=2 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:21:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:02:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:02:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:26:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:07:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:07:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:31:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:12:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:12:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:36:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:17:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:17:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:41:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:22:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:22:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:46:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:27:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:27:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:51:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:32:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:32:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 12:56:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:37:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:37:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:01:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:42:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:42:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:06:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:47:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:47:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:11:10 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:52:57   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:52:58   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:16:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      7:57:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      7:57:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:21:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:02:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:02:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=3 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:26:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:07:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:07:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=3 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:31:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:12:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:12:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:36:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:17:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:17:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:41:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:22:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:22:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:46:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:27:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:27:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:51:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:32:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:32:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 13:56:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:37:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:37:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:01:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:42:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:42:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:06:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:47:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:47:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:11:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:52:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:52:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:16:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      8:57:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      8:57:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:21:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:02:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:02:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=4 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:26:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:07:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:07:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=4 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:31:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:12:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:12:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:36:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:17:58   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:17:59   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:41:11 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:22:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:23:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:46:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:27:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:28:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:51:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:32:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:33:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 14:56:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:37:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:38:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 15:01:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:42:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:43:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 15:06:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:47:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:48:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 15:11:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6819             dsv4-sglang-c128  RUNNING      1      9:52:59   16:00:00
+    6818               dsv4-vllm-c128  RUNNING      1      9:53:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=5 pareto=no prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 15:16:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6818               dsv4-vllm-c128  RUNNING      1      9:58:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=6 pareto=YES prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 dsv4_b1_sglang kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 15:21:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+    6818               dsv4-vllm-c128  RUNNING      1     10:03:00   16:00:00
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=5 pareto=no prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=6 pareto=YES prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: kimi_b1 dsv4_b1_sglang kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+================ 2026-06-08 15:26:12 UTC ================
+--- squeue ---
+   JOBID                         NAME    STATE  NODES         TIME TIME_LIMIT
+--- results (conc files + pareto) ---
+  dsv4_b1                conc=6 pareto=YES prom=no
+  kimi_b1                conc=6 pareto=YES prom=no
+  dsv4_b1_sglang         conc=6 pareto=YES prom=no
+  kimi_b1_sglang         conc=6 pareto=YES prom=no
+  dsv4_sglang_4p_4d      conc=3 pareto=YES prom=yes
+  dsv4_sglang_8p_4d      (no dir)
+  dsv4_sglang_4p_8d      conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_8p_4d        conc=3 pareto=YES prom=yes
+  dsv4_vllm_4p_8d        conc=3 pareto=YES prom=yes
+--- pareto.csv present for: dsv4_b1 kimi_b1 dsv4_b1_sglang kimi_b1_sglang dsv4_sglang_4p_4d dsv4_sglang_4p_8d dsv4_vllm_4p_4d dsv4_vllm_8p_4d dsv4_vllm_4p_8d  ---
+
+[2026-06-08 15:26:12 UTC] no jobs left in squeue — watcher exiting

@@ -1,0 +1,51 @@
+{
+  "concurrency": 128,
+  "runtime_s": 2171.62,
+  "completed_turns": 1768,
+  "failed_turns": 1,
+  "request_throughput_per_s": 0.8141,
+  "output_throughput_tok_per_s": 1212.69,
+  "total_token_throughput_tok_per_s": 6850.96,
+  "ttft_ms": {
+    "mean": 572.5,
+    "p50": 436.88,
+    "p90": 859.72,
+    "p95": 1322.48,
+    "p99": 2301.36
+  },
+  "tpot_ms": {
+    "mean": 62.57,
+    "p50": 64.08,
+    "p90": 73.85,
+    "p95": 102.62,
+    "p99": 138.72
+  },
+  "itl_ms": {
+    "mean": 57.18,
+    "p99": 329.16
+  },
+  "e2e_ms": {
+    "mean": 84878.62,
+    "p50": 41113.42,
+    "p90": 222841.69,
+    "p95": 299725.81,
+    "p99": 440405.73
+  },
+  "isl": {
+    "mean": 6925.4,
+    "median": 5771,
+    "p95": 17327
+  },
+  "osl": {
+    "mean": 1489.5,
+    "median": 764,
+    "p95": 5284
+  },
+  "cache_hit_rate": 0.0,
+  "cached_tokens_total": 0,
+  "input_tokens_total": 12244164,
+  "output_tokens_total": 2633492,
+  "errors_sample": [
+    "ServerDisconnectedError: Server disconnected"
+  ]
+}

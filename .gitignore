@@ -14,3 +14,7 @@ hf/
 
 # stray result-dir virtualenvs (never commit)
 .rvenv/
+results/legacy/dsv4_sglang_4p_4d_batch3x/server_metrics.prom
+results/legacy/dsv4_vllm_4p_4d_batch3x/server_metrics.prom
+results/legacy/dsv4_vllm_4p_8d_batch3x/server_metrics.prom
+results/legacy/dsv4_vllm_8p_4d_batch3x/server_metrics.prom
