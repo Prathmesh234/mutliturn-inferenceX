@@ -10,7 +10,8 @@ PyTorch. Each invocation is ONE evaluation iteration (the budget).
 Config via env (set by the worker on the `claude -p` process):
   JUDGE_REF        path to reference.py (the PyTorch module + get_inputs helpers)
   JUDGE_ENTRY      reference class name; solution must define <ENTRY>New
-  JUDGE_MAX_EVALS  evaluation budget (Claude mode only)
+  JUDGE_MIN_EVALS  required floor of iterations before Claude may stop (Claude mode)
+  JUDGE_MAX_EVALS  optional ceiling; <=0 = no cap (Claude mode only)
 CUDA_VISIBLE_DEVICES is pinned to this worker's GPU. The received kernel is saved
 to submission.py and every attempt is appended to _evallog.jsonl.
 """
@@ -24,7 +25,8 @@ from pathlib import Path
 
 REF = os.environ.get("JUDGE_REF", "reference.py")
 ENTRY = os.environ.get("JUDGE_ENTRY", "")
-MAX_EVALS = int(os.environ.get("JUDGE_MAX_EVALS", "8"))
+MIN_EVALS = int(os.environ.get("JUDGE_MIN_EVALS", "8"))   # required floor of iterations
+MAX_EVALS = int(os.environ.get("JUDGE_MAX_EVALS", "0"))   # <=0 means no cap (wall-clock backstops)
 # All artifacts go HERE, not in cwd -- Claude may `cd` elsewhere before running us,
 # and multiple workers must never share files. JUDGE_WORKDIR is the per-problem dir.
 WORKDIR = Path(os.environ.get("JUDGE_WORKDIR", ".")).resolve()
@@ -182,19 +184,33 @@ def main():
     if not code.strip():
         print("ERROR: no kernel received on stdin. Pipe your COMPLETE kernel source in.")
         return
-    (WORKDIR / "submission.py").write_text(code)  # always capture the latest kernel
 
-    # Hard budget: refuse to run more than MAX_EVALS GPU evals (the iteration cap).
     cf = WORKDIR / "_evalcount"
     prev = int(cf.read_text()) if cf.exists() else 0
-    if prev >= MAX_EVALS:
-        print(f"=== eval refused: budget {prev}/{MAX_EVALS} already exhausted ===")
+
+    # Optional hard ceiling (MAX_EVALS<=0 means no cap; wall-clock backstops instead).
+    if MAX_EVALS > 0 and prev >= MAX_EVALS:
+        print(f"=== eval refused: cap {prev}/{MAX_EVALS} reached ===")
         print(">>> No evaluations remain. Submit your best kernel and STOP now.")
         return
+
+    # Substantive-iteration guard: an identical re-pipe does NOT count toward the
+    # minimum. Compare to the previous kernel BEFORE overwriting it.
+    sub_path = WORKDIR / "submission.py"
+    prev_code = sub_path.read_text() if sub_path.exists() else None
+    if prev > 0 and prev_code is not None and code.strip() == prev_code.strip():
+        print(f"=== identical submission: NOT counted ({prev}/{MIN_EVALS} so far) ===")
+        print(">>> This kernel is byte-identical to your previous attempt, so it does not")
+        print(">>> count as an iteration. Change something real (block size, num_warps/")
+        print(">>> num_stages, tiling, fusion, vectorized loads, fp32 accumulation, or the")
+        print(">>> algorithm) and pipe again.")
+        return
+    sub_path.write_text(code)  # capture the latest kernel
+
     nrun = prev + 1
     cf.write_text(str(nrun))
 
-    res = run_eval(str(WORKDIR / "submission.py"))
+    res = run_eval(str(sub_path))
     res["attempt"] = nrun
     with open(WORKDIR / "_evallog.jsonl", "a") as f:
         f.write(json.dumps(res) + "\n")
@@ -204,10 +220,11 @@ def main():
         bf = WORKDIR / "_best_speedup"
         prev_best = float(bf.read_text()) if bf.exists() else -1.0
         if res["speedup"] > prev_best:
-            shutil.copyfile(WORKDIR / "submission.py", WORKDIR / "best.py")
+            shutil.copyfile(sub_path, WORKDIR / "best.py")
             bf.write_text(str(res["speedup"]))
 
-    print(f"=== eval attempt {nrun} / {MAX_EVALS} ===")
+    cap_str = str(MAX_EVALS) if MAX_EVALS > 0 else "inf"
+    print(f"=== eval attempt {nrun}  (minimum {MIN_EVALS}, cap {cap_str}) ===")
     print(f"status      : {res.get('status')}")
     print(f"correct     : {res.get('correct')}")
     if res.get("max_abs_err") is not None:
@@ -218,7 +235,10 @@ def main():
         print(f"detail      : {res['detail'][:800]}")
     print()
 
-    rem = MAX_EVALS - nrun
+    below_floor = nrun < MIN_EVALS
+    need = MIN_EVALS - nrun
+    at_cap = MAX_EVALS > 0 and nrun >= MAX_EVALS
+
     if res.get("status") == "reward_hack":
         print(">>> REJECTED — this looks like reward hacking, NOT a valid solution:")
         for r in res.get("reasons", []):
@@ -231,16 +251,25 @@ def main():
         print(">>>     inputs and tl.store the outputs (do the real math in Triton).")
         print(">>>   * Do NOT import/call the reference, hardcode outputs, cache results,")
         print(">>>     use extra CUDA streams/threads/graphs, or modify the harness.")
-        print(f">>> Rewrite with a genuine Triton kernel and pipe again. {rem} eval(s) left.")
+        print(">>> Rewrite with a genuine Triton kernel and pipe again.")
     elif res.get("status") == "env_unavailable":
         print(">>> GPU/torch unavailable; cannot evaluate. Stop here.")
-    elif rem <= 0:
-        print(">>> EVALUATION BUDGET EXHAUSTED. Submit your best kernel and STOP now.")
+    elif below_floor:
+        if res.get("correct"):
+            print(f">>> Correct — but you've completed only {nrun}/{MIN_EVALS} required "
+                  f"iterations. Do NOT stop.")
+            print(">>> Try a GENUINELY DIFFERENT optimization (block size, num_warps/")
+            print(">>>  num_stages, tiling, kernel fusion, coalesced/vectorized loads, fp32")
+            print(f">>>  accumulation, or a different algorithm) and pipe again. {need} more required.")
+        else:
+            print(f">>> Not correct yet ({nrun}/{MIN_EVALS} required). Fix the kernel and pipe it again.")
+    elif at_cap:
+        print(">>> Evaluation cap reached. Submit your best kernel and STOP now.")
     elif res.get("correct"):
-        print(f">>> Correct! {rem} eval(s) left. Improve the speedup and pipe the kernel "
-              f"again, or stop if you're satisfied.")
+        print(f">>> Correct! You've met the {MIN_EVALS}-iteration minimum. Keep pushing for "
+              f"more speedup with a different approach, or stop if it's truly plateaued.")
     else:
-        print(f">>> Not correct yet. {rem} eval(s) left. Fix the kernel and pipe it again.")
+        print(">>> Not correct yet. Fix the kernel and pipe it again.")
 
 
 if __name__ == "__main__":

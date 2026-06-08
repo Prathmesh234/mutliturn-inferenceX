@@ -11,3 +11,6 @@ batch_0.jsonl
 hf/
 
 .DS_Store
+
+# stray result-dir virtualenvs (never commit)
+.rvenv/

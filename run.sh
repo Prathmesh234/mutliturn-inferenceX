@@ -82,5 +82,6 @@ uv run python solve.py \
   --num-workers 4 \
   --num-gpus 4 \
   --model claude-opus-4-8 \
-  --max-evals 8 \
+  --min-evals "${MIN_EVALS:-8}" \
+  --max-evals "${MAX_EVALS:-0}" \
   --output-dir "$OUTDIR"
