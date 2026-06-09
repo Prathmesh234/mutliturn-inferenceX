@@ -1,0 +1,52 @@
+{
+  "concurrency": 4,
+  "model": "minimax",
+  "prearrange_frac": 0.75,
+  "ramp_seconds": 60.0,
+  "server": {
+    "runtime_s": 4405.84,
+    "n_gpu": 4,
+    "input_tput_per_gpu": 649.01,
+    "ttft_ms": {
+      "mean": 78.957,
+      "p50": 72.288,
+      "p99": 247.083,
+      "p95": 232.991
+    },
+    "e2e_ms": {
+      "mean": 9905.482,
+      "p50": 5139.405,
+      "p99": 54625.0,
+      "p95": 36209.677
+    },
+    "gpu_prefix_cache_hit_rate": 0.8994,
+    "gpu_kv_usage_perc": 0.0,
+    "cpu_kv_usage_perc": null,
+    "num_running": 0.0,
+    "num_waiting": 0.0,
+    "output_tput_per_gpu_steady": 150.84,
+    "intvty_steady": 150.84,
+    "tpot_steady_ms": 6.63,
+    "_steady_samples": 416,
+    "_steady_max_batch": 4
+  },
+  "client": {
+    "completed_turns": 1745,
+    "failed_turns": 0,
+    "runtime_s": 4405.84,
+    "client_ttft_ms": {
+      "p50": 81.272,
+      "p99": 162.862
+    },
+    "client_itl_ms": {
+      "p50": 6.494,
+      "p99": 7.691
+    },
+    "client_e2e_ms": {
+      "p50": 5100.643,
+      "p99": 56692.08
+    },
+    "client_intvty_p50": 153.99,
+    "client_out_tokens": 2589682
+  }
+}
