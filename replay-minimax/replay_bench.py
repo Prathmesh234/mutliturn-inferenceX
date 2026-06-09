@@ -10,8 +10,9 @@ Load model (first principles):
     from k_i+1. => at t0 users are mid-conversation, mixed phases, WARM cache.
   - Staggered ramp + shuffle => no synchronized turn-0 prefill burst.
 
-Metrics: client TTFT/ITL/E2E (sanity) + SERVER PROMETHEUS TRUTH (throughput,
-interactivity, cache hit rate, KV usage) via metrics.summarize over the window.
+Metrics: client TTFT/ITL (sanity) + ACTUAL client E2E (exact per-turn latency, the
+true end-to-end — the server prom e2e histogram is bucket-coarse above 60s) + SERVER
+PROMETHEUS TRUTH (throughput, interactivity, cache hit rate, KV usage) via metrics.summarize.
 
 Usage:
   python replay_bench.py --dataset batch_long.replay.jsonl --base-url http://localhost:8000 \
@@ -191,14 +192,22 @@ async def run(args):
         except Exception as e:  # noqa: BLE001
             print(f"[replay] could not save prom snapshots: {e}", file=sys.stderr)
 
-    # client-side sanity metrics
+    # client-side metrics. client_e2e_ms is the ACTUAL end-to-end latency: per MEASURED
+    # turn, request-send -> stream-complete, from raw client timestamps in replay_turn
+    # (the untimed pre-arrange warmup turns are NOT in `e2es`, so this is steady-state).
+    # EXACT percentiles over the real per-turn samples — unlike the server prom e2e
+    # histogram, whose >60s buckets are 60s-wide and so estimate the tail coarsely. This
+    # is the only true e2e; the prom e2e_ms in `server` is retained solely as a cross-check.
     median_itl = statistics.median(all_itls) if all_itls else None
     client = {
         "completed_turns": cached["ok"], "failed_turns": cached["fail"],
         "runtime_s": round(runtime, 2),
         "client_ttft_ms": {"p50": pct(ttfts, .5), "p99": pct(ttfts, .99)},
         "client_itl_ms": {"p50": pct(all_itls, .5), "p99": pct(all_itls, .99)},
-        "client_e2e_ms": {"p50": pct(e2es, .5), "p99": pct(e2es, .99)},
+        "client_e2e_ms": {
+            "mean": round(statistics.mean(e2es), 3) if e2es else None,
+            "p50": pct(e2es, .5), "p95": pct(e2es, .95), "p99": pct(e2es, .99),
+        },
         "client_intvty_p50": round(1000 / median_itl, 2) if median_itl else None,
         "client_out_tokens": sum(outs),
     }
