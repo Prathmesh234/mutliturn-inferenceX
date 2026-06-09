@@ -1424,3 +1424,21 @@
 [2026-06-09 22:43:05] INFO:     127.0.0.1:32866 - "POST /v1/chat/completions HTTP/1.1" 200 OK
 [2026-06-09 22:43:07 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 64, #cached-token: 0, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 27.06
 [2026-06-09 22:43:08] INFO:     127.0.0.1:32874 - "GET /health HTTP/1.1" 200 OK
+[2026-06-09 22:43:10 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 4224, #cached-token: 10688, token usage: 0.01, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 1571.90
+[2026-06-09 22:43:10] INFO:     127.0.0.1:32866 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:12 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 896, #cached-token: 16704, token usage: 0.01, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 410.99
+[2026-06-09 22:43:12] INFO:     127.0.0.1:32866 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:13 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 640, #cached-token: 1664, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 489.13
+[2026-06-09 22:43:13] INFO:     127.0.0.1:32866 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:22 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 448, #cached-token: 17536, token usage: 0.01, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 53.12
+[2026-06-09 22:43:22] INFO:     127.0.0.1:54486 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:24 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 640, #cached-token: 2240, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 243.31
+[2026-06-09 22:43:24] INFO:     127.0.0.1:54486 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:36 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 640, #cached-token: 2816, token usage: 0.00, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 55.20
+[2026-06-09 22:43:36] INFO:     127.0.0.1:60204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:41 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 640, #cached-token: 17920, token usage: 0.01, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 117.31
+[2026-06-09 22:43:41] INFO:     127.0.0.1:39204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:43 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 1472, #cached-token: 14848, token usage: 0.01, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 1411.94
+[2026-06-09 22:43:43] INFO:     127.0.0.1:39204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+[2026-06-09 22:43:44 TP0 EP0] Prefill batch, #new-seq: 1, #new-token: 896, #cached-token: 16256, token usage: 0.01, #running-req: 0, #queue-req: 0, #pending-token: 0, #bootstrap-req: 0, #inflight-req: 1, cuda graph: False, input throughput (token/s): 909.17
+[2026-06-09 22:43:44] INFO:     127.0.0.1:39204 - "POST /v1/chat/completions HTTP/1.1" 200 OK
