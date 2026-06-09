@@ -1,0 +1,42 @@
+{
+  "n_gpu": 4,
+  "samples": 40652,
+  "avg_power_w_per_gpu": 439.54,
+  "total_avg_power_w": 1758.14,
+  "avg_util_pct": 99.56,
+  "peak_power_w_per_gpu": 678.93,
+  "per_gpu": {
+    "0": {
+      "avg_power_w": 446.85,
+      "peak_power_w": 678.93,
+      "avg_util_pct": 99.59,
+      "avg_temp_c": 37.66,
+      "peak_temp_c": 43.0,
+      "avg_mem_used_mb": 258362.96
+    },
+    "1": {
+      "avg_power_w": 437.6,
+      "peak_power_w": 667.72,
+      "avg_util_pct": 99.55,
+      "avg_temp_c": 37.27,
+      "peak_temp_c": 43.0,
+      "avg_mem_used_mb": 258362.96
+    },
+    "2": {
+      "avg_power_w": 434.95,
+      "peak_power_w": 665.75,
+      "avg_util_pct": 99.66,
+      "avg_temp_c": 38.6,
+      "peak_temp_c": 45.0,
+      "avg_mem_used_mb": 258362.96
+    },
+    "3": {
+      "avg_power_w": 438.74,
+      "peak_power_w": 676.77,
+      "avg_util_pct": 99.42,
+      "avg_temp_c": 38.8,
+      "peak_temp_c": 45.0,
+      "avg_mem_used_mb": 258362.96
+    }
+  }
+}

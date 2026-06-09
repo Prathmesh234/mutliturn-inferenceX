@@ -73,6 +73,52 @@ def write_csv(rows, path):
             w.writerow(row_of(r))
 
 
+def _mono_cubic(xs, ys, n=240):
+    """Fritsch-Carlson monotone cubic Hermite interpolation over a strictly
+    increasing xs. Shape-preserving: never overshoots or invents bumps between
+    data points, so the smoothed pareto curve stays faithful to the measurement."""
+    import numpy as np
+    xs = np.asarray(xs, float); ys = np.asarray(ys, float)
+    h = np.diff(xs); delta = np.diff(ys) / h
+    m = np.empty_like(xs)
+    m[1:-1] = (delta[:-1] + delta[1:]) / 2.0
+    m[0], m[-1] = delta[0], delta[-1]
+    for i in range(len(delta)):                       # enforce monotone tangents
+        if delta[i] == 0:
+            m[i] = m[i + 1] = 0.0
+        else:
+            a, b = m[i] / delta[i], m[i + 1] / delta[i]
+            s = a * a + b * b
+            if s > 9.0:
+                t = 3.0 / s ** 0.5
+                m[i], m[i + 1] = t * a * delta[i], t * b * delta[i]
+    xg = np.linspace(xs[0], xs[-1], n)
+    idx = np.clip(np.searchsorted(xs, xg) - 1, 0, len(xs) - 2)
+    t = (xg - xs[idx]) / h[idx]
+    h00 = (1 + 2 * t) * (1 - t) ** 2; h10 = t * (1 - t) ** 2
+    h01 = t * t * (3 - 2 * t); h11 = t * t * (t - 1)
+    yg = h00 * ys[idx] + h10 * h[idx] * m[idx] + h01 * ys[idx + 1] + h11 * h[idx] * m[idx + 1]
+    return xg, yg
+
+
+def _smooth_xy(xvals, yvals):
+    """Smooth curve through (metric, throughput) points. Throughput is the
+    monotone axis (rises with concurrency), so we interpolate metric=f(tput)
+    and trace it back as (metric_smooth, tput_grid) -> a clean elbow, no zigzag."""
+    import numpy as np
+    pts = [(x, y) for x, y in zip(xvals, yvals) if x is not None and y is not None]
+    if len(pts) < 3:
+        return None
+    pts.sort(key=lambda p: p[1])                       # sort by throughput (y)
+    ys = [p[1] for p in pts]; xs = [p[0] for p in pts]
+    ys = list(ys)                                      # ensure strictly increasing y
+    for i in range(1, len(ys)):
+        if ys[i] <= ys[i - 1]:
+            ys[i] = ys[i - 1] + 1e-6
+    tg, xg = _mono_cubic(ys, xs)                       # x(metric) = f(tput)
+    return np.asarray(xg), np.asarray(tg)
+
+
 def plot(rows, path, title):
     try:
         import matplotlib
@@ -82,13 +128,24 @@ def plot(rows, path, title):
         print(f"plot skipped: {e}", file=sys.stderr)
         return
     rows = sorted(rows, key=lambda r: r["concurrency"])
+    # Drop c4 from the plotted frontier: it runs first against a cold radix cache
+    # (prearrange only warms `concurrency` sessions, not the shared prefix), so its
+    # TTFT/interactivity are a warm-up artifact, not steady-state. Kept in pareto.csv.
+    rows = [r for r in rows if r["concurrency"] != 4]
     tput = [row_of(r)["output_tput_per_gpu"] for r in rows]
     panels = [("intvty_p99", "Interactivity p99 (tok/s/user)"),
               ("ttft_p99_ms", "TTFT p99 (ms)"), ("e2e_p99_ms", "E2E p99 (ms)")]
     fig, ax = plt.subplots(1, 3, figsize=(18, 5.2))
     for a, (key, lab) in zip(ax, panels):
         x = [row_of(r)[key] for r in rows]
-        a.plot(x, tput, "-o", color="#2a6fc2", lw=2)
+        sm = _smooth_xy(x, tput)
+        if sm is not None:                              # smooth monotone-cubic frontier
+            a.plot(sm[0], sm[1], "-", color="#2a6fc2", lw=2, zorder=2)
+            a.plot([xx for xx in x if xx is not None],
+                   [yy for xx, yy in zip(x, tput) if xx is not None],
+                   "o", color="#2a6fc2", ms=6, zorder=3)
+        else:
+            a.plot(x, tput, "-o", color="#2a6fc2", lw=2)
         for xx, yy, r in zip(x, tput, rows):
             if xx is not None and yy is not None:
                 a.annotate(f"c{r['concurrency']}", (xx, yy), textcoords="offset points", xytext=(6, 4), fontsize=8)

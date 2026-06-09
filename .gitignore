@@ -18,3 +18,8 @@ results/legacy/dsv4_sglang_4p_4d_batch3x/server_metrics.prom
 results/legacy/dsv4_vllm_4p_4d_batch3x/server_metrics.prom
 results/legacy/dsv4_vllm_4p_8d_batch3x/server_metrics.prom
 results/legacy/dsv4_vllm_8p_4d_batch3x/server_metrics.prom
+
+# abandoned scratch result dirs (large prom dumps; not committed)
+results/.failed_launch1/
+results/.preherdfix_run/
+results/.sglang_nocache_run/
