@@ -105,3 +105,16 @@
 (Worker_TP0_EP0 pid=3339876) WARNING 06-09 22:43:06 [kv_cache.py:123] Using KV cache scaling factor 1.0 for fp8_e4m3. If this is unintended, verify that k/v_scale scaling factors are properly set in the checkpoint.
 (Worker_TP0_EP0 pid=3339876) WARNING 06-09 22:43:06 [kv_cache.py:162] Using uncalibrated q_scale 1.0 and/or prob_scale 1.0 with fp8 attention. This may cause accuracy issues. Please make sure q/prob scaling factors are available in the fp8 checkpoint.
 (Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:06 [nvfp4.py:491] Using MoEPrepareAndFinalizeNoDPEPMonolithic
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:09 [gpu_model_runner.py:4959] Model loading took 62.76 GiB memory and 50.149413 seconds
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:23 [backends.py:1089] Using cache directory: /root/.cache/vllm/torch_compile_cache/1621101042/rank_0_0/backbone for vLLM's torch.compile
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:23 [backends.py:1148] Dynamo bytecode transform time: 12.94 s
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:23 [flashinfer_all_reduce.py:109] Auto-selected flashinfer allreduce backend: trtllm
+(Worker_TP0_EP0 pid=3339876) /usr/local/lib/python3.12/dist-packages/torch/distributed/c10d_logger.py:83: UserWarning: barrier(): using the device under current context. You can specify `device_id` in `init_process_group` to mute this warning.
+(Worker_TP0_EP0 pid=3339876)   return func(*args, **kwargs)
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:23 [flashinfer_all_reduce.py:149] Initialized FlashInfer Allreduce norm fusion workspace with backend=trtllm
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:32 [backends.py:378] Cache the graph of compile range (1, 8192) for later use
+(Worker_TP1_EP1 pid=3339877) /usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:322: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+(Worker_TP1_EP1 pid=3339877)   warnings.warn(
+(Worker_TP0_EP0 pid=3339876) /usr/local/lib/python3.12/dist-packages/torch/_inductor/compile_fx.py:322: UserWarning: TensorFloat32 tensor cores for float32 matrix multiplication available but not enabled. Consider setting `torch.set_float32_matmul_precision('high')` for better performance.
+(Worker_TP0_EP0 pid=3339876)   warnings.warn(
+(Worker_TP0_EP0 pid=3339876) INFO 06-09 22:43:36 [backends.py:393] Compiling a graph for compile range (1, 8192) takes 11.84 s
