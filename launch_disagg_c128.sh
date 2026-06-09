@@ -11,15 +11,18 @@ launch() {
   local name="$1" engine="$2" recipe="$3"
   local ws="$DR/$name"
   cd "$ws" || { echo "MISSING WORKSPACE $ws"; return 1; }
-  local fw_env=""
+  local fw_env="" image=""
   if [ "$engine" = "vllm" ]; then
     fw_env="FRAMEWORK=dynamo-vllm IS_AGENTIC=1"
+    image="vllm/vllm-openai:v0.22.1-aarch64-ubuntu2404"
   else
     fw_env="FRAMEWORK=dynamo-sglang"
+    image="lmsysorg/sglang:nightly-dev-cu13-20260602-98a1b58c"
   fi
-  echo "[launch] $name ($engine)  recipe=$recipe"
+  echo "[launch] $name ($engine)  image=$image  recipe=$recipe"
   setsid env UV_CACHE_DIR=/tmp/uvcache-$name MODEL_PREFIX=dsv4 PRECISION=fp4 \
       $fw_env \
+      IMAGE="$image" \
       CONFIG_FILE="$recipe" \
       GITHUB_WORKSPACE="$PWD" RUNNER_NAME="$name" \
       SLURM_ACCOUNT=cw-sup SLURM_PARTITION=all \

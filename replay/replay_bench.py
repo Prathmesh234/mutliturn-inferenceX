@@ -202,7 +202,33 @@ async def run_benchmark(args):
     # past the recorded session count, refactor the dataset into more DISTINCT
     # sessions (see replay/make_variants.py) instead of re-replaying identical
     # ones — identical replays would just be free prefix-cache hits.
-    work = sessions
+    work = list(sessions)
+    if args.shuffle_sessions:
+        # Randomize session order (seeded for reproducibility) so the staggered
+        # arrivals bring in a realistic RANDOM mix of session sizes. Better than a
+        # length sort, which would correlate size with arrival time (heavy prefills
+        # bunching at the tail = a second mini-herd). Combined with --ramp-seconds
+        # this removes the synchronized turn-0 prefill burst (thundering herd).
+        import random
+        random.Random(args.seed).shuffle(work)
+
+    # Pre-arrange (steady-state snapshot): position the first `concurrency` sessions
+    # at a random point up to --prearrange-frac through their conversation. The setup
+    # phase sends ONE request per session (turn k_i) to warm its prefix cache; the
+    # measured phase then resumes each from turn k_i+1. So at t0 the in-flight users
+    # are at MIXED phases with WARM caches — like a real server snapshot — instead of
+    # all starting fresh at turn 0 (thundering herd). Sessions pulled later (fresh
+    # arrivals) start at turn 0.
+    if args.prearrange_frac > 0:
+        import random as _r
+        _rng = _r.Random(args.seed + 1)
+        for s in work[: min(args.concurrency, len(work))]:
+            nt = len(s["turns"])
+            if nt >= 2:  # need a turn k_i to warm AND at least one turn to profile
+                k = min(int(_rng.uniform(0, args.prearrange_frac) * nt), nt - 2)
+                s["_warm_idx"] = k        # the single warmup request (turn k_i)
+                s["_measure_from"] = k + 1  # profiling resumes here
+
     total_turns = sum(len(s["turns"]) for s in work)
     results: list[TurnResult] = []
 
@@ -225,8 +251,14 @@ async def run_benchmark(args):
 
         async def drain(record: bool, limit: int):
             counter = {"i": 0}
+            nw = min(n_workers, limit)
 
-            async def worker():
+            async def worker(wid: int):
+                # Staggered ramp: spread the workers' first-turn starts evenly across
+                # --ramp-seconds so they don't all fire prefill at the same instant
+                # (thundering herd). Only on the measured pass.
+                if record and args.ramp_seconds and nw > 1:
+                    await asyncio.sleep(args.ramp_seconds * wid / nw)
                 while True:
                     i = counter["i"]
                     counter["i"] += 1
@@ -234,7 +266,9 @@ async def run_benchmark(args):
                         return
                     s = work[i]
                     msgs = s["messages"]
-                    for turn in s["turns"]:
+                    # Pre-arranged sessions resume from turn k_i+1 (prefix already
+                    # warmed in the pre-arrange phase); fresh sessions start at 0.
+                    for turn in s["turns"][s.get("_measure_from", 0):]:
                         if args.use_think_time and turn.get("delay_before_s"):
                             await asyncio.sleep(min(turn["delay_before_s"], args.max_think_time))
                         tr = await replay_turn(
@@ -243,13 +277,43 @@ async def run_benchmark(args):
                         if record:
                             results.append(tr)   # record EVERY turn — nothing censored
 
-            await asyncio.gather(*[worker() for _ in range(min(n_workers, limit))])
+            await asyncio.gather(*[worker(k) for k in range(nw)])
 
-        # Warmup: an untimed pass to prime the server prefix cache before the
-        # measured pass. With --warmup-sessions N, only the first N sessions are
-        # warmed (a cheap prime) instead of the whole dataset — the measured pass
-        # below always covers ALL sessions.
-        if args.warmup:
+        async def prearrange(limit: int):
+            # ONE untimed request per initial session, at its random mid-point k_i,
+            # to warm that session's prefix cache. All workers run concurrently; we
+            # await all before profiling so every in-flight user is positioned.
+            counter = {"i": 0}
+
+            async def pworker():
+                while True:
+                    i = counter["i"]
+                    counter["i"] += 1
+                    if i >= limit:
+                        return
+                    s = work[i]
+                    wi = s.get("_warm_idx")
+                    if wi is None:
+                        continue
+                    turn = s["turns"][wi]
+                    await replay_turn(http, url, args.model,
+                                      s["messages"][:turn["prefix_len"]],
+                                      turn["max_tokens"], extra_body, timeout)  # not recorded
+
+            await asyncio.gather(*[pworker() for _ in range(min(n_workers, limit))])
+
+        # Setup phase. Pre-arrange (steady-state snapshot: 1 request per initial
+        # session to warm it mid-conversation) takes precedence; else the legacy
+        # full-prefix warmup.
+        if args.prearrange_frac > 0:
+            nlim = min(args.concurrency, len(work))
+            npre = sum(1 for s in work[:nlim] if "_warm_idx" in s)
+            print(f"[replay] pre-arrange: positioning {npre}/{nlim} initial sessions "
+                  f"<= {args.prearrange_frac:.0%} through (1 warmup request each)...", flush=True)
+            await prearrange(nlim)
+            print("[replay] pre-arrange done; profiling resumes each session from k_i+1",
+                  flush=True)
+        elif args.warmup:
             wlim = args.warmup_sessions if args.warmup_sessions and args.warmup_sessions > 0 else len(work)
             wlim = min(wlim, len(work))
             print(f"[replay] warmup: untimed pass over {wlim}/{len(work)} sessions "
@@ -386,6 +450,21 @@ def parse_args():
                     help="sleep the recorded inter-turn idle gap before each turn "
                          "(default off = saturate for throughput)")
     ap.add_argument("--max-think-time", type=float, default=60)
+    ap.add_argument("--ramp-seconds", type=float, default=0.0,
+                    help="stagger worker starts evenly across this window on the "
+                         "measured pass to avoid a synchronized turn-0 prefill burst "
+                         "(thundering herd). 0 = all workers start at once.")
+    ap.add_argument("--shuffle-sessions", action="store_true",
+                    help="randomize session order (seeded) so staggered arrivals "
+                         "bring a realistic random size mix; avoids the t=0 herd and "
+                         "any length/arrival-time correlation a sort would add.")
+    ap.add_argument("--seed", type=int, default=0,
+                    help="RNG seed for --shuffle-sessions / --prearrange-frac.")
+    ap.add_argument("--prearrange-frac", type=float, default=0.0,
+                    help="steady-state snapshot: position the first `concurrency` "
+                         "sessions at a random point in [0, FRAC) of their conversation "
+                         "via ONE warmup request each, then profile from k_i+1. "
+                         "0 = off. e.g. 0.75 = up to 75%% through.")
     ap.add_argument("--api-key", default=None)
     ap.add_argument("--extra-body", default=None,
                     help="JSON merged into every request body (e.g. sampling params)")
