@@ -20,8 +20,17 @@ import re
 # family -> list of name aliases (first match wins). Same harness, both engines:
 # vLLM uses the `vllm:` prefix, SGLang the `sglang:` prefix.
 TTFT = ["vllm:time_to_first_token_seconds", "sglang:time_to_first_token_seconds"]
-ITL = ["vllm:inter_token_latency_seconds", "vllm:time_per_output_token_seconds",
-       "sglang:inter_token_latency_seconds", "sglang:time_per_output_token_seconds"]
+# per-token-GAP inter-token latency: one histogram observation per generated token
+# gap (count ~= output_tokens). Reflects the decode step time distribution.
+ITL = ["vllm:inter_token_latency_seconds", "sglang:inter_token_latency_seconds"]
+# per-REQUEST time-per-output-token: one observation per request (count == #requests);
+# this is the canonical TPOT. vLLM exposes `request_time_per_output_token_seconds`
+# (the older bare `time_per_output_token_seconds` name does NOT exist on this build, so
+# it was a dead alias). SGLang has no per-request TPOT histogram -> lat_stats returns
+# None and callers fall back to ITL.
+TPOT = ["vllm:request_time_per_output_token_seconds",
+        "sglang:request_time_per_output_token_seconds",
+        "sglang:time_per_output_token_seconds"]
 E2E = ["vllm:e2e_request_latency_seconds", "vllm:request_latency_seconds",
        "sglang:e2e_request_latency_seconds"]
 GEN_TOK = ["vllm:generation_tokens_total", "sglang:generation_tokens_total"]
@@ -137,10 +146,14 @@ def summarize(before_text: str, after_text: str, runtime_s: float, n_gpu: int) -
 
     ttft = lat_stats(bh, ah, TTFT)
     itl = lat_stats(bh, ah, ITL)
+    tpot = lat_stats(bh, ah, TPOT)        # per-request TPOT; None on SGLang
     e2e = lat_stats(bh, ah, E2E)
+    # interactivity (tok/s/user) is 1/TPOT; prefer the per-request TPOT metric, fall
+    # back to per-gap ITL where the engine doesn't expose TPOT (SGLang).
+    tp = tpot or itl
 
-    def intvty(itl_ms):
-        return round(1000.0 / itl_ms, 2) if itl_ms else None
+    def intvty(v_ms):
+        return round(1000.0 / v_ms, 2) if v_ms else None
 
     # prefix cache hit rate: prefer hits/queries delta; else the gauge (use 'after')
     hits, queries = cdelta(CACHE_HITS), cdelta(CACHE_QUERIES)
@@ -157,12 +170,13 @@ def summarize(before_text: str, after_text: str, runtime_s: float, n_gpu: int) -
         "output_tput_per_gpu": round(out_tps / n_gpu, 2),
         "input_tput_per_gpu": round(in_tps / n_gpu, 2),
         "output_tput_total": round(out_tps, 2),
-        # interactivity (per user)
-        "intvty_p50": intvty(itl[1]) if itl else None,
-        "intvty_p99": intvty(itl[2]) if itl else None,
+        # interactivity (per user) = 1/TPOT (per-request); ITL fallback on SGLang
+        "intvty_p50": intvty(tp[1]) if tp else None,
+        "intvty_p99": intvty(tp[2]) if tp else None,
         # latency (ms) mean / p50 / p99
         "ttft_ms": {"mean": ttft[0], "p50": ttft[1], "p99": ttft[2]} if ttft else None,
         "itl_ms": {"mean": itl[0], "p50": itl[1], "p99": itl[2]} if itl else None,
+        "tpot_ms": {"mean": tpot[0], "p50": tpot[1], "p99": tpot[2]} if tpot else None,
         "e2e_ms": {"mean": e2e[0], "p50": e2e[1], "p99": e2e[2]} if e2e else None,
         # cache / capacity (the stage-2 metrics)
         "gpu_prefix_cache_hit_rate": cache_hit,

@@ -105,7 +105,9 @@ config: `agg_vllm_tp4/`, `agg_vllm_tp4_offload40/`, `agg_sglang_tp4/`, … each 
 - `metrics.py`      — Prometheus extraction; **engine-agnostic** (handles both
   `vllm:` and `sglang:` metric names — same file for both servers).
 - `gpu_metrics.py`  — reduce the `nvidia-smi` CSV → per-GPU + deployment power/util/temp/mem.
-- `scrape_metrics.py` — background `/metrics` poller → timestamped snapshots.
+- `recompute_steady.py` — post-process each `conc<N>.json`: STEADY full-batch throughput +
+  interactivity from the engine logs (the canonical numbers). Drops the ramp/drain-diluted
+  whole-window throughput and the bucket-coarse prom decode-latency fields (itl/tpot).
 
 ## Run
 
