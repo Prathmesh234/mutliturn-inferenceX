@@ -41,10 +41,22 @@ def run_point(conc, args):
     return json.loads(out.read_text())
 
 
-COLS = ["concurrency", "output_tput_per_gpu", "intvty_p50", "intvty_p99",
+COLS = ["concurrency", "output_tput_per_gpu_steady",
+        "intvty_steady", "tpot_steady_ms",
         "ttft_p50_ms", "ttft_p99_ms", "e2e_p50_ms", "e2e_p99_ms",
         "gpu_prefix_cache_hit_rate", "gpu_kv_usage_perc", "cpu_kv_usage_perc",
         "num_running", "num_waiting", "completed_turns"]
+
+
+def tput_pg(r):
+    """Plotted-frontier throughput = STEADY-STATE full-batch tput/GPU (recompute_steady.py:
+    median decode tput over engine-log samples with running >= 0.9*conc, per GPU). This is
+    the canonical throughput in conc<N>.json; recompute_steady removes the whole-window
+    average entirely. The `.get(output_tput_per_gpu)` fallback only fires for a live sweep
+    plotted BEFORE recompute_steady has run (the window avg is diluted up to ~2.2x at high
+    conc by ramp/drain on the 150-session set, so it's a placeholder only)."""
+    s = r.get("server", {}) or {}
+    return s.get("output_tput_per_gpu_steady", s.get("output_tput_per_gpu"))
 
 
 def row_of(r):
@@ -53,8 +65,9 @@ def row_of(r):
     e2e = s.get("e2e_ms") or {}
     return {
         "concurrency": r["concurrency"],
-        "output_tput_per_gpu": s.get("output_tput_per_gpu"),
-        "intvty_p50": s.get("intvty_p50"), "intvty_p99": s.get("intvty_p99"),
+        "output_tput_per_gpu_steady": s.get("output_tput_per_gpu_steady"),
+        "intvty_steady": s.get("intvty_steady"),
+        "tpot_steady_ms": s.get("tpot_steady_ms"),
         "ttft_p50_ms": ttft.get("p50"), "ttft_p99_ms": ttft.get("p99"),
         "e2e_p50_ms": e2e.get("p50"), "e2e_p99_ms": e2e.get("p99"),
         "gpu_prefix_cache_hit_rate": s.get("gpu_prefix_cache_hit_rate"),
@@ -132,8 +145,8 @@ def plot(rows, path, title):
     # (prearrange only warms `concurrency` sessions, not the shared prefix), so its
     # TTFT/interactivity are a warm-up artifact, not steady-state. Kept in pareto.csv.
     rows = [r for r in rows if r["concurrency"] != 4]
-    tput = [row_of(r)["output_tput_per_gpu"] for r in rows]
-    panels = [("intvty_p99", "Interactivity p99 (tok/s/user)"),
+    tput = [tput_pg(r) for r in rows]
+    panels = [("intvty_steady", "Interactivity (steady, tok/s/user)"),
               ("ttft_p99_ms", "TTFT p99 (ms)"), ("e2e_p99_ms", "E2E p99 (ms)")]
     fig, ax = plt.subplots(1, 3, figsize=(18, 5.2))
     for a, (key, lab) in zip(ax, panels):
@@ -190,13 +203,12 @@ def main():
     write_csv(rows, Path(args.result_dir) / "pareto.csv")
     print(f"wrote {Path(args.result_dir) / 'pareto.csv'}")
     plot(rows, Path(args.result_dir) / "pareto.png", args.title or f"MiniMax-M2.5 {args.model}")
-    print("\nconc | tput/gpu | intvty_p99 | ttft_p99 | e2e_p99 | cache_hit | kv_use")
+    print("\nconc | tput/gpu(steady) | intvty(steady) | tpot_steady_ms | ttft_p99 | e2e_p99 | cache_hit")
     for r in sorted(rows, key=lambda r: r["concurrency"]):
         x = row_of(r)
-        print(f"{x['concurrency']:>4} | {str(x['output_tput_per_gpu']):>8} | "
-              f"{str(x['intvty_p99']):>10} | {str(x['ttft_p99_ms']):>8} | "
-              f"{str(x['e2e_p99_ms']):>7} | {str(x['gpu_prefix_cache_hit_rate']):>9} | "
-              f"{str(x['gpu_kv_usage_perc']):>6}")
+        print(f"{x['concurrency']:>4} | {str(tput_pg(r)):>16} | {str(x['intvty_steady']):>14} | "
+              f"{str(x['tpot_steady_ms']):>14} | {str(x['ttft_p99_ms']):>8} | "
+              f"{str(x['e2e_p99_ms']):>7} | {str(x['gpu_prefix_cache_hit_rate']):>9}")
 
 
 if __name__ == "__main__":
